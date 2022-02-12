@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us" id="<%= yield :html_id %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="footer, address, phone, icons"/>
+
+  <title> Document Management - PGN Solution </title>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <%= stylesheet_link_tag 'application', media: 'screen' %>
+
+  <!-- FAVICONS -->
+  <%= favicon_link_tag 'qmis-transparent.ico' %>
+  <%= favicon_link_tag 'qmis-transparent.ico', rel: 'icon' %>
+
+  <!-- Specifying a Webpage Icon for Web Clip
+     Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+
+
+  <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Startup image for web apps -->
+
+
+  <%= yield :head %>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=error_404.html.erb">
+  </noscript>
+
+  <% if current_user %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <% end %>
+</head>
+
+<!--
+
+TABLE OF CONTENTS.
+
+Use search to find needed section.
+
+===================================================================
+
+|  01. #CSS Links                |  all CSS links and file paths  |
+|  02. #FAVICONS                 |  Favicon links and file paths  |
+|  03. #GOOGLE FONT              |  Google font link              |
+|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+|  05. #BODY                     |  body tag                      |
+|  06. #HEADER                   |  header tag                    |
+|  07. #PROJECTS                 |  project lists                 |
+|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+|  09. #MOBILE                   |  mobile view dropdown          |
+|  10. #SEARCH                   |  search field                  |
+|  11. #NAVIGATION               |  left panel & navigation       |
+|  12. #RIGHT PANEL              |  right panel userlist          |
+|  13. #MAIN PANEL               |  main panel                    |
+|  14. #MAIN CONTENT             |  content holder                |
+|  15. #PAGE FOOTER              |  page footer                   |
+|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
+|  17. #PLUGINS                  |  all scripts and plugins       |
+
+===================================================================
+
+-->
+
+<!-- #BODY -->
+<!-- Possible Classes
+
+  * 'smart-style-{SKIN#}'
+  * 'smart-rtl'         - Switch theme mode to RTL
+  * 'menu-on-top'       - Switch to top navigation (no DOM change required)
+  * 'no-menu'			  - Hides the menu completely
+  * 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+  * 'fixed-header'      - Fixes the header
+  * 'fixed-navigation'  - Fixes the main menu
+  * 'fixed-ribbon'      - Fixes breadcrumb
+  * 'fixed-page-footer' - Fixes footer
+  * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+-->
+<body class="<%= yield :body_class %>">
+
+<!-- HEADER -->
+<%= render partial: 'layouts/header' if session[:id].present? %>
+<!-- END HEADER -->
+
+<!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<%= render partial: 'layouts/left_panel' if session[:id].present? %>
+<%= render partial: 'layouts/left_panel1' if session[:id].present? %>
+<!-- END NAVIGATION -->
+
+<!-- MAIN PANEL -->
+<!-- <div id="main" role="main"> -->
+<div>
+  <%= yield :ribbon %>
+  <% if notice %>
+    <div class="alert alert-success fade in">
+      <button data-dismiss="alert" class="close">
+        ×
+      </button>
+      <i class="fa-fw fa fa-check"></i>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-warning fade in">
+      <button data-dismiss="alert" class="close">
+        ×
+      </button>
+      <i class="fa-fw fa fa-warning"></i>
+      <%= alert %>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
+<!-- END MAIN PANEL -->
+
+<!-- PAGE FOOTER -->
+<%= render partial: 'layouts/footer' if session[:id].present? %>
+<!-- END PAGE FOOTER -->
+
+<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+Note: These tiles are completely responsive,
+you can add as many as you like
+-->
+<% render partial: 'layouts/tiles' if session[:id].present? %>
+<!-- END SHORTCUT AREA -->
+
+<!--================================================== -->
+
+<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+<%= javascript_include_tag 'plugin/pace/pace', 'data-pace-options' => '{ "restartOnRequestAfter": true }' if current_user %>
+
+<%= javascript_include_tag 'application' %>
+
+<%# <% if session[:id].present? %>
+<!-- Demo purpose only -->
+<%# <%= javascript_include_tag 'demo' %>
+<%# <% end %>
+
+
+
+<!--[if IE 8]>
+
+<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+<![endif]-->
+
+<%= yield(:scripts).present? ? yield(:scripts) : render(partial: 'layouts/scripts') if session[:id].present? %>
+    <!--
+    <% if current_user %>
+       Your GOOGLE ANALYTICS CODE Below
+      <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+          _gaq.push(['_trackPageview']);
+
+          (function () {
+              var ga = document.createElement('script');
+              ga.type = 'text/javascript';
+              ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(ga, s);
+          })();
+
+          
+
+      </script>
+    <% end %>
+    -->
+</body>
+
+</html>

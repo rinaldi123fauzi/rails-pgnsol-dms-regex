@@ -1,0 +1,2 @@
+module Sub2DocumentTypesHelper
+end

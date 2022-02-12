@@ -1,0 +1,2 @@
+class InternalWrAudit < ApplicationRecord
+end

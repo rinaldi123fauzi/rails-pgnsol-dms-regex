@@ -1,0 +1,110 @@
+<style type="text/css">
+  body {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 11px;
+    color: black;
+  }
+
+  .ibox-title {
+    font-size: 10px;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .in-table tr td,
+  .in-table tr th {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 3px;
+  }
+
+  .in-table tr th {
+    background-color: #c6d9f0;
+  }
+
+  .in-table table {
+    border: 0px;
+    margin-top: 5px;
+  }
+
+  .bottom-table tr td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding-left: 3px;
+  }
+
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+</style>
+
+<div class="ibox">
+
+  <div class="ibox-content" style="display: block;">
+    <div class="print-area" style="padding: 15px 30px;">
+
+      <table class="bottom-table">
+        <tr>
+          <td width="365" height="60">
+            <div style="margin: 20px"><%= wicked_pdf_image_tag 'pgn.png', :height => 50 %></div>
+          </td>
+          <td colspan="3">
+            <h3 style="text-align: center; margin-top: 15px;font-style: italic;font-size: 16px;">
+              <b>DAFTAR DATA REQUEST DOKUMEN</b></h3>
+            <!--            <p style="text-align: center; margin-bottom: 15px">Quality Management - DAK</p>-->
+          </td>
+        </tr>
+      </table>
+
+
+      <table style="border-collapse: collapse;" class="in-table">
+        <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Username</th>
+          <th>Division</th>
+          <th>Email</th>
+          <th>Request Time</th>
+          <th>Activity</th>
+          <th>Browser</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @log_request.each_with_index do |log_activity, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= log_activity.nama %></td>
+            <td><%= log_activity.username %></td>
+            <% qm_request = DocumentRequest.find_by_requester(log_activity.username) %>
+            <% wr_request = WrDocRequest.find_by_requester(log_activity.username) %>
+            <% if qm_request.present? %>
+              <td><%= qm_request.division %></td>
+            <% elsif wr_request.present? %>
+              <td><%= wr_request.division %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+            <td><%= log_activity.email %></td>
+            <td><%= log_activity.activity_date.strftime('%d %b %Y') %></td>
+            <td><%= log_activity.activity %></td>
+            <td><%= log_activity.browser %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<br>

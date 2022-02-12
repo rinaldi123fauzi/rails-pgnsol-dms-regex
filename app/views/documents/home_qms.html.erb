@@ -1,0 +1,524 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="<%= root_path %>" style="text-docoration: none;">HOME</a></li>
+        <li>Quality Documents</li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <span class="ribbon-button-alignment pull-right hidden-lg hidden-md hidden-sm" style="background-color: transparent;">
+      <span id="hide-menu" class="btn btn-ribbon" data-original-title="Expand menu.">
+        <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder" style="color: white;"></i></a>
+      </span>
+    </span>
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <h1>Quality Documents</h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+
+  <div class="page-header">
+    <h4>Search by categories</h4>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+        <div>
+          <div class="widget-body no-padding animated fadeInDown" style="box-shadow: -1rem 0 3rem #000;">
+            <%= form_for :document, url: view_all_index_documents_path, method: :get, html: {id: "review-form", class: "smart-form", role: "form"} do |f| %>
+              <fieldset>
+                <div class="row">
+                  <section class="col col-6">
+                    <label class="control-label">Tipe Pencarian</label>
+                    <label class="input"> <i class="icon-append fa fa-tag"></i>
+                      <label class="input">
+                        <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                        <%= f.select :table_structures, ['Judul Dokumen', 'Nomor Dokumen', 'Tanggal Berlaku'], {prompt: "Select a search type"}, {:id => 'search_type', :class => 'select2'} %>
+                        <i></i>
+                      </label>
+                  </section>
+                  <section class="col col-6">
+                    <label class="control-label">Pencarian</label>
+                    <label class="input"> <i class="icon-append fa fa-tag"></i>
+                      <input type="text" class="form-control" name="document_title" placeholder="Search Title" style="display: block" id="title">
+                      <input type="text" class="form-control" name="document_code" placeholder="Search Code" style="display: none" id="code">
+                      <input type="text" id="dateformat" name="document_date" placeholder="Search Date" class="datepicker" data-dateformat='yy-mm-dd' style="display: none">
+                    </label>
+                  </section>
+                </div>
+                <footer>
+                  <%= f.submit 'Search', class: "btn btn-primary" %>
+                </footer>
+              </fieldset>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <nav>
+      <!-- Superadmin -->
+      <% if current_user.is? 2 %>
+        <ul class="col-md-4 hidden-xs col-sm-4">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Document Control">
+              <span class="nav-label"> Document Control <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li>
+                <a style="color: black;" href="<%= new_document_path %>" title="New Document"><span class='menu-item-parent'>New Document</span></a>
+              </li>
+              <!--              <li>-->
+              <!--                <a style="color: black;" href="<%#= documents_url %>" title="Edit Document"><span class='menu-item-parent'>Edit Document</span></a>-->
+              <!--              </li>-->
+              <li>
+                <a style="color: black;" href="<%= recycle_bin_documents_path %>" title="Recycle Bin"><span class='menu-item-parent'>Recycle Bin</span></a>
+              </li>
+              <li>
+                <a style="color: black;" href="<%= report_documents_path(:format => 'pdf') %>" target="_blank" title="Report Document"><span class='menu-item-parent'>Report Document</span></a>
+              </li>
+<!--              <li>-->
+<!--                <a style="color: black;" href="<%#= new_internal_audit_path %>" title="Internal Audit"><span class='menu-item-parent'>Add Internal Audit</span></a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a style="color: black;" href="<%#= internal_audits_url %>" title="Log Internal Audit"><span class='menu-item-parent'>List Internal Audit</span></a>-->
+<!--              </li>-->
+            </ul>
+          </li>
+        </ul>
+        <ul class="col-md-4 hidden-xs col-sm-4">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Request">
+              <span class="nav-label"> Request <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li>
+                <% @document_request_p = DocumentRequest.where('status_request = ? and receiver = ? or status_request = ? and receiver = ?', 'baru', current_user.username, 'revisi', current_user.username).select('*') %>
+                <a style="color: black;" href="<%= index_request_document_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span><sup class="badge bg-color-yellow bounceIn animated"><%= @document_request_p.count %></sup></a>
+              </li>
+              <li>
+                <!--                <a style="color: black;" href="<%#= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>-->
+                <a style="color: black;" href="<%= distributions_url %>" title="List Distribution"><span class='menu-item-parent'>List Distribution</span></a>
+              </li>
+              <li>
+                <% @document_request = DocumentRequest.where('status_request = ?', 'Pending Request').select('*') %>
+                <a style="color: black;" href="<%= document_requests_url %>" title="Request Document"><span class='menu-item-parent'>Request Document</span><sup class="badge bg-color-yellow bounceIn animated"><%= @document_request.count %></sup></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="col-md-4 hidden-xs col-sm-4">
+          <li>
+            <a class="btn btn-primary" href="<%= view_all_index_documents_path %>" title="All Document"><span class='menu-item-parent'>All Document</span></a>
+          </li>
+        </ul>
+
+        <!-- Staff -->
+      <% elsif current_user.is? 10 %>
+        <ul class="col-md-6 col-xs-6">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Request">
+              <span class="nav-label"> Request <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li>
+                <a style="color: black;" href="<%= new_request_document_requests_path %>" title="Revision or Request New Doc"><span class='menu-item-parent'>Revision or Request New Doc</span></a>
+              </li>
+              <li>
+                <% @request = DocumentRequest.where('status_request = ? and receiver = ? or status_request = ? and receiver = ?', 'baru', current_user.username, 'revisi', current_user.username).select('*') %>
+                <% if @request.exists? %>
+                  <a style="color: black;" href="<%= index_request_document_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span><sup class="badge bg-color-yellow bounceIn animated"><%= @request.count %></sup></a>
+                <% else %>
+                  <a style="color: black;" href="<%= index_request_document_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span></a>
+                <% end %>
+              </li>
+              <li>
+                <!--                <a style="color: black;" href="<%#= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>-->
+                <a style="color: black;" href="<%= distributions_url %>" title="Document Distribution"><span class='menu-item-parent'>Document Distribution</span></a>
+              </li>
+              <li>
+                <!--                <a style="color: black;" href="<%#= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>-->
+                <a style="color: black;" href="<%= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="col-md-6 col-xs-6">
+          <li>
+            <a class="btn btn-primary" href="<%= view_all_index_documents_path %>" title="All Documents"><span class='menu-item-parent'>All Documents</span></a>
+          </li>
+        </ul>
+
+        <!-- Inputer WR -->
+      <% elsif current_user.is? 7 %>
+        <ul class="col-md-6 col-xs-6">
+          <li>
+            <a class="btn btn-primary" href="<%= document_requests_url %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+          </li>
+        </ul>
+        <ul class="col-md-6 col-xs-6">
+          <li>
+            <a class="btn btn-primary" href="<%= view_all_index_documents_path %>" title="All Documents"><span class='menu-item-parent'>All Documents</span></a>
+          </li>
+        </ul>
+
+        <!-- Inputer QM -->
+      <% elsif current_user.is? 6 or current_user.is? 21 %>
+        <ul class="col-md-4 hidden-xs hidden-md">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Document Control">
+              <span class="nav-label"> Document Control <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li>
+                <a style="color: black;" href="<%= new_document_path %>" title="New Document"><span class='menu-item-parent'>New Document</span></a>
+              </li>
+              <!--              <li>-->
+              <!--                <a style="color: black;" href="<%#= documents_url %>" title="Edit Document"><span class='menu-item-parent'>Edit Document</span></a>-->
+              <!--              </li>-->
+              <li>
+                <a style="color: black;" href="<%= recycle_bin_documents_path %>" title="Recycle Bin"><span class='menu-item-parent'>Recycle Bin</span></a>
+              </li>
+              <li>
+                <a style="color: black;" href="<%= report_documents_path(:format => 'pdf') %>" target="_blank" title="Report Document"><span class='menu-item-parent'>Report Document</span></a>
+              </li>
+<!--              <li>-->
+<!--                <a style="color: black;" href="<%#= new_internal_audit_path %>" title="Internal Audit"><span class='menu-item-parent'>Add Internal Audit</span></a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a style="color: black;" href="<%#= internal_audits_url %>" title="Log Internal Audit"><span class='menu-item-parent'>List Internal Audit</span></a>-->
+<!--              </li>-->
+            </ul>
+          </li>
+        </ul>
+        <ul class="col-md-4 hidden-xs">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Request">
+              <span class="nav-label"> Request <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li>
+                <a style="color: black;" href="<%= index_request_document_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span></a>
+              </li>
+              <li>
+                <% @document_request = DocumentRequest.where('status_request = ?', 'Approve1').select('*') %>
+                <a style="color: black;" href="<%= document_requests_url %>" title="Request Document"><span class='menu-item-parent'>Request Document</span><sup class="badge bg-color-yellow bounceIn animated"><%= @document_request.count %></sup></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="col-md-4 hidden-xs hidden-xs">
+          <li>
+            <a class="btn btn-primary" href="<%= view_all_index_documents_path %>" title="All Documents"><span class='menu-item-parent'>All Documents</span></a>
+          </li>
+        </ul>
+
+        <!-- Kadiv -->
+      <% elsif current_user.is? 12 %>
+        <ul class="col-md-4 hidden-xs col-sm-4">
+          <li>
+            <a class="btn btn-primary" href="<%= view_all_index_documents_path %>" title="Document Viewer"><span class='menu-item-parent'>Document Viewer</span></a>
+          </li>
+        </ul>
+      <% end %>
+    </nav>
+  </div>
+  <%= render 'layouts/css_cards' %>
+  <dl class="dl-horizontal">
+    <div class="row animated fadeInDown">
+      <hr style="border-color: black;">
+      <%
+        @field.each do |f|
+      %>
+        <div class="col-lg-2 col-md-2 col-xs-6 col-sm-3" id="card">
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <a href="<%= sub_type_document_path(f.document_type_id) %>" style="text-decoration:none; color:black;" title="<%= f.type_name %>">
+            <div class="card">
+              <h3 class="title"><%= f.type_name %></h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+                <% @WrDoc = Document.where('document_type_id = ?', f.document_type_id).select('*') %>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+              </div>
+            </div>
+          </a>
+          <br>
+        </div>
+      <% end %>
+
+      <%# if current_user.is? 2 %>
+      <!--        <div class="col-md-4">-->
+      <!--          <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">-->
+      <!--            <div class="widget-body">-->
+
+      <!--<span class="label label-success pull-right">Monthly</span>-->
+      <!--              <a href="<%#= document_requests_url %>" style="text-decoration:none; color:black;" title="Quality Management System">-->
+      <!--                <div class="row">-->
+      <!--                  <div class="col-md-2">-->
+      <!--                    <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>-->
+      <!--                  </div>-->
+      <!--                  <div class="col-md-6">-->
+      <!--                    <header>REQ Dokumen</header>-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </a>-->
+
+      <!--              <div class="row">-->
+      <!--                <div class="col-md-12">-->
+      <%# @WrDoc = DocumentRequest.select('*') %>
+      <!--                  <h2 class="no-margins text-navy" style="color:#42f4a1;"><%#= @WrDoc.count %></h2>-->
+      <!--                  <small>Total</small>-->
+      <!--                </div>-->
+      <!--              </div>-->
+
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <%# end %>
+    </div>
+  </dl>
+  <%#= render 'layouts/pagination_cards' %>
+  <%= will_paginate @field, renderer: @custom_paginate_renderer %>
+</div>
+
+<% content_for :scripts do %>
+
+  <script type="text/javascript">
+
+      // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+      $(document).ready(function () {
+          $('#search_type').change(function () {
+              var x = $(this).val();
+              console.log(x)
+              if (x == 'Tanggal Berlaku') {
+                  document.getElementById('dateformat').style.display = 'block';
+                  // document.getElementById('dateformat').required = true;
+                  document.getElementById('title').style.display = 'none';
+                  // document.getElementById('title').required = false;
+                  document.getElementById('code').style.display = 'none';
+                  // document.getElementById('code').required = false;
+              } else if (x == 'Nomor Dokumen') {
+                  document.getElementById('dateformat').style.display = 'none';
+                  // document.getElementById('dateformat').required = false;
+                  document.getElementById('title').style.display = 'none';
+                  // document.getElementById('title').required = false;
+                  document.getElementById('code').style.display = 'block';
+                  // document.getElementById('code').required = true;
+              } else {
+                  document.getElementById('dateformat').style.display = 'none';
+                  // document.getElementById('dateformat').required = false;
+                  document.getElementById('title').style.display = 'block';
+                  // document.getElementById('title').required = true;
+                  document.getElementById('code').style.display = 'none';
+                  // document.getElementById('code').required = false;
+              }
+
+          })
+      })
+
+      $(document).ready(function () {
+          $("#dateformat").datepicker({
+              dateFormat: 'yy-mm-dd',
+              defaultDate: "0d",
+              changeMonth: true,
+              changeYear: true,
+              prevText: "",
+              nextText: "",
+          });
+
+          pageSetUp();
+
+          /* // DOM Position key index //
+
+           l - Length changing (dropdown)
+           f - Filtering input (search)
+           t - The Table! (datatable)
+           i - Information (records)
+           p - Pagination (paging)
+           r - pRocessing
+           < and > - div elements
+           <"#id" and > - div with an id
+           <"class" and > - div with a class
+           <"#id.class" and > - div with an id and class
+
+           Also see: http://legacy.datatables.net/usage/features
+           */
+
+          /* BASIC ;*/
+          var responsiveHelper_dt_basic = undefined;
+          var responsiveHelper_datatable_fixed_column = undefined;
+          var responsiveHelper_datatable_col_reorder = undefined;
+          var responsiveHelper_datatable_tabletools = undefined;
+
+          var breakpointDefinition = {
+              tablet: 1024,
+              phone: 480
+          };
+
+          $('#dt_basic').dataTable({
+              "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                  "t" +
+                  "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+              "autoWidth": true,
+              "oLanguage": {
+                  "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+              },
+              "preDrawCallback": function () {
+                  // Initialize the responsive datatables helper once.
+                  if (!responsiveHelper_dt_basic) {
+                      responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                  }
+              },
+              "rowCallback": function (nRow) {
+                  responsiveHelper_dt_basic.createExpandIcon(nRow);
+              },
+              "drawCallback": function (oSettings) {
+                  responsiveHelper_dt_basic.respond();
+              }
+          });
+
+          /* END BASIC */
+
+          /* COLUMN FILTER  */
+          var otable = $('#datatable_fixed_column').DataTable({
+              "searching": false,
+              //"bFilter": false,
+              //"bInfo": false,
+              //"bLengthChange": false
+              //"bAutoWidth": false,
+              //"bPaginate": false,
+              //"bStateSave": true // saves sort state using localStorage
+              "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'f><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>" +
+                  "t" +
+                  "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+              "autoWidth": true,
+              "oLanguage": {
+                  "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+              },
+              "preDrawCallback": function () {
+                  // Initialize the responsive datatables helper once.
+                  if (!responsiveHelper_datatable_fixed_column) {
+                      responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+                  }
+              },
+              "rowCallback": function (nRow) {
+                  responsiveHelper_datatable_fixed_column.createExpandIcon(nRow);
+              },
+              "drawCallback": function (oSettings) {
+                  responsiveHelper_datatable_fixed_column.respond();
+              }
+
+          });
+
+          // Apply the filter
+          $("#datatable_fixed_column thead th input[type=text]").on('keyup change', function () {
+
+              otable
+                  .column($(this).parent().index() + ':visible')
+                  .search(this.value)
+                  .draw();
+
+          });
+          /* END COLUMN FILTER */
+
+          /* COLUMN SHOW - HIDE */
+          $('#datatable_col_reorder').dataTable({
+              "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>" +
+                  "t" +
+                  "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+              "autoWidth": true,
+              "oLanguage": {
+                  "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+              },
+              "preDrawCallback": function () {
+                  // Initialize the responsive datatables helper once.
+                  if (!responsiveHelper_datatable_col_reorder) {
+                      responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+                  }
+              },
+              "rowCallback": function (nRow) {
+                  responsiveHelper_datatable_col_reorder.createExpandIcon(nRow);
+              },
+              "drawCallback": function (oSettings) {
+                  responsiveHelper_datatable_col_reorder.respond();
+              }
+          });
+
+          /* END COLUMN SHOW - HIDE */
+
+          /* TABLETOOLS */
+          $('#datatable_tabletools').dataTable({
+
+              // Tabletools options:
+              //   https://datatables.net/extensions/tabletools/button_options
+              "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>" +
+                  "t" +
+                  "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+              "oLanguage": {
+                  "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+              },
+              "oTableTools": {
+                  "aButtons": [
+                      "copy",
+                      "csv",
+                      "xls",
+                      {
+                          "sExtends": "pdf",
+                          "sTitle": "SmartAdmin_PDF",
+                          "sPdfMessage": "SmartAdmin PDF Export",
+                          "sPdfSize": "letter"
+                      },
+                      {
+                          "sExtends": "print",
+                          "sMessage": "Generated by SmartAdmin <i>(press Esc to close)</i>"
+                      }
+                  ],
+                  "sSwfPath": "js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+              },
+              "autoWidth": true,
+              "preDrawCallback": function () {
+                  // Initialize the responsive datatables helper once.
+                  if (!responsiveHelper_datatable_tabletools) {
+                      responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+                  }
+              },
+              "rowCallback": function (nRow) {
+                  responsiveHelper_datatable_tabletools.createExpandIcon(nRow);
+              },
+              "drawCallback": function (oSettings) {
+                  responsiveHelper_datatable_tabletools.respond();
+              }
+          });
+
+          /* END TABLETOOLS */
+
+      })
+
+  </script>
+<% end %>

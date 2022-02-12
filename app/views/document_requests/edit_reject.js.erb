@@ -1,0 +1,9 @@
+$('#dialog h3').html("Reject");
+
+$('#body').html('<%= j render ("form_reject") %>');
+
+$('#dialog').modal("show");
+
+$('#dialog').on('shown.bs.modal', function(){
+    $('.first_input').focus()
+})

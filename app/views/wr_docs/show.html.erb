@@ -1,0 +1,272 @@
+<div id="content">
+  <% content_for :ribbon do %>
+  <!-- RIBBON -->
+  <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+    <!-- breadcrumb -->
+    <ol class="breadcrumb">
+      <li><a href="<%= root_path %>" style="text-decoration: none;">HOME</a></li><li><a href="<%= home_document_wr_docs_path %>" style="text-decoration: none;">WR Document</a></li><li><a href="#" onclick="return goBack()">Previous</a></li><li>Detail</li>
+      <script type="text/javascript" charset="utf-8">
+          function goBack() {
+              window.history.back();
+          }
+      </script>
+    </ol>
+    <!-- end breadcrumb -->
+
+    <!-- You can also add more buttons to the
+    ribbon for further usability
+
+    Example below:
+
+    <span class="ribbon-button-alignment pull-right">
+    <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+    <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+    <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+    </span> -->
+
+  </div>
+  <!-- END RIBBON -->
+  <% end %>
+
+<div class="page-header">
+  <h1>Detail</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+  <!-- <ul id="myTab" class="nav nav-pills">
+    <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Detail Document </a></li>
+    <li class=""><a href="#specifications" data-toggle="tab">See Scan Document</a></li>
+  </ul>
+  <style media="screen">
+    h4{
+      font-size: 20px; font-family:calibri;
+     }
+  </style> -->
+  <!-- <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in" id="more-information"> -->
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+          <div class="row">
+            <section class="col-md-6">
+              <table border="0">
+                <tr>
+                  <td> <h3>Nomor Dokumen</h3> </td>
+                </tr>
+                <tr>
+                  <td> <h4><%= @wr_docs_code %></h4> </td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-6">
+              <table border="0">
+                <tr>
+                  <td><h3>Judul Dokumen</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_title %></h4></td>
+                </tr>
+              </table>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+          <div class="row">
+            <section class="col-md-3">
+              <table border="0">
+                <tr>
+                  <td><h3>Field</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_field %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-3">
+              <table border="0">
+                <tr>
+                  <td><h3>Sub Field</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_sub_field %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-3">
+              <table border="0">
+                <tr>
+                  <td><h3>Tipe Dokumen</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_doc_type %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-3">
+              <table border="0">
+                <tr>
+                  <td><h3>Sifat Dokumen</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @sifat %></h4></td>
+                </tr>
+              </table>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+          <div class="row">
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Issued By</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_issued_by %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Tanggal Berlaku</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_date %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Revisi</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_revision %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <!-- <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Checked By</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_checked_by %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Approved By</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_approved_by %></h4></td>
+                </tr>
+              </table>
+            </section> -->
+          </div>
+        </div>
+      </div>
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+          <div class="row">
+            <!-- <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Status</h3></td>
+                </tr>
+                <tr>
+                  <% if @wr_docs_status == "Done"%>
+                    <td><h4 style="color:green; font-weight:bold;"><%= @wr_docs_status %></h4></td>
+                  <% elsif @wr_docs_status.split(" ").present? %>
+                    <td><h4 style="color:orange; font-weight:bold;"><%= @wr_docs_status %></h4></td>
+                  <% else %>
+                    <td><h4 style="color:red; font-weight:bold;"><%= @wr_docs_status %></h4></td>
+                  <% end %>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Revision</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @wr_docs_revision %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Date of Document</h3></td>
+                </tr>
+                <tr>
+                  <%# <td><h4><%= @wr_docs_date.strftime('%d') + "/" + @wr_docs_date.strftime('%m') + "/" + @wr_docs_date.strftime('%Y') %></h4></td> %>
+                </tr>
+              </table>
+            </section> -->
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Penanggung Jawab</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @penanggung_jawab %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Lokasi Simpan</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= @save_location %></h4></td>
+                </tr>
+              </table>
+            </section>
+            <section class="col-md-4">
+              <table border="0">
+                <tr>
+                  <td><h3>Lama Simpan</h3></td>
+                </tr>
+                <tr>
+                  <td><h4><%= distance_of_time_in_words(Time.now, @save_date, true, :only => [:years, :months, :weeks,:days]) %></h4></td>
+                </tr>
+              </table>
+            </section>
+          </div>
+        </div>
+      </div>
+    <!-- </div>
+  </div> -->
+
+</dl>
+</div>
+<br><br>
+<!-- <div class="tab-pane fade" id="specifications">
+  <br>
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <% if current_user.is? 10 %>
+          <iframe src="<%= pdfjs.minimal_path(file: "/file/DMS/#{@wr_docs_file_upload}") %>" style="width: 100%; height: 600px;"></iframe>
+      <% else %>
+        <iframe src="<%= pdfjs.full_path(file: "/file/DMS/#{@wr_docs_file_upload}") %>" style="width: 100%; height: 600px;"></iframe>
+      <% end %>
+    </div>
+  </div>
+</div> -->

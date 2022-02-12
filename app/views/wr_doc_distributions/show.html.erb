@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to wr_doc_distributions_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_wr_doc_distribution_path(@wr_doc_distribution), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show wr_doc_distribution</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Wr doc:</dt>
+  <dd><%= @wr_doc_distribution.wr_doc_id %></dd>
+
+  <dt>Sender:</dt>
+  <dd><%= @wr_doc_distribution.sender %></dd>
+
+  <dt>Receiver:</dt>
+  <dd><%= @wr_doc_distribution.receiver %></dd>
+
+  <dt>Date:</dt>
+  <dd><%= @wr_doc_distribution.date %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @wr_doc_distribution.status %></dd>
+
+</dl>

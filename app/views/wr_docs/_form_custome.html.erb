@@ -1,0 +1,475 @@
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+  -->
+  <header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Form Document </h2>
+
+  </header>
+
+  <!-- widget div-->
+  <div>
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+      <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+      <%= form_for(@wr_doc, html: {id: "review-form", class: "smart-form", role: "form"}) do |f| %>
+        <!-- <header>
+          Work Reference Document
+        </header> -->
+        <style media="screen">
+          select.select2 {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            margin-top: 4px;
+            margin-left: 4px;
+            width: 190px;
+            height: 20px;
+          }
+        </style>
+        <script type="text/javascript">
+            $(".select2").select2();
+        </script>
+        <fieldset>
+          <% if @wr_doc.wr_doc_id != nil %>
+            <%= f.text_field :file_upload, class: "form-control", readonly: "true", name: "nmfile", type: "hidden" %>
+          <% end %>
+          <div class="row">
+            <section class="col col-6">
+              <label class="control-label">Judul Dokumen</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <%= f.text_field :document_title, class: "form-control", id: "document_title" %>
+                <b class="tooltip tooltip-top-right">
+                  <i class="fa fa-warning txt-color-teal"></i>
+                  Please entry...</b>
+              </label>
+            </section>
+            <section class="col col-6">
+              <label class="control-label">Nomor Dokumen</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <%= f.text_field :document_code, class: "form-control", id: "document_code", onkeypress: "return RestrictSpace()" %>
+                <b class="tooltip tooltip-top-right">
+                  <i class="fa fa-warning txt-color-teal"></i>
+                  Please entry...</b>
+              </label>
+            </section>
+          </div>
+          <div class="row">
+            <section class="col col-3">
+              <label class="control-label">Field</label>
+              <label class="input">
+                <%# <%= f.number_field :field_id, class: "form-control", id: "field_id", placeholder: "field_id" %>
+                <% if current_user.is? 19 %>
+                  <% @getId = Member.find_by_username(current_user.username) %>
+                  <%= f.collection_select :field_id, Field.where('akses LIKE ?', "%#{@getId.id}%").select('field_id, description_field').order(:description_field), :field_id, :description_field, {prompt: "Select a Field"}, {:class => 'select2'} %>
+                <% else %>
+                  <%= f.collection_select :field_id, Field.order(:description_field), :field_id, :description_field, {prompt: "Select a Field"}, {:class => 'select2'} %>
+                <% end %>
+              </label>
+            </section>
+            <section class="col col-3">
+              <label class="control-label">Sub Field</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <label class="select">
+                  <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                  <% if current_user.is? 19 %>
+                    <% @getId = Member.find_by_username(current_user.username) %>
+                    <%= f.grouped_collection_select :sub_field_id, Field.where('akses LIKE ?', "%#{@getId.id}%").order(:description_field), :sub_field, :description_field, :sub_field_id, :description_sub_field, include_blank: true %>
+                  <% else %>
+                    <%= f.grouped_collection_select :sub_field_id, Field.order(:description_field), :sub_field, :description_field, :sub_field_id, :description_sub_field, include_blank: true %>
+                  <% end %>
+                  <i></i>
+                </label>
+            </section>
+            <section class="col col-3">
+              <label class="control-label">Sub2 Field</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <label class="select">
+                  <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                  <% if current_user.is? 19 %>
+                    <% @getId = Member.find_by_username(current_user.username) %>
+                    <%= f.grouped_collection_select :sub2_field_id, SubField.where('akses LIKE ?', "%#{@getId.id}%").order(:description_sub_field), :sub2_field, :description_sub_field, :sub2_field_id, :sub2_name, include_blank: true %>
+                  <% else %>
+                    <%= f.grouped_collection_select :sub2_field_id, SubField.order(:description_sub_field), :sub2_field, :description_sub_field, :sub2_field_id, :sub2_name, include_blank: true %>
+                  <% end %>
+                  <i></i>
+                </label>
+            </section>
+            <section class="col col-3">
+              <label class="control-label">Sub3 Field</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <label class="select">
+                  <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                  <%= f.grouped_collection_select :sub3_field_id, Sub2Field.order(:sub2_name), :sub3_field, :sub2_name, :sub3_field_id, :sub3_name_field, include_blank: true %>
+                  <i></i>
+                </label>
+            </section>
+          </div>
+          <div class="row">
+            <section class="col col-4">
+              <label class="control-label">Sub4 Field</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <label class="select">
+                  <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                    <%= f.grouped_collection_select :sub4_field_id, Sub3Field.order(:sub3_name_field), :sub4_field, :sub3_name_field, :sub4_field_id, :sub4_name_field, include_blank: true %>
+                  <i></i>
+                </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Tipe Dokumen</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <!--                <label class="input">-->
+                <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                <%= f.collection_select :wr_doc_type_id, WrDocType.all, :wr_doc_type_id, :document_name, {prompt: "Select a Document Type"}, {:class => 'select2'} %>
+                <i></i>
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Sifat Dokumen</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <!--                <label class="input">-->
+                <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                <%= f.select :sifat, ['Rahasia', 'Tidak Rahasia', 'Tidak Berlaku'], {prompt: "Select a character"}, {:class => 'select2'} %>
+                <i></i>
+              </label>
+            </section>
+          </div>
+
+          <div class="row">
+            <section class="col col-4">
+              <label class="control-label">Issued by</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <%= f.text_field :issued_by, class: "form-control", id: "issued_by", placeholder: "issued_by", value: current_user.nama, readonly: true %>
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Tanggal Berlaku</label>
+              <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                <%# <%= f.date_select :date, class: "form-control", id: "date", placeholder: "date" %>
+                <% if params[:id].present?
+                     document = WrDoc.find(params[:id])
+                %>
+                  <input type="text" id="dateformat" value="<%= document.date %>" name="wr_doc[date]" class="datepicker" data-dateformat='yy-mm-dd'>
+                <% else %>
+                  <input type="text" id="dateformat" name="wr_doc[date]" class="datepicker" data-dateformat='yy-mm-dd'>
+                  <b class="tooltip tooltip-top-right">
+                    <i class="fa fa-warning txt-color-teal"></i>
+                    Please entry...</b>
+                <% end %>
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Revisi</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <%= f.text_field :revision, class: "form-control", id: "revision" %>
+                <b class="tooltip tooltip-top-right">
+                  <i class="fa fa-warning txt-color-teal"></i>
+                  Please entry...</b>
+              </label>
+            </section>
+            <!--
+            <section class="col col-4">
+              <label class="control-label">Checker</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <style media="screen">
+                  select.select2 {
+                    display: block;
+                    visibility: visible;
+                    position: absolute;
+                    margin-top: 4px;
+                    margin-left: 4px;
+                    width: 190px;
+                    height: 20px;
+                   }
+                </style>
+                <script type="text/javascript">
+                  $(".select2").select2();
+                </script>
+                  <%# <%= f.number_field :member_id, class: "form-control", id: "member_id", placeholder: "member_id" %>
+                  <%= f.collection_select :checker, Permission.joins(:member).where("permissions.role_id = ?", "9").select('*'), :nama, :nama, {prompt: "Select a checker"}, {:class => 'select2'} %>
+              </label>
+            </section>-->
+          </div>
+          <div class="row">
+            <section class="col col-4">
+              <label class="control-label">Penanggung Jawab</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <%= f.text_field :penanggung_jawab, class: "form-control", id: "save_location" %>
+                <b class="tooltip tooltip-top-right">
+                  <i class="fa fa-warning txt-color-teal"></i>
+                  Please entry...</b>
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Lokasi Simpan</label>
+              <label class="input"> <i class="icon-append fa fa-tag"></i>
+                <%= f.text_field :save_location, class: "form-control", id: "document_title" %>
+                <b class="tooltip tooltip-top-right">
+                  <i class="fa fa-warning txt-color-teal"></i>
+                  Please entry...</b>
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Tanggal Simpan</label>
+              <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                <%# <%= f.date_select :date, class: "form-control", id: "date", placeholder: "date" %>
+                <% if params[:id].present?
+                     document = WrDoc.find(params[:id])
+                %>
+                  <input type="text" id="format" value="<%= document.save_date %>" name="wr_doc[save_date]" class="datepicker" data-dateformat='yy-mm-dd'>
+                <% else %>
+                  <input type="text" id="format" name="wr_doc[save_date]" class="datepicker" data-dateformat='yy-mm-dd'>
+                  <b class="tooltip tooltip-top-right">
+                    <i class="fa fa-warning txt-color-teal"></i>
+                    Please entry...</b>
+                <% end %>
+              </label>
+            </section>
+          </div>
+
+          <section>
+            <label class="control-label">Keterangan</label>
+            <label class="textarea"> <i class="icon-append fa fa-tag"></i>
+              <%= f.text_area :keterangan, rows: 4, class: "form-control", id: "document_title" %>
+              <b class="tooltip tooltip-top-right">
+                <i class="fa fa-warning txt-color-teal"></i>
+                Please entry...</b>
+            </label>
+          </section>
+          <section>
+            <label class="control-label">Attachment</label>
+            <label class="input"> <i class="icon-append fa fa-file"></i>
+              <%# <%= f.text_field :file_upload, class: "form-control", id: "file_upload", placeholder: "file_upload" %>
+              <%= f.file_field :file_upload, class: "form-control", accept: 'file/*', onchange: "validateFiles(this);",
+                               data: {max_file_size: 100.megabytes} %>
+            </label>
+            <script type="text/javascript">
+                function validateFiles(inputFile) {
+                    var maxExceededMessage = "This file exceeds the maximum allowed file size (100 MB)";
+                    var extErrorMessage = "Only doc file with extension: .pdf or .docx is allowed";
+                    var allowedExtension = ["pdf", "docx"];
+
+                    var extName;
+                    var maxFileSize = $(inputFile).data('max-file-size');
+                    var sizeExceeded = false;
+                    var extError = false;
+
+                    $.each(inputFile.files, function () {
+                        if (this.size && maxFileSize && this.size > parseInt(maxFileSize)) {
+                            sizeExceeded = true;
+                        }
+                        ;
+                        extName = this.name.split('.').pop();
+                        if ($.inArray(extName, allowedExtension) == -1) {
+                            extError = true;
+                        }
+                        ;
+                    });
+                    if (sizeExceeded) {
+                        window.alert(maxExceededMessage);
+                        $(inputFile).val('');
+                    }
+                    ;
+
+                    if (extError) {
+                        window.alert(extErrorMessage);
+                        $(inputFile).val('');
+                    }
+                    ;
+                }
+
+            </script>
+          </section>
+        </fieldset>
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+      <% end %>
+
+    </div>
+    <!-- end widget content -->
+
+  </div>
+  <!-- end widget div -->
+
+</div>
+<% content_for :scripts do %>
+
+  <script type="text/javascript">
+      function RestrictSpace() {
+          if (event.keyCode == 32) {
+              alert('Disallowed');
+              return false;
+          }
+      }
+
+      $(document).ready(function () {
+
+          // Format Date
+          $("#dateformat").datepicker({
+              dateFormat: 'yy-mm-dd',
+              defaultDate: "0d",
+              changeMonth: true,
+              changeYear: true,
+              prevText: "",
+              nextText: "",
+          });
+
+          $("#format").datepicker({
+              dateFormat: 'yy-mm-dd',
+              defaultDate: "0d",
+              maxDate: '0',
+              changeMonth: true,
+              changeYear: true,
+              prevText: "",
+              nextText: "",
+          });
+
+          <% if params[:id].nil?%>
+          $('#wr_doc_sub_field_id').empty()
+          $('#wr_doc_sub2_field_id').empty()
+          $('#wr_doc_sub3_field_id').empty()
+          <% end %>
+          pageSetUp();
+          var errorClass = 'invalid';
+          var errorElement = 'em';
+          var $reviewForm = $("#review-form").validate({
+              errorClass: errorClass,
+              errorElement: errorElement,
+              highlight: function (element) {
+                  $(element).parent().removeClass('state-success').addClass("state-error");
+                  $(element).removeClass('valid');
+              },
+              unhighlight: function (element) {
+                  $(element).parent().removeClass("state-error").addClass('state-success');
+                  $(element).addClass('valid');
+              },
+              // Rules for form validation
+              rules: {
+                  'wr_doc[document_code]': {
+                      required: true
+                  },
+                  'wr_doc[document_title]': {
+                      required: true
+                  },
+                  'wr_doc[field_id]': {
+                      required: true
+                  },
+                  'wr_doc[sub_field_id]': {
+                      required: true
+                  },
+                  'wr_doc[issued_by]': {
+                      required: true
+                  },
+                  // 'wr_doc[date]': {
+                  //     required: true
+                  // },
+                  <% if params[:id].nil? %>
+                  'wr_doc[file_upload]': {
+                      required: true
+                  },
+                  <% end %>
+                  'wr_doc[document_type_id]': {
+                      required: true
+                  },
+                  //         'wr_doc[keterangan]' : {
+                  //   required : true
+                  // },
+                  'wr_doc[sifat]': {
+                      required: true
+                  },
+                  'wr_doc[revision]': {
+                      required: true
+                  },
+                  'wr_doc[save_location]': {
+                      required: true
+                  },
+                  'wr_doc[save_date]': {
+                      required: true
+                  },
+                  'wr_doc[wr_doc_type_id]': {
+                      required: true
+                  },
+                  'wr_doc[penanggung_jawab]': {
+                      required: true
+                  },
+              },
+
+              // Messages for form validation
+              messages: {
+                  'wr_doc[document_code]': {
+                      required: 'Please enter your textbox document_code '
+                  },
+                  'wr_doc[document_title]': {
+                      required: 'Please enter your textbox document_title '
+                  },
+                  'wr_doc[field_id]': {
+                      required: 'Please enter your textbox field_id '
+                  },
+                  'wr_doc[sub_field_id]': {
+                      required: 'Please enter your textbox sub_field_id '
+                  },
+                  'wr_doc[issued_by]': {
+                      required: 'Please enter your textbox issued_by '
+                  },
+                  'wr_doc[date]': {
+                      required: 'Please enter your textbox date '
+                  },
+                  <% if params[:id].nil? %>
+                  'wr_doc[file_upload]': {
+                      required: 'Please enter your textbox file_upload '
+                  },
+                  <% end %>
+                  'wr_doc[document_type_id]': {
+                      required: 'Please select your selectbox document_type '
+                  },
+                  //         'wr_doc[keterangan]' : {
+                  //   required : 'Please select your selectbox document_type '
+                  // },
+                  'wr_doc[sifat]': {
+                      required: 'Please select your selectbox character '
+                  },
+                  'wr_doc[revision]': {
+                      required: 'Please select your textbox revision '
+                  },
+                  'wr_doc[save_location]': {
+                      required: 'Please select your textbox save_location '
+                  },
+                  'wr_doc[save_date]': {
+                      required: 'Please select your textbox save_date '
+                  },
+                  'wr_doc[wr_doc_type_id]': {
+                      required: 'Please select your textbox document type '
+                  },
+                  'wr_doc[penanggung_jawab]': {
+                      required: 'Please select your textbox penanggung_jawab '
+                  },
+              },
+
+              // Do not change code below
+              errorPlacement: function (error, element) {
+                  error.insertAfter(element.parent());
+              }
+          });
+      });
+  </script>
+<% end %>

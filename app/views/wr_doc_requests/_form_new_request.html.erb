@@ -1,0 +1,248 @@
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+  -->
+  <header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>document_request </h2>
+
+  </header>
+
+  <!-- widget div-->
+  <div>
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+      <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+      <%= form_for(@wr_doc_request, html: {id: "review-form", class: "smart-form", role: "form"}) do |f| %>
+        <header>
+          document_request
+        </header>
+
+        <fieldset>
+          <style media="screen">
+            select.select2 {
+              display: block;
+              visibility: visible;
+              position: absolute;
+              margin-top: 4px;
+              margin-left: 4px;
+              width: 190px;
+              height: 20px;
+            }
+          </style>
+          <script type="text/javascript">
+              $(".select2").select2();
+          </script>
+          <div class="row">
+            <section class="col col-6">
+              <label class="control-label">Nama Request</label>
+              <label class="input"> <i class="icon-append fa fa-user"></i>
+                <%= f.text_field :requester, value: "#{current_user.nama}", class: "form-control", id: "requester", readonly: true %>
+              </label>
+            </section>
+            <section class="col col-6">
+              <label class="control-label">Jabatan & Divisi</label>
+              <label class="input"> <i class="icon-append fa fa-user"></i>
+                <%= f.text_field :division, class: "form-control" %>
+              </label>
+            </section>
+          </div>
+          <div class="row">
+            <section class="col col-4">
+              <label class="control-label">Tipe</label>
+              <label class="input">
+                <select name="status_request" id="tipe" class="select2" required>
+                  <option value="">Silahkan Pilih</option>
+                  <option value="baru">Baru</option>
+                  <option value="revisi">Revisi</option>
+                </select>
+              </label>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Attachment</label>
+              <div class="input input-file"><i class="icon-append fa fa-file"></i>
+                <%= f.file_field :attachment_file, class: "form-control", accept: 'file/*', onchange: "validateFiles(this);",
+                                 data: {max_file_size: 100.megabytes}, required: true %>
+              </div>
+              <script type="text/javascript">
+                  function validateFiles(inputFile) {
+                      var maxExceededMessage = "This file exceeds the maximum allowed file size (100 MB)";
+                      var extErrorMessage = "Only doc file with extension: .pdf or .docx is allowed";
+                      var allowedExtension = ["pdf", "docx"];
+
+                      var extName;
+                      var maxFileSize = $(inputFile).data('max-file-size');
+                      var sizeExceeded = false;
+                      var extError = false;
+
+                      $.each(inputFile.files, function () {
+                          if (this.size && maxFileSize && this.size > parseInt(maxFileSize)) {
+                              sizeExceeded = true;
+                          }
+                          ;
+                          extName = this.name.split('.').pop();
+                          if ($.inArray(extName, allowedExtension) == -1) {
+                              extError = true;
+                          }
+                          ;
+                      });
+                      if (sizeExceeded) {
+                          window.alert(maxExceededMessage);
+                          $(inputFile).val('');
+                      }
+                      ;
+
+                      if (extError) {
+                          window.alert(extErrorMessage);
+                          $(inputFile).val('');
+                      }
+                      ;
+                  }
+
+              </script>
+            </section>
+            <section class="col col-4">
+              <label class="control-label">Tujuan Dokumen</label>
+              <label class="input">
+                <%# <%= f.number_field :field_id, class: "form-control", id: "field_id", placeholder: "field_id" %>
+                <%= f.collection_select :receiver, Member.where('status = ?', "Active").select('*'), :username, :nama, {prompt: "Select a Field"}, {:class => 'select2', required: true} %>
+              </label>
+            </section>
+          </div>
+          <div id="revisi">
+            <div class="row">
+              <section class="col col-4">
+                <label class="control-label">Jenis Revisi</label>
+                <label class="input">
+                  <%= f.select :sub_status_request, ['dokumen lama', 'dokumen baru'], {prompt: "Select a category"}, {:class => 'select2', :id => "sub_status_request", required: true} %>
+                </label>
+              </section>
+              <section class="col col-4">
+                <label class="control-label">Tipe Dokumen</label>
+                <label class="input">
+                  <%# <%= f.number_field :field_id, class: "form-control", id: "field_id", placeholder: "field_id" %>
+                  <%= f.collection_select :wr_doc_type_id, WrDocType.order(:document_name), :wr_doc_type_id, :document_name, {prompt: "Select a Field"}, {:class => 'select2'} %>
+                </label>
+              </section>
+              <section class="col col-4">
+                <label class="control-label">Nama Dokumen</label>
+                <label class="input"> <i class="icon-append fa fa-tag"></i>
+                  <label class="select">
+                    <%# <%= f.number_field :sub_field_id, class: "form-control", id: "sub_field_id", placeholder: "sub_field_id" %>
+                    <%= f.grouped_collection_select :wr_doc_id, WrDocType.order(:document_name), :wr_doc, :document_name, :wr_doc_id, :document_title, include_blank: true %>
+                    <i></i>
+                  </label>
+              </section>
+            </div>
+          </div>
+          <section>
+            <label class="control-label">Keterangan Detail Request</label>
+            <label class="textarea"> <i class="icon-append fa fa-tag"></i>
+              <%= f.text_area :reason_request, rows: 6, class: "form-control", id: "reason_request", placeholder: "reason_request" %>
+            </label>
+          </section>
+        </fieldset>
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+      <% end %>
+
+    </div>
+    <!-- end widget content -->
+
+  </div>
+  <!-- end widget div -->
+
+</div>
+<% content_for :scripts do %>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+          <% if params[:id].nil?%>
+          $('#document_request_document_id').empty()
+
+          <% end %>
+
+          pageSetUp();
+
+          $('#tipe').change(function () {
+              if ($('#tipe').val() == "revisi") {
+                  $('#revisi').show();
+                  $('#document_request_document_reference_id').required();
+              } else {
+                  $('#revisi').hide();
+                  $('#document_request_document_reference_id').removeAttribute('required');
+                  $('#sub_status_request').removeAttribute('required');
+              }
+          });
+
+          $(document).ready(function () {
+              $('#revisi').hide();
+          })
+
+          var errorClass = 'invalid';
+          var errorElement = 'em';
+          var $reviewForm = $("#review-form").validate({
+              errorClass: errorClass,
+              errorElement: errorElement,
+              highlight: function (element) {
+                  $(element).parent().removeClass('state-success').addClass("state-error");
+                  $(element).removeClass('valid');
+              },
+              unhighlight: function (element) {
+                  $(element).parent().removeClass("state-error").addClass('state-success');
+                  $(element).addClass('valid');
+              },
+              // Rules for form validation
+              rules: {
+                  'document_request[document_id]': {
+                      required: true
+                  },
+                  'document_request[reason_request]': {
+                      required: true
+                  },
+                  'document_request[division]': {
+                      required: true
+                  },
+              },
+
+              // Messages for form validation
+              messages: {
+                  'document_request[document_id]': {
+                      required: 'Please enter your textbox document_id '
+                  },
+                  'document_request[reason_request]': {
+                      required: 'Please enter your textbox reason_request '
+                  },
+                  'document_request[division]': {
+                      required: 'Please enter your textbox division '
+                  },
+              },
+
+              // Do not change code below
+              errorPlacement: function (error, element) {
+                  error.insertAfter(element.parent());
+              }
+          });
+      });
+  </script>
+<% end %>

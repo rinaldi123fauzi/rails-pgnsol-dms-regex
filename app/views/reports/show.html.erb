@@ -1,0 +1,71 @@
+<div id="content">
+<div class="page-header">
+  <%= link_to reports_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_report_path(@report), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show report</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+    <div class="widget-body">
+      <div class="row">
+        <section class="col-md-12">
+          <table border="0">
+            <tr>
+              <td> <h3>Project Name</h3> </td>
+            </tr>
+            <tr>
+              <td> <h4><%= @report_project_name %></h4> </td>
+            </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+    <div class="widget-body">
+      <div class="row">
+        <section class="col-md-6">
+          <table border="0">
+            <tr>
+              <td> <h3>Issued By </h3> </td>
+            </tr>
+            <tr>
+              <td> <h4><%= @report_issued_by %></h4> </td>
+            </tr>
+          </table>
+        </section>
+        <section class="col-md-6">
+          <table border="0">
+            <tr>
+              <td> <h3>Date</h3> </td>
+            </tr>
+            <tr>
+              <td> <h4><%= @report_date %></h4> </td>
+            </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+    <div class="widget-body">
+      <div class="ibox-title">
+        <table border="0">
+          <tr>
+            <td> <h3>Attachment </h3> </td>
+          </tr>
+        </table>
+        <iframe src="<%= pdfjs.full_path(file: "/file/DMS/#{@report_file_upload}") %>" style="width: 100%; height: 600px;"></iframe>
+      </div>
+    </div>
+  </div>
+</dl>
+</div>

@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to document_requests_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_document_request_path(@document_request), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show document_request</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Document:</dt>
+  <dd><%= @document_request.document_id %></dd>
+
+  <dt>Internal audit:</dt>
+  <dd><%= @document_request.internal_audit_id %></dd>
+
+  <dt>Receiver:</dt>
+  <dd><%= @document_request.receiver %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @document_request.status %></dd>
+
+  <dt>Reason request:</dt>
+  <dd><%= @document_request.reason_request %></dd>
+
+</dl>

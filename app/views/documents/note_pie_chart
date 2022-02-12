@@ -1,0 +1,63 @@
+<% content_for :scripts do %>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          pageSetUp();
+          function getRandomColor() {
+              var letters = '0123456789ABCDEF'.split('');
+              var color = '#';
+              for (var i = 0; i < 6; i++ ) {
+                  color += letters[Math.floor(Math.random() * 16)];
+              }
+              return color;
+          }
+          var DakGraph = {
+              type: 'pie',
+              data: {
+                  datasets: [{
+                      data: [
+                          <%  @field = SubDocumentType.where(document_type_id: 2).select('*').order('sub_document_type_id, sub_type_name ASC')
+                      @field.each do |f|
+                  %>
+                          <%  @dak_count = Document.where('sub_document_type_id = ?', f.sub_document_type_id).select('*') %>
+                          "<%= @dak_count.count %>",
+                          <% end %>
+                      ],
+                      backgroundColor: [
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                          getRandomColor(),
+                      ],
+                  }],
+                  labels: [
+                      <%  @field = SubDocumentType.where(document_type_id: 2).select('*').order('sub_document_type_id, sub_type_name ASC')
+                      @field.each do |f|
+                  %>
+                      <%  @dak_count = Document.where('sub_document_type_id = ?', f.sub_document_type_id).select('*') %>
+                      "<%= f.sub_type_name.gsub('&', 'dan') %>",
+                      <% end %>
+                  ]
+              },
+              options: {
+                  responsive: false
+              }
+          };
+          window.onload = function () {
+              window.myPie = new Chart(document.getElementById("dak-graph"), DakGraph);
+          };
+      })
+  </script>
+<% end %>

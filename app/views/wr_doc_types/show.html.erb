@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to wr_doc_types_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_wr_doc_type_path(@wr_doc_type), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show wr_doc_type</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Document name:</dt>
+  <dd><%= @wr_doc_type.document_name %></dd>
+
+  <dt>Desc document:</dt>
+  <dd><%= @wr_doc_type.desc_document %></dd>
+
+</dl>

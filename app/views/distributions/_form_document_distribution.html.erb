@@ -1,0 +1,129 @@
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+  -->
+  <header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>distribution </h2>
+
+  </header>
+
+  <!-- widget div-->
+  <div>
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+      <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body">
+
+        <%= form_for(@distribution, html: { id: "movieForm", role: "form" }) do |f| %>
+        <style media="screen">
+          select.select2 {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            margin-top: 4px;
+            margin-left: 4px;
+            width: 190px;
+            height: 20px;
+           }
+        </style>
+        <script type="text/javascript">
+          $(".select2").select2();
+        </script>
+        <fieldset>
+          <legend>
+            Distribution Document
+          </legend>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="control-label">Document Code</label>
+                <%= f.collection_select :document_id, Document.where(document_id: @document.document_id).select('*'), :document_id, :document_code, {}, {:class => 'form-control select2'} %>
+              </div>
+
+              <div class="col-md-6">
+                <label class="control-label">Sender</label>
+                <%= f.text_field :sender, class: "form-control", id: "sender", placeholder: "sender", value:current_user.nama, readonly:true %>
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-12">
+                <label>Receiver</label>
+                <select multiple style="max-width:100%;" class="form-control select2" name="distribution[receiver][]">
+                  <option value="">Pilih</option>
+                  <% @member = Member.all%>
+                  <% @member.each do |f|%>
+                    <option value="<%= f.nama%>"><%= f.nama%></option>
+                  <% end %>
+                </select>
+            </div>
+          </div>
+        </div>
+                <%# <%= f.text_field :receiver, class: "form-control", id: "receiver", placeholder: "receiver" %>
+                <%# <%= f.collection_select :receiver, Member.all, :nama, :nama, {prompt: "Select a member"}, {:class => 'select2'} %>
+
+
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+        <% end %>
+
+    </div>
+    <!-- end widget content -->
+
+  </div>
+  <!-- end widget div -->
+
+</div>
+<% content_for :scripts do %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    pageSetUp();
+    var errorClass = 'invalid';
+    var errorElement = 'em';
+    $('#movieForm').bootstrapValidator({
+      feedbackIcons : {
+        valid : 'glyphicon glyphicon-ok',
+        invalid : 'glyphicon glyphicon-remove',
+        validating : 'glyphicon glyphicon-refresh'
+      },
+      fields : {
+        'distribution[receiver][]' : {
+          group : '.col-md-12',
+          validators : {
+            notEmpty : {
+              message : 'The receiver is required'
+            },
+            stringLength : {
+              max : 200,
+              message : 'The title must be less than 200 characters long'
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
+<% end %>

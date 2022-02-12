@@ -1,0 +1,2 @@
+class DakTemplate < ApplicationRecord
+end

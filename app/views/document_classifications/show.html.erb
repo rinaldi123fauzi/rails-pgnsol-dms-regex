@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to document_classifications_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_document_classification_path(@document_classification), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show document_classification</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Sub document type:</dt>
+  <dd><%= @document_classification.sub_document_type_id %></dd>
+
+  <dt>Classification name:</dt>
+  <dd><%= @document_classification.classification_name %></dd>
+
+</dl>

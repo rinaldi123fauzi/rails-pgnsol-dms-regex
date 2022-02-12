@@ -1,0 +1,32 @@
+<!-- MAIN CONTENT -->
+<div id="error_explanation" class="bg-danger text-danger"></div>
+<div class="modal-body">
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+    <div class="widget-body">
+      <dl class="dl-horizontal">
+        <div id="myTabContent" class="tab-content">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <% if current_user.is? 10
+                   @wr_document_file = WrDoc.find_by(wr_doc_id: params[:wr_doc_id])
+              %>
+<!--                <div style="width: 100% !important; height: 480px; position: relative;">-->
+<!--                  <iframe src="https://docs.google.com/gview?url=https://dms.pgn-solution.co.id/file/DMS/Work_Reference/<%#= "#{@wr_document_file.file_upload}" %>&embedded=true" style="width: 100% !important; height: 480px; position: relative;" frameborder="0" scrolling="no" seamless=""></iframe>-->
+<!--                  <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;"></div>-->
+<!--                </div>-->
+                                <iframe src="<%= pdfjs.minimal_path(file: "/file/DMS/Work_Reference/#{@wr_document_file.file_upload}") %>" style="width: 100%; height: 600px; position: relative;"></iframe>
+              <% else
+                   @wr_document_file = WrDoc.find_by(wr_doc_id: params[:wr_doc_id])
+              %>
+<!--                <object data="<%#= pdfjs.full_path(file: "/file/DMS/Work_Reference/#{@wr_document_file.file_upload}") %>" type="application/pdf" style="width: 100% !important; height: 600px; position: relative;">-->
+<!--                  <embed src="<%#= pdfjs.full_path(file: "/file/DMS/Work_Reference/#{@wr_document_file.file_upload}") %>" type="application/pdf"/>-->
+<!--                </object>-->
+                                <iframe src="<%= pdfjs.full_path(file: "/file/DMS/Work_Reference/#{@wr_document_file.file_upload}") %>" style="width: 100%; height: 600px; position: relative;"></iframe>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

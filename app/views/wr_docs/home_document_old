@@ -1,0 +1,289 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+<div class="page-header">
+  <h1>Total Reference Document</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <div class="row animated fadeInDown">
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <div class="row">
+            <div class="col-md-2">
+              <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+            </div>
+            <div class="col-md-6">
+              <header>Oil & Gas</header>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @WrDoc = WrDoc.where('field_id = ?', 1).select('*')%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+              <small>Total Document</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Power Plant</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 2).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Renewable Energy</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 3).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Civil Property</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 4).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row animated fadeInDown">
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Civil Infrastructure</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 5).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Water</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 6).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>QA / QC</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 7).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>HSSE</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 8).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Telecomunication</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 9).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Storage Tank</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 10).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Mini LNG</header>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <% @WrDoc = WrDoc.where('field_id = ?', 11).select('*')%>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+                <small>Total Document</small>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</dl>
+</div>

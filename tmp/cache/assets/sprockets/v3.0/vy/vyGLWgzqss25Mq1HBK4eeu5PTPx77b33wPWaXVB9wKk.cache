@@ -1,0 +1,38 @@
+I"Ì(function() {
+  var email, nama;
+
+  jQuery(function() {});
+
+  email = $('#email').html();
+
+  nama = $('#nama').html();
+
+  console.log(email);
+
+  $('#username').change(function() {
+    var option, userSelectBox, username;
+    username = $('#username').val();
+    console.log(username);
+    username = $('#username :selected').text();
+    userSelectBox = $('#email');
+    userSelectBox = $('#nama');
+    userSelectBox.html('');
+    if (username.length === 0) {
+      return userSelectBox.append($('<input>').type('text').attr('value'));
+    } else {
+      option = $('#email').attr('value', username + '@pgn-solution.co.id');
+      option = $('#nama').attr('value', username.replace(".", " ").toUpperCase());
+      return userSelectBox.append(option);
+    }
+  });
+
+  $('#IndexMember').dataTable({
+    sPaginationType: "full_numbers",
+    bJQueryUI: false,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#IndexMember').data('source')
+  });
+
+}).call(this);
+:ET

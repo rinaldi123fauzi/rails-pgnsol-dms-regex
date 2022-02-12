@@ -1,0 +1,91 @@
+<% if is_active_controller('documents')%>
+<li class="dropdown" style="margin-top: 10px;">
+<!--  <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Quality Management"> <i class='fa fa-lg fa-fw fa-home'></i> <span class="nav-label"> QMS <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>-->
+  <span class="nav-label" style="color: white; font-size: 14px;"> Quality Management </span>
+<!--  <ul <%# if current_page?(new_document_path) or current_page?(internal_audits_url) or current_page?(new_internal_audit_path) or current_page?(sub_fields_path)-->
+<!--        concat "style='display:block;'".html_safe-->
+<!--      end-->
+<!--   %>>-->
+  <ul style="display: block; margin-top: 10px;">
+    <li <% if current_page?(document_requests_url)
+          concat "class='active'".html_safe
+        end
+     %>>
+        <a href="<%= document_requests_url%>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+    </li>
+    <li <% if current_page?(view_all_index_documents_path)
+          concat "class='active'".html_safe
+        end
+     %>>
+        <a href="<%= view_all_index_documents_path%>" title="List Documents All"><span class='menu-item-parent'>List Documents All</span></a>
+    </li>
+  </ul>
+</li>
+<% end %>
+
+<% if is_active_controller('wr_docs')%>
+<li class="dropdown" style="margin-top: 10px;">
+<!--  <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Work Reference"> <i class='fa fa-lg fa-fw fa-home'></i> <span class="nav-label"> Work Reference <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>-->
+<!--  <ul <%# if current_page?(new_wr_doc_path) or current_page?(internal_wr_audits_url) or current_page?(new_internal_wr_audit_path)-->
+<!--        concat "style='display:block;'".html_safe-->
+<!--      end-->
+<!--   %>>-->
+  <span class="nav-label" style="color: white; font-size: 14px;"> Reference Document </span>
+  <ul style="display: block; margin-top: 10px;">
+  <li class="dropdown">
+   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Document Control"> <span class="nav-label"> Document Control <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+     <ul>
+       <li <% if current_page?(new_wr_doc_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= new_wr_doc_path%>" title="New Document"><span class='menu-item-parent'>New Document</span></a>
+       </li>
+       <li <% if current_page?(wr_docs_url)
+                concat "class='active'".html_safe
+              end
+           %>>
+         <a href="<%= view_all_index_wr_docs_path%>" title="Edit Document"><span class='menu-item-parent'>Edit document</span></a>
+       </li>
+       <li <% if current_page?(wr_docs_url)
+                concat "class='active'".html_safe
+              end
+           %>>
+         <a href="<%= recycle_bin_wr_docs_path%>" title="Recycle Bin"><span class='menu-item-parent'>Recycle Bin</span></a>
+       </li>
+       <li <% if current_page?(wr_docs_url)
+                concat "class='active'".html_safe
+              end
+           %>>
+         <a href="<%= report_wr_docs_path(:format => 'pdf')%>" target="_blank" title="Report Document"><span class='menu-item-parent'>Report Document</span></a>
+       </li>
+       <li <% if current_page?(new_internal_wr_audit_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= new_internal_wr_audit_path%>" title="Internal Audit"><span class='menu-item-parent'>Internal Audit</span></a>
+       </li>
+       <li <% if current_page?(internal_wr_audits_url)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= internal_wr_audits_url%>" title="Log Internal Audit"><span class='menu-item-parent'>Log Audit</span></a>
+       </li>
+     </ul>
+   </li>
+    <li <% if current_page?(wr_doc_requests_url)
+          concat "class='active'".html_safe
+        end
+     %>>
+      <% @wr_doc_request = WrDocRequest.where('status_request = ?', 'Approve1').select('*') %>
+      <a href="<%= wr_doc_requests_url%>" title="Request Document"><span class='menu-item-parent'>Request Document <sup class="badge bg-color-yellow bounceIn animated"><%= @wr_doc_request.count %></sup></span></a>
+    </li>
+    <li <% if current_page?(view_all_index_wr_docs_path)
+          concat "class='active'".html_safe
+        end
+     %>>
+        <a href="<%= view_all_index_wr_docs_path%>" title="List Documents All"><span class='menu-item-parent'>List Documents All</span></a>
+    </li>
+  </ul>
+</li>
+<% end %>

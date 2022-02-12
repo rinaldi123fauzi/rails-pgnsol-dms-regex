@@ -1,0 +1,19 @@
+I"Q(function() {
+  $(function() {
+    var sub_field;
+    sub_field = $('#document_request_document_id').html();
+    console.log(sub_field);
+    return $('#document_request_document_reference_id').change(function() {
+      var field, options;
+      field = $('#document_request_document_reference_id :selected').text();
+      options = $(sub_field).filter("optgroup[label='" + field + "']").html();
+      if (options) {
+        return $('#document_request_document_id').html(options);
+      } else {
+        return $('#document_request_document_id').empty();
+      }
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,119 @@
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+  -->
+  <header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>wr_doc_type </h2>
+
+  </header>
+
+  <!-- widget div-->
+  <div>
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+      <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <%= form_for(@wr_doc_type, html: { id: "review-form", class: "smart-form", role: "form" }) do |f| %>
+        <% if @wr_doc_type.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4><%= pluralize(@wr_doc_type.errors.count, "error") %> prohibited this member from being saved:</h4>
+
+            <ul>
+              <% @wr_doc_type.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <header>
+          wr_doc_type
+        </header>
+
+        <fieldset>
+                    <section>
+            <label class="input"> <i class="icon-append fa fa-user"></i>
+                <%= f.text_field :document_name, class: "form-control", id: "document_name", placeholder: "document_name" %>
+            </label>
+          </section>
+                    <section>
+            <label class="input"> <i class="icon-append fa fa-user"></i>
+                <%= f.text_field :desc_document, class: "form-control", id: "desc_document", placeholder: "desc_document" %>
+            </label>
+          </section>
+                  </fieldset>
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+        <% end %>
+
+    </div>
+    <!-- end widget content -->
+
+  </div>
+  <!-- end widget div -->
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    pageSetUp();
+    var errorClass = 'invalid';
+    var errorElement = 'em';
+    var $reviewForm = $("#review-form").validate({
+      errorClass		: errorClass,
+      errorElement	: errorElement,
+      highlight: function(element) {
+        $(element).parent().removeClass('state-success').addClass("state-error");
+        $(element).removeClass('valid');
+      },
+      unhighlight: function(element) {
+        $(element).parent().removeClass("state-error").addClass('state-success');
+        $(element).addClass('valid');
+      },
+      // Rules for form validation
+      rules : {
+                'wr_doc_type[document_name]' : {
+          required : true
+        },
+                'wr_doc_type[desc_document]' : {
+          required : true
+        },
+              },
+
+      // Messages for form validation
+      messages : {
+                'wr_doc_type[document_name]' : {
+          required : 'Please enter your textbox document_name '
+        },
+                'wr_doc_type[desc_document]' : {
+          required : 'Please enter your textbox desc_document '
+        },
+              },
+
+      // Do not change code below
+      errorPlacement : function(error, element) {
+        error.insertAfter(element.parent());
+      }
+    });
+  });
+</script>

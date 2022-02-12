@@ -1,0 +1,32 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+<div class="page-header">
+  <%= link_to members_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_member_path(@member), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show member</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Username:</dt>
+  <dd><%= @member.username %></dd>
+
+  <dt>Password:</dt>
+  <dd><%= @member.password %></dd>
+
+  <dt>Nama:</dt>
+  <dd><%= @member.nama %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= @member.email %></dd>
+
+  <dt>Last login:</dt>
+  <dd><%= @member.last_login %></dd>
+
+</dl>
+</div>

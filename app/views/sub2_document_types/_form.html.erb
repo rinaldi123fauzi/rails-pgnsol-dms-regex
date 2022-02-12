@@ -1,0 +1,141 @@
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+  -->
+  <header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>sub2_document_type </h2>
+
+  </header>
+
+  <!-- widget div-->
+  <div>
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+      <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+      <%= form_for(@sub2_document_type, html: {id: "review-form", class: "smart-form", role: "form"}) do |f| %>
+        <% if @sub2_document_type.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4><%= pluralize(@sub2_document_type.errors.count, "error") %> prohibited this member from being saved:</h4>
+
+            <ul>
+              <% @sub2_document_type.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <header>
+          sub2_document_type
+        </header>
+
+        <fieldset>
+          <style media="screen">
+            select.select2 {
+              display: block;
+              visibility: visible;
+              position: absolute;
+              margin-top: 4px;
+              margin-left: 4px;
+              width: 190px;
+              height: 20px;
+            }
+          </style>
+          <section>
+            <label class="input"> <i class="icon-append fa fa-user"></i>
+              <%#= f.number_field :sub_document_type_id, class: "form-control", id: "sub_document_type_id", placeholder: "sub_document_type_id" %>
+              <%= f.collection_select :sub_document_type_id, SubDocumentType.all, :sub_document_type_id, :sub_type_name, {prompt: "Select a field"}, {:class => 'select2'} %>
+            </label>
+          </section>
+
+          <section>
+            <label class="input"> <i class="icon-append fa fa-user"></i>
+              <%= f.text_field :sub2_type_name, class: "form-control", id: "sub2_type_name", placeholder: "sub2_type_name" %>
+            </label>
+          </section>
+
+        </fieldset>
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+      <% end %>
+
+    </div>
+    <!-- end widget content -->
+
+  </div>
+  <!-- end widget div -->
+
+</div>
+<% content_for :scripts do %>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+          pageSetUp();
+          var errorClass = 'invalid';
+          var errorElement = 'em';
+          var $reviewForm = $("#review-form").validate({
+              errorClass: errorClass,
+              errorElement: errorElement,
+              highlight: function (element) {
+                  $(element).parent().removeClass('state-success').addClass("state-error");
+                  $(element).removeClass('valid');
+              },
+              unhighlight: function (element) {
+                  $(element).parent().removeClass("state-error").addClass('state-success');
+                  $(element).addClass('valid');
+              },
+              // Rules for form validation
+              rules: {
+
+                  'sub2_document_type[sub_document_type_id]': {
+                      required: true
+                  },
+
+                  'sub2_document_type[sub2_type_name]': {
+                      required: true
+                  },
+
+              },
+
+              // Messages for form validation
+              messages: {
+
+                  'sub2_document_type[sub_document_type_id]': {
+                      required: 'Please enter your textbox sub_document_type_id '
+                  },
+
+                  'sub2_document_type[sub2_type_name]': {
+                      required: 'Please enter your textbox sub2_type_name '
+                  },
+
+              },
+
+              // Do not change code below
+              errorPlacement: function (error, element) {
+                  error.insertAfter(element.parent());
+              }
+          });
+      });
+  </script>
+<% end %>

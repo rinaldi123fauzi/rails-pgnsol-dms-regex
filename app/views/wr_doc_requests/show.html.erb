@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to wr_doc_requests_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_wr_doc_request_path(@wr_doc_request), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show wr_doc_request</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Wr doc:</dt>
+  <dd><%= @wr_doc_request.wr_doc_id %></dd>
+
+  <dt>Requester:</dt>
+  <dd><%= @wr_doc_request.requester %></dd>
+
+  <dt>Status request:</dt>
+  <dd><%= @wr_doc_request.status_request %></dd>
+
+  <dt>Reason request:</dt>
+  <dd><%= @wr_doc_request.reason_request %></dd>
+
+</dl>

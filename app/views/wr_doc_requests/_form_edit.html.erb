@@ -1,0 +1,63 @@
+<%= form_for (@wr_doc_request), remote: true do |f| %>
+  <div id="error_explanation" class="bg-danger text-danger"></div>
+
+  <div class="modal-body">
+    <div class="smart-form">
+      <div class="row">
+        <section>
+          <label class="label">
+            Upload File Copy
+          </label>
+          <input type="hidden" name="nama" value="<%= current_user.nama %>">
+          <input type="hidden" name="member" value="<%= current_user.member_id %>">
+          <label class="input">
+            <%= f.file_field :file_copy, class: "form-control", accept: 'file/*', onchange: "validateFiles(this);", required: true,
+                             data: {max_file_size: 100.megabytes}%>
+          </label>
+          <script type="text/javascript">
+              function validateFiles(inputFile) {
+                  var maxExceededMessage = "This file exceeds the maximum allowed file size (100 MB)";
+                  var extErrorMessage = "Only doc file with extension: .pdf or .docx is allowed";
+                  var allowedExtension = ["pdf", "docx"];
+
+                  var extName;
+                  var maxFileSize = $(inputFile).data('max-file-size');
+                  var sizeExceeded = false;
+                  var extError = false;
+
+                  $.each(inputFile.files, function () {
+                      if (this.size && maxFileSize && this.size > parseInt(maxFileSize)) {
+                          sizeExceeded = true;
+                      }
+                      ;
+                      extName = this.name.split('.').pop();
+                      if ($.inArray(extName, allowedExtension) == -1) {
+                          extError = true;
+                      }
+                      ;
+                  });
+                  if (sizeExceeded) {
+                      window.alert(maxExceededMessage);
+                      $(inputFile).val('');
+                  }
+                  ;
+
+                  if (extError) {
+                      window.alert(extErrorMessage);
+                      $(inputFile).val('');
+                  }
+                  ;
+              }
+
+          </script>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a type="button" class="btn btn-default" data-dismiss="modal">Close</a>
+    <%= f.submit "Upload File", class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

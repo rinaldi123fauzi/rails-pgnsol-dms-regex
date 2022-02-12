@@ -1,0 +1,68 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+<div class="page-header">
+  <h1>Home</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <div class="row animated fadeInDown">
+
+    <div class="col-md-4">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <a href="<%= home_qms_documents_path%>" style="text-decoration:none; color:black;" title="Quality Management System">
+          <div class="row">
+            <div class="col-md-2">
+              <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+            </div>
+            <div class="col-md-6">
+              <header>QMS</header>
+            </div>
+          </div>
+          </a>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @document = Document.all%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @document.count%></h2>
+              <small>Total Document</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <a href="<%= home_document_wr_docs_path%>" style="text-decoration:none; color:black;" title="Work Reference Document">
+          <div class="row">
+            <div class="col-md-2">
+              <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+            </div>
+            <div class="col-md-6">
+              <header>Work Reference Document</header>
+            </div>
+          </div>
+          </a>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @WrDoc = WrDoc.all%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+              <small>Total Document</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</dl>
+</div>

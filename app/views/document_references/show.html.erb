@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to document_references_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_document_reference_path(@document_reference), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show document_reference</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Reference name:</dt>
+  <dd><%= @document_reference.reference_name %></dd>
+
+</dl>

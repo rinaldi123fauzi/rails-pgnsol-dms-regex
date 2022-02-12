@@ -1,0 +1,73 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+<div class="page-header">
+  <h1>Quality Management System</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <div class="row animated fadeInDown">
+    <%
+      @field = DocumentType.all
+      @field.each do |f|
+    %>
+    <div class="col-md-4">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <a href="<%= sub_type_document_path(f.document_type_id)%>" style="text-decoration:none; color:black;" title="Quality Management System">
+          <div class="row">
+            <div class="col-md-2">
+              <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+            </div>
+            <div class="col-md-6">
+              <header><%= f.type_name %></header>
+            </div>
+          </div>
+          </a>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @WrDoc = Document.where('document_type_id = ?', f.document_type_id).select('*')%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+              <small>Total Document</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    <% if current_user.is? 2 %>
+    <div class="col-md-4">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <a href="<%= document_requests_url %>" style="text-decoration:none; color:black;" title="Quality Management System">
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Jumlah Request Dokumen</header>
+              </div>
+            </div>
+          </a>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @WrDoc = DocumentRequest.select('*')%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+              <small>Total</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</dl>
+</div>

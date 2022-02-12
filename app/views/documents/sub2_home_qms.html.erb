@@ -1,0 +1,78 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <span class="project-selector dropdown-toggle" data-toggle="dropdown" style="color: #bababa;"><%= _('...') %>
+          <i class="fa fa-angle-down"></i></span>
+        <% @sub = Sub2DocumentType.joins(:sub_document_type).where(sub_document_type_id: params[:sub_document_type_id]).select('*') %>
+        <% @document = DocumentType.find_by(document_type_id: @sub.first.document_type_id.to_s) %>
+        <ul class="dropdown-menu">
+          <li><a href="<%= root_path %>" style="text-decoration:none;">HOME</a></li>
+          <li><a href="<%= home_qms_documents_path %>" style="text-decoration:none;">Quality Documents</a></li>
+          <li>
+            <a href="<%= sub_type_document_path(@document.document_type_id) %>" style="text-decoration:none;"><%= "#{@document.type_name}" %></a>
+          </li>
+        </ul>
+        <li><%= "#{@sub.first.sub_type_name.to_s.gsub('/', 'atau').truncate(35, sparator:"...")}" %></li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <h1>List Items - <%= @sub.first.sub_type_name.to_s.gsub('/', 'atau') %></h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+
+  <%= render 'layouts/css_cards' %>
+
+  <dl class="dl-horizontal">
+    <div class="row animated fadeInDown">
+      <hr style="border-color: black;">
+      <%
+        @field.each do |f|
+          cache f do
+  %>
+        <div class="col-lg-2 col-md-2 col-xs-6 col-sm-3" id="card">
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <div class="card">
+            <a href="<%= view2_base_type_documents_path(f.sub2_document_type_id) %>" style="text-decoration:none; color:black;" title="<%= f.sub2_type_name %>">
+              <h3 class="title"><%= f.sub2_type_name %></h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+                <% @WrDoc = Document.where('sub2_document_type_id = ?', f.sub2_document_type_id).select('*') %>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+              </div>
+            </a>
+          </div>
+          <br>
+        </div>
+      <% end end %>
+    </div>
+  </dl>
+  <%#= render 'layouts/pagination_cards' %>
+  <%#= will_paginate @field, renderer: @custom_paginate_renderer %>
+</div>

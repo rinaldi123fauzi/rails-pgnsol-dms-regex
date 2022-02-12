@@ -1,0 +1,158 @@
+<% content_for :html_id, "extr-page" %>
+<!-- MAIN CONTENT -->
+<style>
+  @media screen and (min-width: 1366px){
+      #master-content{
+        background-color: white; 
+        padding-top: 90px;
+      }
+  }
+
+  @media screen and (min-width: 480px){
+      #master-content{
+        background-color: white;
+        padding-top: 90px; 
+      }
+  }
+
+  @media screen and (min-width: 320px){
+      #master-content{
+        background-color: white; 
+        padding-top: 90px;
+      }
+  }
+
+  @media screen and (min-width: 1366px){
+      #content{
+        background-color: white; 
+        padding-left: 25%;
+      }
+  }
+
+  @media screen and (min-width: 480px){
+      #content{
+        background-color: white; 
+        padding-left: 25%;
+      }
+  }
+
+  @media screen and (min-width: 480px){
+      #content{
+        background-color: white; 
+        padding-left: 25%;
+      }
+  }
+</style>
+<div id="master-content">
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8">
+        <span id="logo"> <%= image_tag 'main-dms-logo.png', alt: '', class: 'pull-left display-image', style: "width: 200px;" %> </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="well no-padding">
+          <%= form_for(sessions_create_path, html: {id: 'login-form', class: 'smart-form client-form'}) do |f| %>
+            <header>
+              Sign In
+            </header>
+
+            <fieldset>
+
+              <section>
+                <label class="label">Username</label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <%= f.text_field :username, name: 'username', autofocus: true %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter
+                    username</b>
+                </label>
+              </section>
+
+              <section>
+                <label class="label">Password</label>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <%= f.password_field :password, name: 'password', autofocus: true %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
+                </label>
+              </section>
+
+              <section style="position:relative;">
+                <%= recaptcha_tags %>
+              </section>
+
+            </fieldset>
+            <footer>
+              <button type="submit" class="btn btn-primary">
+                Sign in
+              </button>
+            </footer>
+          <% end %>
+
+        </div>
+        <%
+          if Time.now.year >= 2020
+            date = "2019 - " + "#{Time.now.year}"
+          else
+            date = Time.now.year
+            # Time.now.year
+          end
+        %>
+        <p class="text-center m-t">
+          <small>DMS &trade; <%= date %></small>
+        </p>
+        <% begin %>
+          <p class="text-center m-t">
+            <% @version = Version.where(aplikasi_id: 9).order(:versi_sourcecode => :asc).last%>
+            <small><%= @version.versi_sourcecode %></small>
+          </p>
+        <% rescue %>
+        <% end %>
+        
+        <ul class="list-inline text-center">
+          <li>
+            <%= image_tag 'logo-home.png', alt: '', style: 'width:150px' %>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <% content_for :scripts do %>
+    <script type="text/javascript">
+        runAllForms();
+
+        $(function () {
+            // Validation
+            $("#login-form").validate({
+                // Rules for form validation
+                rules: {
+                    username: {
+                        required: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 100
+                    }
+                },
+
+                // Messages for form validation
+                messages: {
+                    username: {
+                        required: 'Please enter your username'
+                    },
+                    password: {
+                        required: 'Please enter your password'
+                    }
+                },
+
+                // Do not change code below
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element.parent());
+                }
+            });
+        });
+    </script>
+  <% end %>
+</div>

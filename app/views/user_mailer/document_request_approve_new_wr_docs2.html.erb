@@ -1,0 +1,103 @@
+<!--
+<h1>User#document_request</h1>
+
+<p>
+  <%= @greeting %>, find me in app/views/user_mailer/document_receiver.html.erb
+</p>
+-->
+
+<img src="https://sdm.pgn-solution.co.id/application/essMobile/assets/img/logo-home.png" width="300" height="50" alt="">
+<hr style="color:black">
+
+<h3>Kepada Bapak / Ibu Yth,</h3>
+<%
+@month_indonesian = ["","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]
+# @month_name = @month_indonesian[@incoming_letter.tgl_terima.strftime("%m").to_i]
+#
+# @day = @incoming_letter.tgl_terima.strftime("%A")
+# def day_changer(day)
+#        case day
+#            when "Sunday"
+#                @hari = "Minggu"
+#
+#            when "Monday"
+#                @hari = "Senin"
+#
+#            when "Tuesday"
+#                @hari = "Selasa"
+#
+#            when "Wednesday"
+#                @hari = "Rabu"
+#
+#            when "Thursday"
+#                @hari = "Kamis"
+#
+#            when "Friday"
+#                @hari = "Jumat"
+#
+#           when "Saturday"
+#                @hari = "Sabtu"
+#        end
+#    end
+#   @hari = day_changer(@day)
+%>
+
+<p>Berikut permohonan untuk perevisian dokumen : </p>
+
+<table border="0">
+  <tr>
+    <td>Nama Pemohon</td>
+    <td> : </td>
+    <td><%= @sender_name %></td>
+  </tr>
+  <tr>
+    <td>Jabatan & Divisi</td>
+    <td> : </td>
+    <td><%= @division %></td>
+  </tr>
+  <tr>
+    <td>Status Permintaan</td>
+    <td> : </td>
+    <td><%= @request_status %></td>
+  </tr>
+  <tr>
+    <td>Jenis Permintaan</td>
+    <td> : </td>
+    <td><%= @sub_status_request %></td>
+  </tr>
+  <tr>
+    <td>Nomor Dokumen</td>
+    <td> : </td>
+    <td><%= @document.document_code %></td>
+  </tr>
+  <tr>
+    <td>Judul Dokumen</td>
+    <td> : </td>
+    <td><%= @document.document_title %></td>
+  </tr>
+  <tr>
+    <td>Tanggal Permintaan</td>
+    <td> : </td>
+    <td><%= @month_name = @month_indonesian[@request_date.strftime("%m").to_i]
+            @request_date.strftime('%d ') + "#{@month_name}" + @request_date.strftime(' %Y')
+      %></td>
+  </tr>
+  <tr>
+    <td>Tertuju</td>
+    <td> : </td>
+    <td><%= @receiver_name %></td>
+  </tr>
+  <tr>
+    <td>Keterangan</td>
+    <td> : </td>
+    <td><%= @reason_request %></td>
+  </tr>
+</table>
+<p>
+  Permohonan tersebut sudah disetujui.
+Atas perhatiannya, disampaikan terimakasih. -- https://dms.pgn-solution.co.id --
+</p>
+
+<h3>Regards,</h3>
+<h3><%= @sender_name %></h3>
+<h3>PT. PGAS SOLUTION</h3>

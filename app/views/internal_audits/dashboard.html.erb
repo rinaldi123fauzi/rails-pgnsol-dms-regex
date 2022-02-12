@@ -1,0 +1,256 @@
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="<%= root_path %>" style="text-docoration: none;">HOME</a></li>
+        <li>Audit Dashboard</li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <span class="ribbon-button-alignment pull-right hidden-lg hidden-md hidden-sm" style="background-color: transparent;">
+      <span id="hide-menu" class="btn btn-ribbon" data-original-title="Expand menu.">
+        <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder" style="color: white;"></i></a>
+      </span>
+    </span>
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+
+  <div class="page-header">
+    <h1>Audit</h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6"  style="margin-top: 5px;">
+      <section id="widget-grid" class="animated fadeInDown">
+        <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="false" style="box-shadow: -1rem 0 3rem #000;">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>Internal</h2>
+          </header>
+          <div>
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+              <!-- This area used as dropdown edit box -->
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+              <div id="audit-graph-internal" class="chart no-padding"></div>
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </div>
+        <!-- end widget -->
+      </section>
+    </div>
+
+    <div class="col-md-6">
+      <section id="widget-grid" class="animated fadeInDown">
+        <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="false" style="box-shadow: -1rem 0 3rem #000;">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>Eksternal</h2>
+          </header>
+          <div>
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+              <!-- This area used as dropdown edit box -->
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+              <div id="audit-graph-eksternal" class="chart no-padding"></div>
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </div>
+        <!-- end widget -->
+      </section>
+    </div>
+
+
+    <div class="col-md-12">
+      <section id="widget-grid" class="animated fadeInDown">
+        <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="false" style="box-shadow: -1rem 0 3rem #000;">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>Tindak Lanjut</h2>
+          </header>
+          <div>
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+              <!-- This area used as dropdown edit box -->
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+              <div id="audit-graph-tindaklanjut" class="chart no-padding"></div>
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </div>
+        <!-- end widget -->
+      </section>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <nav>
+      <ul class="col-md-4 col-sm-4">
+        <li>
+          <a class="btn btn-primary" href="<%= internal_audits_path %>" title="Audit Data"><span class='menu-item-parent'>Audit Data</span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          pageSetUp();
+          if ($('#audit-graph-internal').length) {
+
+              Morris.Bar({
+                  element: 'audit-graph-internal',
+                  data: [
+                      <%  @field = InternalAudit.select('DISTINCT ON (division)*').where('fungsi_audit = ?', "Internal")
+                          @field.each do |f|
+                      %>
+                      <%  @dak_count = InternalAudit.where('fungsi_audit = ? and division = ?', "Internal", f.division).select('*') %>
+                      {
+                          x: "<%= f.division %>",
+                          z: "<%= f.division %>",
+                          y: <%= @dak_count.count %>
+                      },
+                      <% end %>
+                  ],
+                  xkey: 'x',
+                  ykeys: ['y'],
+                  labels: ['Jumlah Audit'],
+                  hoverCallback: function (index, options, content, row) {
+                      return row.z + '<br> <b>' + row.y + '</b> <br> Dokumen Temuan';
+                  },
+                  barColors: function (row, series, type) {
+                      var letters = '0123456789ABCDEF'.split('');
+                      var color = '#';
+                      for (var i = 0; i < 6; i++) {
+                          color += letters[Math.floor(Math.random() * 16)];
+                      }
+                      if (type === 'bar') {
+                          return color;
+                      } else {
+                          return '#000';
+                      }
+                  }
+              });
+
+          }
+
+
+          if ($('#audit-graph-eksternal').length) {
+
+              Morris.Bar({
+                  element: 'audit-graph-eksternal',
+                  data: [
+                      <%  @field = InternalAudit.select('DISTINCT ON (division)*').where('fungsi_audit = ?', "Eksternal")
+                          @field.each do |f|
+                      %>
+                      <%  @dak_count = InternalAudit.where('fungsi_audit = ? and division = ?', "Eksternal", f.division).select('*') %>
+                      {
+                          x: "<%= f.division %>",
+                          z: "<%= f.division %>",
+                          y: <%= @dak_count.count %>
+                      },
+                      <% end %>
+                  ],
+                  xkey: 'x',
+                  ykeys: ['y'],
+                  labels: ['Jumlah Audit'],
+                  hoverCallback: function (index, options, content, row) {
+                      return row.z + '<br> <b>' + row.y + '</b> <br> Dokumen Temuan';
+                  },
+                  barColors: function (row, series, type) {
+                      var letters = '0123456789ABCDEF'.split('');
+                      var color = '#';
+                      for (var i = 0; i < 6; i++) {
+                          color += letters[Math.floor(Math.random() * 16)];
+                      }
+                      if (type === 'bar') {
+                          return color;
+                      } else {
+                          return '#000';
+                      }
+                  }
+              });
+
+          }
+
+          if ($('#audit-graph-tindaklanjut').length) {
+
+              Morris.Bar({
+                  element: 'audit-graph-tindaklanjut',
+                  data: [
+                      <%  @field = InternalAudit.select('DISTINCT ON (division)*').where(tindak_lanjut: 1)
+                          @field.each do |f|
+                      %>
+                      <%  @dak_count = InternalAudit.where('tindak_lanjut = ? and division = ?', 1, f.division).select('*') %>
+                      {
+                          x: "<%= f.division %>",
+                          z: "<%= f.division %>",
+                          y: <%= @dak_count.count %>
+                      },
+                      <% end %>
+                  ],
+                  xkey: 'x',
+                  ykeys: ['y'],
+                  labels: ['Jumlah Audit'],
+                  hoverCallback: function (index, options, content, row) {
+                      return row.z + '<br> <b>' + row.y + '</b> <br> Dokumen Temuan';
+                  },
+                  barColors: function (row, series, type) {
+                      var letters = '0123456789ABCDEF'.split('');
+                      var color = '#';
+                      for (var i = 0; i < 6; i++) {
+                          color += letters[Math.floor(Math.random() * 16)];
+                      }
+                      if (type === 'bar') {
+                          return color;
+                      } else {
+                          return '#000';
+                      }
+                  }
+              });
+
+          }
+      })
+  </script>
+<% end %>

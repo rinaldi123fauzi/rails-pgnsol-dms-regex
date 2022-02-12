@@ -1,0 +1,70 @@
+I"0(function() {
+  $(function() {
+    var classification, sub22, sub2document, sub_field;
+    $('#ViewAllIndex').dataTable({
+      sPaginationType: "full_numbers",
+      bJQueryUI: false,
+      searching: false,
+      bProcessing: true,
+      bServerSide: true,
+      sAjaxSource: $('#ViewAllIndex').data('source')
+    });
+    $('#ViewBaseType').dataTable({
+      sPaginationType: "full_numbers",
+      bJQueryUI: false,
+      searching: false,
+      bProcessing: true,
+      bServerSide: true,
+      sAjaxSource: $('#ViewBaseType').data('source')
+    });
+    $('#View2BaseType').dataTable({
+      sPaginationType: "full_numbers",
+      bJQueryUI: false,
+      searching: false,
+      bProcessing: true,
+      bServerSide: true,
+      sAjaxSource: $('#View2BaseType').data('source')
+    });
+    sub_field = $('#document_sub_document_type_id').html();
+    classification = $('#document_document_classification_id').html();
+    sub2document = $('#document_sub2_document_type_id').html();
+    console.log(sub_field);
+    $('#document_document_type_id').change(function() {
+      var doc_class, field, options, optionss, sub2ss;
+      field = $('#document_document_type_id :selected').text();
+      options = $(sub_field).filter("optgroup[label='" + field + "']").html();
+      if (options) {
+        $('#document_sub_document_type_id').html(options);
+        doc_class = $('#document_sub_document_type_id :selected').text();
+        optionss = $(classification).filter("optgroup[label='" + doc_class + "']").html();
+        $('#document_document_classification_id').html(optionss);
+        sub2ss = $(sub2document).filter("optgroup[label='" + doc_class + "']").html();
+        return $('#document_sub2_document_type_id').html(sub2ss);
+      } else {
+        return $('#document_sub_document_type_id').empty();
+      }
+    });
+    classification = $('#document_document_classification_id').html();
+    sub22 = $('#document_sub2_document_type_id').html();
+    console.log(classification);
+    return $('#document_sub_document_type_id').change(function() {
+      var doc_class, options, optionss;
+      doc_class = $('#document_sub_document_type_id :selected').text();
+      options = $(classification).filter("optgroup[label='" + doc_class + "']").html();
+      optionss = $(sub22).filter("optgroup[label='" + doc_class + "']").html();
+      if (options && optionss) {
+        $('#document_document_classification_id').html(options);
+        return $('#document_sub2_document_type_id').html(optionss);
+      } else if (options) {
+        return $('#document_document_classification_id').html(options);
+      } else if (optionss) {
+        return $('#document_sub2_document_type_id').html(optionss);
+      } else {
+        $('#document_document_classification_id').empty();
+        return $('#document_sub2_document_type_id').empty();
+      }
+    });
+  });
+
+}).call(this);
+:ET

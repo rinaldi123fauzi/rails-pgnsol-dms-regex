@@ -1,0 +1,106 @@
+<% if is_active_controller('documents') %>
+  <li class="dropdown">
+    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Work Reference">
+      <i class='fa fa-lg fa-fw fa-home'></i>
+      <span class="nav-label"> QMS <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+    <ul
+      <% if current_page?(new_wr_doc_path) or current_page?(internal_wr_audits_url) or current_page?(new_internal_wr_audit_path)
+           concat "style='display:block;'".html_safe
+         end
+      %>>
+      <li
+        <% if current_page?(document_requests_url)
+             concat "class='active'".html_safe
+           end
+        %>>
+        <% if current_user.is? 2 %>
+          <a href="<%= document_requests_url %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+        <% else %>
+          <!--          <a class="btn btn-primary" href="<%#= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>-->
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Request">
+              <span class="nav-label"> Request <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+            <ul>
+              <li>
+                <a href="<%= new_request_document_requests_path %>" title="Revision or Request New Doc"><span class='menu-item-parent'>Revision or Request New Doc</span></a>
+              </li>
+              <li>
+                <% @request = DocumentRequest.where('status_request = ? and receiver = ? or status_request = ? and receiver = ?', 'baru', current_user.username, 'revisi', current_user.username).select('*') %>
+                <% if @request.exists? %>
+                  <a style="color: black;" href="<%= index_request_document_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span><sup class="badge bg-color-yellow bounceIn animated"><%= @request.count %></sup></a>
+                <% else %>
+                  <a style="color: black;" href="<%= index_request_document_requests_url %>" title="Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span></a>
+                <% end %>
+                <!--                  <a href="<%#= index_request_document_requests_url %>" title="List New Request"><span class='menu-item-parent'>List new Request</span></a>-->
+              </li>
+              <li>
+                <!--                <a style="color: black;" href="<%#= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>-->
+                <a style="color: black;" href="<%= distributions_url %>" title="List Distribution"><span class='menu-item-parent'>List Distribution</span></a>
+              </li>
+              <li>
+                <a href="<%= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+        </li>
+        <li
+          <% if current_page?(view_all_index_documents_path)
+               concat "class='active'".html_safe
+             end
+          %>>
+          <a href="<%= view_all_index_documents_path %>" title="List Documents All"><span class='menu-item-parent'>List Documents All</span></a>
+        </li>
+        </ul>
+  </li>
+<% end %>
+
+<% if is_active_controller('wr_docs') %>
+  <li class="dropdown">
+    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Work Reference">
+      <i class='fa fa-lg fa-fw fa-home'></i>
+      <span class="nav-label"> Work Reference <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+    <ul
+      <% if current_page?(new_wr_doc_path) or current_page?(internal_wr_audits_url) or current_page?(new_internal_wr_audit_path)
+           concat "style='display:block;'".html_safe
+         end
+      %>>
+      <li class="dropdown">
+        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Request">
+          <span class="nav-label"> Request <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+        <ul>
+          <li>
+            <a href="<%= new_request_wr_doc_requests_path %>" title="Create New Request"><span class='menu-item-parent'>Create New Request</span></a>
+          </li>
+          <li>
+            <% @request = WrDocRequest.where('status_request = ? and receiver = ? or status_request = ? and receiver = ?', 'baru', current_user.username, 'revisi', current_user.username).select('*') %>
+            <% if @request.exists? %>
+              <a style="color: black;" href="<%= index_request_wr_doc_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span><sup class="badge bg-color-yellow bounceIn animated"><%= @request.count %></sup></a>
+            <% else %>
+              <a style="color: black;" href="<%= index_request_wr_doc_requests_url %>" title="List Revision or Request New Doc"><span class='menu-item-parent'>List Revision or Request New Doc</span></a>
+            <% end %>
+            <!--                  <a href="<%#= index_request_document_requests_url %>" title="List New Request"><span class='menu-item-parent'>List new Request</span></a>-->
+          </li>
+          <li>
+            <!--                <a style="color: black;" href="<%#= index_request_documents_path %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>-->
+            <a style="color: black;" href="<%= wr_doc_distributions_url %>" title="List Distribution"><span class='menu-item-parent'>List Distribution</span></a>
+          </li>
+          <li
+            <% if current_page?(wr_doc_requests_url)
+                 concat "class='active'".html_safe
+               end
+            %>>
+            <a href="<%= index_request_wr_docs_url %>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+          </li>
+        </ul>
+      </li>
+      <li
+        <% if current_page?(view_all_index_wr_docs_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+        <a href="<%= view_all_index_wr_docs_path %>" title="List Documents All"><span class='menu-item-parent'>List Documents All</span></a>
+      </li>
+    </ul>
+  </li>
+<% end %>

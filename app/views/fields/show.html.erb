@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to fields_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_field_path(@field), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show field</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Description:</dt>
+  <dd><%= @field.description_field %></dd>
+
+</dl>

@@ -1,0 +1,11 @@
+I"í(function() {
+  $('#IndexInternalAudit').dataTable({
+    sPaginationType: "full_numbers",
+    bJQueryUI: false,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#IndexInternalAudit').data('source')
+  });
+
+}).call(this);
+:ET

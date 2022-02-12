@@ -1,0 +1,33 @@
+{:uriI"˚file:///home/pgnsol/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/ckeditor-4.3.0/vendor/assets/javascripts/ckeditor/samples/toolbarconfigurator/font/config.json?type=application/json&id=a87d91cc0e604808e7947b1eb15e364b47ae5221b84bf6a01b4954fd418a9e85:ET:load_pathI"i/home/pgnsol/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/ckeditor-4.3.0/vendor/assets/javascripts;T:filenameI"ö/home/pgnsol/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/ckeditor-4.3.0/vendor/assets/javascripts/ckeditor/samples/toolbarconfigurator/font/config.json;T:	nameI"5ckeditor/samples/toolbarconfigurator/font/config;T:logical_pathI":ckeditor/samples/toolbarconfigurator/font/config.json;T:content_typeI"application/json;T:sourceI"-{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "f48ae54adfb27d8ada53d0fd9e34ee10",
+      "css": "trash-empty",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "1c4068ed75209e21af36017df8871802",
+      "css": "down-big",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "95376bf082bfec6ce06ea1cda7bd7ead",
+      "css": "up-big",
+      "code": 59394,
+      "src": "fontawesome"
+    }
+  ]
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"®file-digest:///home/pgnsol/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/ckeditor-4.3.0/vendor/assets/javascripts/ckeditor/samples/toolbarconfigurator/font/config.json;TTF:charsetI"
+utf-8;F:digest"%mç6¶;CËê·
+˛Ò ‡Deœ…åMáﬂ‹Y!‚)®l:lengthi-:dependencies_digest"%ó"k"wÇw˝Ï.$¶êÜ*"Ç(“E¬oU˙mxÛõD:idI"Ea87d91cc0e604808e7947b1eb15e364b47ae5221b84bf6a01b4954fd418a9e85;F:
+mtimel+ÄÛ`

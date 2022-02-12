@@ -1,0 +1,299 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="<%= home_documents_path %>" style="text-decoration: none;">HOME</a></li>
+        <li><a href="<%= dashboard_internal_audits_path %>" style="text-decoration: none;">Audit Dashboard</a></li>
+        <li><a href="<%= internal_audits_url %>" style="text-decoration: none;">Audit Data</a></li>
+        <!--        <li><a href="#" onclick="return goBack()">Previous</a></li>-->
+        <li>Detail</li>
+        <!--        <script type="text/javascript" charset="utf-8">-->
+        <!--            function goBack() {-->
+        <!--                window.history.back();-->
+        <!--            }-->
+        <!--        </script>-->
+      </ol>
+      <!-- end breadcrumb -->
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <%#= link_to internal_audits_path, class: 'btn btn-default' do %>
+    <!--    <span class="glyphicon glyphicon-list-alt"></span>-->
+    <!--    Back-->
+    <%# end %>
+    <h1>Detail internal_audit</h1>
+    <%= render "layouts/logo_header" %>
+    <%= link_to edit_internal_audit_path(@internal_audit), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <% end %>
+
+    <%= link_to @internal_audit, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      Delete
+    <% end %>
+
+    <% @checkClosing = InternalAudit.find(params[:id]) %>
+    <% if @checkClosing.status == "open" %>
+      <%= link_to closing_audit_path(@internal_audit), data: {confirm: 'Are you sure to close this audit ?'}, class: 'btn btn-info' do %>
+        <span class="glyphicon glyphicon-eye-close"></span>
+        Closing
+      <% end %>
+    <% end %>
+  </div>
+
+  <dl class="dl-horizontal">
+    <div id="myTabContent" class="tab-content">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <div class="ibox-content" style="display: block;">
+            <table class="table table-bordered">
+              <tr>
+                <td colspan="2" align="center"><strong>DETAIL</strong></td>
+              </tr>
+              <tr>
+                <td style="width: 300px;"><strong>Number Report:</strong></td>
+                <!--                      <td class="gen_number"><-->
+                <!--                        <b><%#=@number%></b> <span class="label label-warning" title="Silahkan ganti status terlebih dahulu menjadi Request Procurement"><i class="fa fa-info"></i></span>-->
+                <!--                      </td>-->
+                <td><b><%= @internal_audit.report_no %></b></td>
+              </tr>
+              <tr>
+                <td><strong>Division:</strong></td>
+                <td><%= @internal_audit.division %></td>
+              </tr>
+              <tr>
+                <% @month_indonesian = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                   @month_name = @month_indonesian[@internal_audit.audit_date.strftime("%m").to_i]
+                %>
+                <td><strong>Audit Date:</strong></td>
+                <td><%= @internal_audit.audit_date.strftime('%d ') + "#{@month_name}" + @internal_audit.audit_date.strftime(' %Y') %></td>
+              </tr>
+
+              <tr>
+                <td><strong>Issued By:</strong></td>
+                <td><%= @internal_audit.issued_by %></td>
+              </tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @internal_audit.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Status:</strong></td>
+                <td><%= @internal_audit.status %></td>
+              </tr>
+              <tr>
+                <td><strong>Audit Functional:</strong></td>
+                <td><%= @internal_audit.fungsi_audit %></td>
+              </tr>
+              <tr>
+                <td><strong>File:</strong></td>
+                <td><a href="<%= download_file_audit_path(@internal_audit.id) %>"><%= @internal_audit.file_upload %></a>
+                </td>
+              </tr>
+
+              <tr>
+                <% @month_indonesian = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                   @month_name = @month_indonesian[@internal_audit.created_at.strftime("%m").to_i]
+                %>
+                <td><strong>Created:</strong></td>
+                <td><%= @internal_audit.created_at.strftime('%d') + " #{@month_name}" + @internal_audit.created_at.strftime(' %Y') + @internal_audit.created_at.strftime(" %H:%I:%S") %></td>
+              </tr>
+              <tr>
+                <% @month_indonesian = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                   @month_name = @month_indonesian[@internal_audit.updated_at.strftime("%m").to_i]
+                %>
+                <td><strong>Updated:</strong></td>
+                <td><%= @internal_audit.updated_at.strftime('%d') + " #{@month_name}" + @internal_audit.updated_at.strftime(' %Y') + @internal_audit.updated_at.strftime(" %H:%I:%S") %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dl>
+
+  <%= link_to new_audit_tindaklanjut_path(@internal_audit), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Tambah Tindak Lanjut
+  <% end %>
+  <br>
+  <br>
+  <br>
+
+  <% @checkFollowup = FollowupAudit.find_by_internal_audit_id(params[:id]) %>
+
+  <% unless @checkFollowup.nil? %>
+    <dl class="dl-horizontal">
+      <div id="myTabContent" class="tab-content">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <div class="ibox-content" style="display: block;">
+              <table class="table table-bordered">
+                <tr>
+                  <td colspan="2" align="center"><strong>TINDAK LANJUT</strong></td>
+                </tr>
+                <% @getFollowup = FollowupAudit.where(internal_audit_id: params[:id]).select('*') %>
+                <% @getFollowup.each do |f| %>
+                  <tr>
+                    <td><strong>Issued By:</strong></td>
+                    <td><%= f.issued_by %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Notes:</strong></td>
+                    <td><%= f.notes %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Description:</strong></td>
+                    <td><%= f.descriptions %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>File:</strong></td>
+                    <td>
+                      <a href="<%= download_audit_tindaklanjut_path(f.id) %>"><%= f.file_upload %></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <% @month_indonesian = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                       @month_name = @month_indonesian[f.created_at.strftime("%m").to_i]
+                    %>
+                    <td><strong>Created:</strong></td>
+                    <td><%= f.created_at.strftime('%d') + " #{@month_name}" + f.created_at.strftime(' %Y') + f.created_at.strftime(" %H:%I:%S") %></td>
+                  </tr>
+                  <tr>
+                    <% @month_indonesian = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                       @month_name = @month_indonesian[f.updated_at.strftime("%m").to_i]
+                    %>
+                    <td><strong>Updated:</strong></td>
+                    <td><%= f.updated_at.strftime('%d') + " #{@month_name}" + f.updated_at.strftime(' %Y') + f.updated_at.strftime(" %H:%I:%S") %></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <%= link_to edit_followup_audit_path(f.id), class: 'btn btn-primary' do %>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Edit
+                      <% end %>
+
+                      <%= link_to delete_audit_tindaklanjut_path(f.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' do %>
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Delete
+                      <% end %>
+                    </td>
+                    <td></td>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dl>
+  <% end %>
+</div>
+
+<!--  <dl class="dl-horizontal">-->
+<!--    <ul id="myTab" class="nav nav-pills">-->
+<!--      <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Detail Document </a></li>-->
+<!--      <li class=""><a href="#specifications" data-toggle="tab">See Scan Document</a></li>-->
+<!--    </ul>-->
+<!--    <style media="screen">-->
+<!--      h4 {-->
+<!--        font-size: 20px;-->
+<!--        font-family: calibri;-->
+<!--      }-->
+<!--    </style>-->
+<!--    <div id="myTabContent" class="tab-content">-->
+<!--      <div class="tab-pane fade active in" id="more-information">-->
+<!--        <br>-->
+<!--        <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">-->
+<!--          <div class="widget-body">-->
+<!--            <div class="row">-->
+<!--              <section class="col-md-4">-->
+<!--                <table border="0">-->
+<!--                  <tr>-->
+<!--                    <td><h3>Report Number</h3></td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td><h4><%#= @internal_audit.report_no %></h4></td>-->
+<!--                  </tr>-->
+<!--                </table>-->
+<!--              </section>-->
+<!--              <section class="col-md-4">-->
+<!--                <table border="0">-->
+<!--                  <tr>-->
+<!--                    <%# @month_indonesian = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]-->
+<!--                       @month_name = @month_indonesian[@internal_audit.audit_date.strftime("%m").to_i]-->
+                        %>
+<!-                   <td><h3>Audit Date</h3></td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td>-->
+<!--                      <h4><%#= @internal_audit.audit_date.strftime('%d ') + "#{@month_name}" + @internal_audit.audit_date.strftime(' %Y') %></h4>-->
+<!--                    </td>-->
+<!--                  </tr>-->
+<!--                </table>-->
+<!--              </section>-->
+<!--              <section class="col-md-4">-->
+<!--                <table border="0">-->
+<!--                  <tr>-->
+<!--                    <td><h3>Issued By</h3></td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td><h4><%#= @internal_audit.issued_by %></h4></td>-->
+<!--                  </tr>-->
+<!--                </table>-->
+<!--              </section>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">-->
+<!--          <div class="widget-body">-->
+<!--            <div class="row">-->
+<!--              <section class="col-md-12">-->
+<!--                <table border="0">-->
+<!--                  <tr>-->
+<!--                    <td><h3>Description</h3></td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td><h4><%#= @internal_audit.description %></h4></td>-->
+<!--                  </tr>-->
+<!--                </table>-->
+<!--              </section>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="tab-pane fade" id="specifications">-->
+<!--        <br>-->
+<!--        <div class="ibox float-e-margins">-->
+<!--          <div class="ibox-title">-->
+<!--            <iframe src="<%#= pdfjs.full_path(file: "/file/DMS/Internal_Audit/#{@internal_audit.file_upload}") %>" style="width: 100%; height: 600px;"></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </dl>-->

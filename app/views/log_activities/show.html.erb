@@ -1,0 +1,38 @@
+<div class="page-header">
+  <%= link_to log_activities_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_log_activity_path(@log_activity), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show log_activity</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Member:</dt>
+  <dd><%= @log_activity.member_id %></dd>
+
+  <dt>Document code:</dt>
+  <dd><%= @log_activity.document_code %></dd>
+
+  <dt>Activity date:</dt>
+  <dd><%= @log_activity.activity_date %></dd>
+
+  <dt>Activity:</dt>
+  <dd><%= @log_activity.activity %></dd>
+
+  <dt>Controller:</dt>
+  <dd><%= @log_activity.controller %></dd>
+
+  <dt>Action:</dt>
+  <dd><%= @log_activity.action %></dd>
+
+  <dt>Browser:</dt>
+  <dd><%= @log_activity.browser %></dd>
+
+  <dt>Ip address:</dt>
+  <dd><%= @log_activity.ip_address %></dd>
+
+</dl>

@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to document_types_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_document_type_path(@document_type), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show document_type</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Type name:</dt>
+  <dd><%= @document_type.type_name %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @document_type.description %></dd>
+
+</dl>

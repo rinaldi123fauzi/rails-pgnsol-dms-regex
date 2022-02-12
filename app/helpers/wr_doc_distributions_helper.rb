@@ -1,0 +1,2 @@
+module WrDocDistributionsHelper
+end

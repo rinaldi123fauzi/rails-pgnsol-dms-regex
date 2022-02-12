@@ -1,0 +1,9 @@
+$('#dialog h3').html("<%= @document.first.document_code.to_s + " - " + @document.first.document_title.to_s %>");
+
+$('#body').html('<%= j render ("show") %>');
+
+$('#dialog').modal("show");
+
+$('#dialog').on('shown.bs.modal', function(){
+    $('.first_input').focus()
+})

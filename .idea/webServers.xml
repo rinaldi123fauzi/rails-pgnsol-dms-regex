@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="73683202-0ef7-43e7-a21b-55b3b049623b" name="DMS" url="http://192.168.60.56">
+        <fileTransfer rootFolder="/var/www/dms" accessType="SFTP" sshConfigId="cefe3b6b-a881-444b-96fc-6b11c4a2025d" sshConfig="DMS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="71fc1044-33b6-442e-88e8-0d85f4af1650" name="RISK" url="http://192.168.60.135">
+        <fileTransfer rootFolder="/var/www/develop-risk" accessType="SFTP" sshConfigId="449dd819-ec80-4f02-891e-e792cff88f7d" sshConfig="RISK">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="a2199cfe-2ae8-4565-bcd1-179fa169ac84" name="IMS-Dev" url="http://192.168.60.56">
+        <fileTransfer rootFolder="/var/www/ims" accessType="SFTP" sshConfigId="cefe3b6b-a881-444b-96fc-6b11c4a2025d" sshConfig="DMS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d0d24f47-b327-428c-a89b-0c98da5447a1" name="Cosmo-Dev" url="http://192.168.60.56">
+        <fileTransfer rootFolder="/var/www/cosmo" accessType="SFTP" sshConfigId="cefe3b6b-a881-444b-96fc-6b11c4a2025d" sshConfig="DMS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="c1bc1ec6-bd44-48c1-a05b-3dac76652f74" name="Cosmo-Prod" url="http://192.168.60.48">
+        <fileTransfer rootFolder="/var/www/html/cosmo" accessType="SFTP" sshConfigId="816d8e00-473d-4986-a95a-749b01159613" sshConfig="Cosmo-Prod">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="8f9bd8be-f693-4ac7-aef3-fcfde66da8fc" name="Cosmo-Last" url="http://192.168.60.48">
+        <fileTransfer rootFolder="/home/nimda/chsms_production/inspina" accessType="SFTP" sshConfigId="816d8e00-473d-4986-a95a-749b01159613" sshConfig="Cosmo-Prod">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="64f7108f-8f4d-427e-999d-7f9de8948ea4" name="DMS-Prod" url="http://192.168.60.98">
+        <fileTransfer rootFolder="/var/www/dms" accessType="SFTP" sshConfigId="d0eae752-b5fa-4342-8054-981823ed7a4e" sshConfig="DMS-Prod">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="1e23d6c0-5237-4997-8323-da73246b6f76" name="dhs_rebuild" url="http://192.168.60.56">
+        <fileTransfer rootFolder="/var/www/html/dhs_rebuild" accessType="SFTP" sshConfigId="cefe3b6b-a881-444b-96fc-6b11c4a2025d" sshConfig="DMS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="9c99462b-3f73-45ba-a0cf-d71c41d84dc9" name="PORTAL Prod" url="http://192.168.60.45">
+        <fileTransfer rootFolder="/home/nimda/portal" accessType="SFTP" sshConfigId="ff29e07b-d6a7-4f67-ba13-4390ef778634" sshConfig="PORTAL Prod">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="e037d9bb-7c1f-4438-afed-f01ec3c5d097" name="enhancement_dms2021" url="http://192.168.60.56">
+        <fileTransfer rootFolder="/var/www/html/enhancement_dms2021/dms" accessType="SFTP" sshConfigId="cefe3b6b-a881-444b-96fc-6b11c4a2025d" sshConfig="DMS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

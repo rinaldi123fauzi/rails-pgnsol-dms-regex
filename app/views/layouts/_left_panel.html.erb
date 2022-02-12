@@ -1,0 +1,18 @@
+<aside id="left-panel padding-5" style="background: transparent;" class="hidden-md hidden-lg">
+
+  <!-- User info -->
+  <div class="login-info" style="border: none;">
+				<span style="border: none;"> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
+					<a href="#" title="<%= current_user.nama%>">
+            <%= image_tag 'avatars/small.svg', alt: 'me', class: 'online' %>
+            <span>
+							<%= current_user.nama %>
+						</span>
+<!--            <i class="fa fa-angle-down"></i>-->
+          </a>
+
+				</span>
+  </div>
+  <!-- end user info -->
+</aside>

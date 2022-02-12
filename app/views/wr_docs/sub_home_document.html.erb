@@ -1,0 +1,89 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <% @field = Field.find_by(field_id: params[:field_id]) %>
+        <span class="project-selector dropdown-toggle" data-toggle="dropdown" style="color: #bababa;"><%= _('...') %>
+          <i class="fa fa-angle-down"></i></span>
+        <ul class="dropdown-menu">
+          <li><a href="<%= root_path %>">HOME</a></li>
+          <li><a href="<%= home_document_wr_docs_path %>">Reference Documents</a></li>
+        </ul>
+        <li><%= "#{@field.description_field.truncate(35, sparator: "...")}" %></li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <h1><a href="#" style="text-decoration: none; color: black" title="<%= @field.description_field %>">References
+      Documents - <%= @field.description_field.truncate(23, sparator: '..') %></a></h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+  <%= render 'layouts/css_cards' %>
+  <dl class="dl-horizontal">
+    <div class="row animated fadeInDown">
+      <%
+        if @subfield.empty?
+          concat "<h3>Data is not exists</h3>".html_safe
+        end
+        @subfield.each do |f|
+      %>
+        <div class="col-lg-2 col-md-2 col-xs-6 col-sm-3" id="card">
+          <% @sub2_field = Sub2Field.find_by_sub_field_id(f.sub_field_id) %>
+          <% if @sub2_field.present? %>
+            <a href="<%= sub2_home_document_wr_docs_path(f.sub_field_id) %>" style="text-decoration:none; color:black;" title="<%= f.description_sub_field %>">
+              <div class="card">
+                <h3 class="title"><%= f.description_sub_field %></h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                  <% @WrDoc = WrDoc.where('sub_field_id = ?', f.sub_field_id).select('*') %>
+                  <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+                </div>
+              </div>
+            </a>
+            <br>
+          <% else %>
+            <a href="<%= reference_document_path(f.sub_field_id) %>" style="text-decoration:none; color:black;" title="<%= f.description_sub_field %>">
+              <div class="card">
+                <h3 class="title"><%= f.description_sub_field %></h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                  <% @WrDoc = WrDoc.where('sub_field_id = ?', f.sub_field_id).select('*') %>
+                  <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+                </div>
+              </div>
+            </a>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </dl>
+  <%#= render 'layouts/pagination_cards' %>
+  <%#= will_paginate @subfield, renderer: @custom_paginate_renderer %>
+</div>

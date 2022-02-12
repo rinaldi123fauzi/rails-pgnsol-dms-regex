@@ -1,0 +1,104 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+  <!-- RIBBON -->
+  <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+    <!-- breadcrumb -->
+    <ol class="breadcrumb">
+      <li><a href="<%= home_document_wr_docs_path %>">WR Document</a></li>
+    </ol>
+    <!-- end breadcrumb -->
+
+    <!-- You can also add more buttons to the
+    ribbon for further usability
+
+    Example below:
+
+    <span class="ribbon-button-alignment pull-right">
+    <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+    <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+    <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+    </span> -->
+
+  </div>
+  <!-- END RIBBON -->
+  <% end %>
+<div class="page-header">
+  <h1>Work Reference Document</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <div class="row animated fadeInDown">
+    <%
+      @field = Field.all
+      @field.each do |f|
+    %>
+    <div class="col-md-4">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <!-- <a href="<% all_index_wr_docs_path(f.field_id)%>" style="text-decoration:none; color:black;" title="Work Reference Document"> -->
+          <a href="<%= sub_wr_doc_path(f.field_id)%>" style="text-decoration:none; color:black;" title="Work Reference Document">
+          <div class="row">
+            <div class="col-md-2">
+              <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+            </div>
+            <div class="col-md-6">
+              <header><%= f.description_field %></header>
+            </div>
+          </div>
+          </a>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @WrDoc = WrDoc.where('field_id = ?', f.field_id).select('*')%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+              <small>Total Document</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+    <% if current_user.is? 2 %>
+    <div class="col-md-4">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+        <div class="widget-body">
+
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <a href="<%= wr_doc_requests_url %>" style="text-decoration:none; color:black;" title="Quality Management System">
+            <div class="row">
+              <div class="col-md-2">
+                <i class="fa fa-folder-open fa-2x" style="color:blue;"></i>
+              </div>
+              <div class="col-md-6">
+                <header>Jumlah Request Dokumen</header>
+              </div>
+            </div>
+          </a>
+
+          <div class="row">
+            <div class="col-md-12">
+              <% @WrDoc = WrDocRequest.select('*')%>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count%></h2>
+              <small>Total</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</dl>
+</div>

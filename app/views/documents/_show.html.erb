@@ -1,0 +1,87 @@
+<!-- MAIN CONTENT -->
+<div id="error_explanation" class="bg-danger text-danger"></div>
+<div class="modal-body">
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+    <div class="widget-body">
+      <dl class="dl-horizontal">
+        <div id="myTabContent" class="tab-content">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <div class="ibox-content" style="display: block;">
+                <table class="table table-bordered">
+                  <tr>
+                    <td colspan="2" align="center"><strong>DETAIL</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nomor Dokumen:</strong></td>
+                    <!--                      <td class="gen_number"><-->
+                    <!--                        <b><%#=@number%></b> <span class="label label-warning" title="Silahkan ganti status terlebih dahulu menjadi Request Procurement"><i class="fa fa-info"></i></span>-->
+                    <!--                      </td>-->
+                    <td><b><%= @document.first.document_code.to_s %></b></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Judul Dokumen:</strong></td>
+                    <td><%= @document.first.document_title.to_s %></td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Jenis Dokumen:</strong></td>
+                    <td><%= @document.first.type_name.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sub Jenis Dokumen:</strong></td>
+                    <td><%= @document.first.sub_type_name.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Klasifikasi Dokumen:</strong></td>
+                    <td><%= @document.first.classification_name.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tipe Dokumen:</strong></td>
+                    <td><%= @document.first.reference_name.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sifat Dokumen:</strong></td>
+                    <td><%= @document.first.sifat.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Issued By:</strong></td>
+                    <td><%= @document.first.issued_by.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tanggal Berlaku:</strong></td>
+                    <% if @document.first.document_date.to_s.present? %>
+                      <td><%= @document.first.document_date.strftime('%d %b %Y') %></td>
+                    <% else %>
+                      <td>-</td>
+                    <% end %>
+                  </tr>
+                  <tr>
+                    <td><strong>Revisi:</strong></td>
+                    <td><%= @document.first.revision.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Penanggung Jawab:</strong></td>
+                    <td><%= @document.first.penanggung_jawab.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lokasi Simpan:</strong></td>
+                    <td><%= @document.first.save_location.to_s %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lama Simpan:</strong></td>
+                    <% if @document.first.save_date.to_s.present? %>
+                      <td><%= distance_of_time_in_words(Time.now, @document.first.save_date.to_s, true, :only => [:years, :months, :weeks, :days]) %></td>
+                    <% else %>
+                      <td>-</td>
+                    <% end %>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

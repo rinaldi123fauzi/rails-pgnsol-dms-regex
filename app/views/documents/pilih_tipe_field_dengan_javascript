@@ -1,0 +1,41 @@
+<section>
+<label class="control-label">Pilih tipe file upload</label>
+    <label class="textarea"> <i class="icon-append fa fa-tag"></i>
+      <input type="checkbox" id="pdf" onchange="limit_direktur(1, 'pdf')" required> PDF
+      <input type="checkbox" id="video" onchange="limit_direktur(1, 'video')" required> VIDEO
+      <b class="tooltip tooltip-top-right">
+        <i class="fa fa-warning txt-color-teal"></i>
+        Please entry...</b>
+    </label>
+    <script type="text/javascript">
+        function limit_direktur(max, identifier) {
+            var checkbox = $("input[id='"+identifier+"']");
+            var checked = $("input[id='" + identifier + "']:checked").length;
+            checkbox.filter(':not(:checked)').prop('disabled', checked >= max);
+            console.log(checked)
+            if (checked >= max) {
+                // document.getElementById('ifYes').style.display = 'block';
+                if (identifier == "pdf") {
+                    document.getElementById('pdf_dodol').style.display = 'block';
+                    document.getElementById('video_dodol').style.display = 'none';
+                } else if (identifier == "video"){
+                    document.getElementById('pdf_dodol').style.display = 'none';
+                    document.getElementById('video_dodol').style.display = 'block';
+                }
+            } else {
+                // document.getElementById('ifYes').style.display = 'none';
+                document.getElementById('pdf_dodol').style.display = 'none';
+                document.getElementById('video_dodol').style.display = 'none';
+            }
+            // checkbox.filter(':not(:checked)').prop('disabled', checked >= max);
+        }
+    </script>
+</section>
+
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <div>
+    <div class="widget-body">
+      <%= video_tag "#{@document.file_video}", style: "width: 70%;", :controls => true %>
+    </div>
+  </div>
+</div>

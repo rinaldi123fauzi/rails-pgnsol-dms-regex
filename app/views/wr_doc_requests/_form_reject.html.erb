@@ -1,0 +1,27 @@
+<%#= form_for (@document_request), remote: true do |f| %>
+<%= form_for (@wr_doc_request) do |f| %>
+  <div id="error_explanation" class="bg-danger text-danger"></div>
+
+  <div class="modal-body">
+    <div class="smart-form">
+      <div class="row">
+        <section>
+          <label class="label">
+            Reason
+          </label>
+          <input type="hidden" name="nama" value="<%= current_user.nama %>">
+          <input type="hidden" name="member" value="<%= current_user.member_id %>">
+          <label class="input">
+            <%= f.text_field :reject_reason, class: "form-control", required: true %>
+          </label>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a type="button" class="btn btn-default" data-dismiss="modal">Close</a>
+    <%= f.submit "Reject", class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

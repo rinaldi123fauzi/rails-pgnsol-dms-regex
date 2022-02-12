@@ -1,0 +1,115 @@
+<style type="text/css">
+  body {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 11px;
+    color: black;
+  }
+
+  .ibox-title {
+    font-size: 10px;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .in-table tr td,
+  .in-table tr th {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 3px;
+  }
+
+  .in-table tr th {
+    background-color: #c6d9f0;
+  }
+
+  .in-table table {
+    border: 0px;
+    margin-top: 5px;
+  }
+
+  .bottom-table tr td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding-left: 3px;
+  }
+
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+</style>
+
+<div class="ibox">
+
+  <div class="ibox-content" style="display: block;">
+    <div class="print-area" style="padding: 15px 30px;">
+
+      <table class="bottom-table">
+
+        <tr>
+          <td rowspan="3" width="270"><%= wicked_pdf_image_tag 'pgn.png', :height=>50 %></td>
+          <td rowspan="3" width="400"><h4 style="text-align: center; padding-top: 20px;">DAFTAR PERMINTAAN</h4>
+            <h4 style="text-align: center;">REQUEST DOKUMEN</h4>
+          </td>
+          <td style="height: 35;">O-001/100.04/F.02</td>
+        </tr>
+        <tr>
+          <td style="height: 35;">Issued: 13/9/2018</td>
+        </tr>
+        <tr>
+          <td style="height: 30;">Revision 00</td>
+        </tr>
+      </table>
+
+
+      <table style="font-size: 1.3pc; margin-top: 50px;">
+        <tr height="40">
+          <td width="30px">1.</td>
+          <td width="30%;">Diajukan oleh</td>
+          <td width="550">:</td>
+          <td width="60%;" style="text-align: justify;"><%= @request.first.requester.to_s %></td>
+        </tr>
+        <tr height="40">
+          <td>2.</td>
+          <td width="">Tanggal Pengajuan</td>
+          <td>:</td>
+          <td width="65%;" style="text-align: justify;"><%= @request.first.request_date.strftime('%d %b %Y').to_s %></td>
+        </tr>
+        <tr height="40">
+          <td>3.</td>
+          <td>Judul Dokumen</td>
+          <td>:</td>
+          <td width="65%;" style="text-align: justify;"><%= @request.first.document_title.to_s %></td>
+        </tr>
+        <tr height="40">
+          <td>4.</td>
+          <td>Nomor Dokumen</td>
+          <td>:</td>
+          <td width="65%;" style="text-align: justify;"><%= @request.first.document_code.to_s %></td>
+        </tr>
+        <tr height="40">
+          <td>5.</td>
+          <td>Nomor Revisi</td>
+          <td>:</td>
+          <td width="65%;" style="text-align: justify;"><%= @request.first.revision.to_s %></td>
+        </tr>
+        <tr height="40">
+          <td>6.</td>
+          <td>Latar Belakang Request</td>
+          <td>:</td>
+          <td width="65%;" style="text-align: justify;"><%= @request.first.reason_request.to_s %></td>
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<br>

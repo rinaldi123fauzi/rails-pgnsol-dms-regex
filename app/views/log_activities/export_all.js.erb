@@ -1,0 +1,33 @@
+$('#dialog h3').html("Range time for export");
+
+$('#body').html('<%= j render ("form_export_all") %>');
+
+$('#dialog').modal("show");
+
+$('#dialog').on('shown.bs.modal', function(){
+    $('.first_input').focus()
+})
+
+$(document).ready(function () {
+    $("#dateformat").datepicker({
+        dateFormat: 'yy-mm-dd',
+        defaultDate: "0d",
+        changeMonth: true,
+        changeYear: true,
+        prevText: "",
+        nextText: "",
+        <%# minDate: -30, %>
+        maxDate: 0
+    });
+    $("#dateformat1").datepicker({
+        dateFormat: 'yy-mm-dd',
+        defaultDate: "0d",
+        changeMonth: true,
+        changeYear: true,
+        prevText: "",
+        nextText: "",
+        <%# minDate: -30, %>
+        maxDate: 0
+    });
+});
+

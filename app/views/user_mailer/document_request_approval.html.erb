@@ -1,0 +1,112 @@
+<!--
+<h1>User#document_request</h1>
+
+<p>
+  <%= @greeting %>, find me in app/views/user_mailer/document_receiver.html.erb
+</p>
+
+<p> ada request dengan no document : <%= @document.document_code%></p>
+-->
+
+<img src="https://sdm.pgn-solution.co.id/application/essMobile/assets/img/logo-home.png" width="300" height="50" alt="">
+<hr style="color:black">
+
+<h3>Kepada Bapak / Ibu Yth,</h3>
+<%
+@month_indonesian = ["","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]
+# @month_name = @month_indonesian[@incoming_letter.tgl_terima.strftime("%m").to_i]
+#
+# @day = @incoming_letter.tgl_terima.strftime("%A")
+# def day_changer(day)
+#        case day
+#            when "Sunday"
+#                @hari = "Minggu"
+#
+#            when "Monday"
+#                @hari = "Senin"
+#
+#            when "Tuesday"
+#                @hari = "Selasa"
+#
+#            when "Wednesday"
+#                @hari = "Rabu"
+#
+#            when "Thursday"
+#                @hari = "Kamis"
+#
+#            when "Friday"
+#                @hari = "Jumat"
+#
+#           when "Saturday"
+#                @hari = "Sabtu"
+#        end
+#    end
+#   @hari = day_changer(@day)
+%>
+
+<p>Berikut permohonan untuk pembukaan akses download dokumen : </p>
+
+<table border="0">
+  <tr>
+    <td>No.Dokumen</td>
+    <td> : </td>
+    <td><%= @document.document_code%></td>
+  </tr>
+  <tr>
+    <td>Tgl Dokumen</td>
+    <td> : </td>
+    <% if @document.document_date.present? %>
+      <td><%= @month_name = @month_indonesian[@document.document_date.strftime("%m").to_i]
+        @document.document_date.strftime('%d ') + "#{@month_name}" + @document.document_date.strftime(' %Y')
+        %></td>
+    <% else %>
+      <td>-</td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Pemohon</td>
+    <td> : </td>
+    <td><%= @request.nama %></td>
+  </tr>
+  <tr>
+    <td>Status Request</td>
+    <td> : </td>
+    <td style="color: #00a300;"><%= @document_request.status_request %></td>
+  </tr>
+  <tr>
+    <td>Tgl Disetujui</td>
+    <td> : </td>
+    <td><%= @month_name = @month_indonesian[@document_request.approve_date.strftime("%m").to_i]
+      @document_request.approve_date.strftime('%d ') + "#{@month_name}" + @document_request.approve_date.strftime(' %Y')
+      %></td>
+  </tr>
+  <tr>
+    <td>Tgl Berakhir Download</td>
+    <td> : </td>
+    <td><%= @month_name = @month_indonesian[@document_request.end_date.strftime("%m").to_i]
+            @document_request.end_date.strftime('%d ') + "#{@month_name}" + @document_request.end_date.strftime(' %Y')
+    %></td>
+  </tr>
+  <tr>
+    <td>Keterangan</td>
+    <td> : </td>
+    <td><%= @document_request.reason_request%></td>
+  </tr>
+  <tr>
+    <td>File</td>
+    <td> : </td>
+    <td><%= link_to 'Download File', 'https://dms.pgn-solution.co.id/document_requests/download_hard_copy/' + @document_request.id.to_s %></td>
+  </tr>
+</table>
+
+<p>
+  Permohonan tersebut sudah disetujui dan dapat digunakan sebagaimana mestinya serta, dimohon untuk menjaga kerahasiaan dokumen.
+</p>
+<p>
+  Untuk akses download diberikan waktu 3 hari dari tanggal disetujui.
+</p>
+<p>Atas perhatiannya, disampaikan terimakasih. -- https://dms.pgn-solution.co.id --</p>
+
+<h3>Regards,</h3>
+<h3><%= @admin %></h3>
+<h3>PT. PGAS Solution</h3>

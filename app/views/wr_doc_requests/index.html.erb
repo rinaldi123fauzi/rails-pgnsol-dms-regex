@@ -1,0 +1,405 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="<%= root_path %>" style="text-decoration: none;">HOME</a></li>
+        <li><a href="<%= home_document_wr_docs_path %>" style="text-decoration: none;">Reference Documents</a></li>
+        <li>Document Request</li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <%# if current_user.is? 10 %>
+    <%#= link_to new_request_wr_doc_requests_path, class: 'btn btn-primary' do %>
+    <!--        <span class="glyphicon glyphicon-plus"></span>-->
+    <!--        New Wr doc request-->
+    <%# end end %>
+    <h1>Listing Request Reference Documents</h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+    <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+    -->
+    <header>
+      <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+    </header>
+
+    <!-- widget div-->
+    <div>
+
+      <!-- widget edit box -->
+      <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+      </div>
+      <!-- end widget edit box -->
+
+      <!-- widget content -->
+      <div class="widget-body">
+        <!--        <div class="widget-body no-padding">-->
+        <div class="table-responsive">
+          <table id="datatable_fixed_column" class="table table-striped table-bordered" width="100%">
+
+            <thead>
+            <!-- <tr>
+                          <th class="hasinput" style="width:17%">
+                <input type="text" class="form-control" placeholder="Wr doc" />
+              </th>
+                          <th class="hasinput" style="width:17%">
+                <input type="text" class="form-control" placeholder="Requester" />
+              </th>
+                          <th class="hasinput" style="width:17%">
+                <input type="text" class="form-control" placeholder="Status request" />
+              </th>
+                          <th class="hasinput" style="width:17%">
+                <input type="text" class="form-control" placeholder="Reason request" />
+              </th>
+
+            </tr> -->
+            <tr>
+              <th>No</th>
+              <th data-class="expand">Judul Dokumen</th>
+              <th>Nomor Dokumen</th>
+              <th data-hide="phone">Revisi</th>
+              <th data-hide="phone">Tanggal Berlaku</th>
+              <% if current_user.role_id != 10 %>
+                <th data-hide="phone,tablet">Requester</th>
+                <th data-hide="phone,tablet">Jabatan</th>
+                <th data-hide="phone,tablet">Divisi</th>
+              <% end %>
+              <th data-hide="phone,tablet">Tanggal Request</th>
+              <th data-hide="phone,tablet">Keterangan Request</th>
+              <th data-hide="phone,tablet">Status Reject (If any)</th>
+              <th data-hide="phone,tablet">Status Request</th>
+              <th data-hide="phone,tablet">Periode Download</th>
+              <% if current_user.is? 10 %>
+                <th data-hide="phone,tablet"></th>
+              <% else %>
+                <th data-hide="phone,tablet">Start Download</th>
+                <th data-hide="phone,tablet">End Download</th>
+                <th data-hide="phone,tablet"></th>
+                <th data-hide="phone,tablet"></th>
+              <% end %>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @wr_doc_requests.each_with_index do |wr_doc_request, index| %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= wr_doc_request.document_title %></td>
+                <td><%= wr_doc_request.document_code %></td>
+                <td><%= wr_doc_request.revision %></td>
+                <td><%= wr_doc_request.date.try(:strftime, '%d-%b-%Y') %></td>
+                <% if current_user.role_id != 10 %>
+                  <td><%= wr_doc_request.requester %></td>
+                  <td><%= wr_doc_request.position %></td>
+                  <td><%= wr_doc_request.division %></td>
+                <% end %>
+                <td><%= wr_doc_request.request_date.strftime('%d %b %Y') %></td>
+                <td><%= wr_doc_request.reason_request %></td>
+                <td><%= wr_doc_request.reject_reason %></td>
+                <% if wr_doc_request.status_request == "Pending Request" %>
+                  <td style="color: black; background-color: yellow;"><%= wr_doc_request.status_request %></td>
+                <% elsif wr_doc_request.status_request == "Approve1" %>
+                  <td style="color: white; background-color: #00a300;"><%= wr_doc_request.status_request %></td>
+                <% elsif wr_doc_request.status_request == "Approved" %>
+                  <td style="color: white; background-color: #00a300;"><%= wr_doc_request.status_request %></td>
+                <% elsif wr_doc_request.status_request == "Rejected" %>
+                  <td style="color: white; background-color: #8F2129;"><%= wr_doc_request.status_request %></td>
+                <% end %>
+                <% if wr_doc_request.file_copy.present? or wr_doc_request.approve_date.present?
+                     @doc_request = WrDocRequest.where('id = ? and approve_date <= ?', wr_doc_request.id, Date.current - 3.day).select('*').order('wr_doc_requests.id DESC')
+                     if @doc_request.present?
+                       file = @doc_request.first.file_copy.to_s
+                       folder_path = File.join('file', 'DMS', 'Work_Reference', 'File_Copy')
+                       file_path = File.join('public', folder_path, file)
+                       File.delete(file_path) if File.exist?(file_path) %>
+                    <td style="color: rgb(94, 96, 94, 0.8)">Download is Expired</td>
+                  <% else %>
+                    <% @count = "#{wr_doc_request.approve_date - (Date.current - 3.day)}".gsub("/1", "") %>
+                    <% if wr_doc_request.approve_date.present? %>
+                      <% if @count == 1.to_s or @count == 2.to_s or @count == 3.to_s %>
+                        <td><%= "#{wr_doc_request.approve_date - (Date.current - 3.day)}".gsub("/1", "") + " Hari" %></td>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% elsif wr_doc_request.status_request == "Rejected" %>
+                  <td><label for="" style="color: rgb(94, 96, 94, 0.8)">Download is Rejected</label></td>
+                <% else %>
+                  <td><label for="" style="color: rgb(94, 96, 94, 0.8)">Download is Pending</label></td>
+                <% end %>
+                <% if current_user.is? 10 %>
+                  <%
+                    @document_request = WrDocRequest.where('requester = ? and id = ? and approve_date >= ?', current_user.nama, wr_doc_request.id, Date.current - 3.day).select('*').order('wr_doc_requests.id DESC')
+                    @request = WrDocRequest.where('requester = ? and id = ?', current_user.nama, wr_doc_request.id).select('*').order('wr_doc_requests.id DESC')
+                    if @request.first.status_request.to_s == "Pending Request"
+                  %>
+                    <td><label for="" style="color: rgb(94, 96, 94, 0.8)">Pending Approval</label></td>
+                  <% elsif @request.first.status_request.to_s == "Rejected" %>
+                    <td><label for="" style="color: rgb(94, 96, 94, 0.8)">Rejected</label></td>
+                  <% else %>
+                    <% if @document_request.present? %>
+                      <td><%= link_to 'Download', download_file_wr_docs_path(wr_doc_request.id) %></td>
+                    <% else %>
+                      <td><label for="" style="color: rgb(94, 96, 94, 0.8)">Expired</label></td>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <% @doc_request = WrDocRequest.find_by(id: wr_doc_request.id)
+                     if @doc_request.approve_date.present?
+                  %>
+                    <td><%= wr_doc_request.approve_date.strftime('%d %b %Y') %></td>
+                    <td><%= wr_doc_request.end_date.strftime('%d %b %Y') %></td>
+                  <% else %>
+                    <td></td>
+                    <td></td>
+                  <% end %>
+                  <% if wr_doc_request.status_request == "Rejected" or wr_doc_request.status_request == "Approved" %>
+                    <%# <%= link_to 'Approve', lembar_pengesahaan_path(wr_doc_request, {format: 'pdf'}), target: '_blank' %>
+                    <td></td>
+                    <td></td>
+                  <% elsif current_user.is? 2 and wr_doc_request.status_request == "Approve1" %>
+                    <td></td>
+                    <td></td>
+                  <% else %>
+                    <!--                    <td><%#= link_to 'Approve', wr_approval_request_path(wr_doc_request), data: {confirm: 'Are you sure to approve?'} %></td>-->
+                    <% if current_user.is? 2 %>
+                      <td><%= link_to 'Approve1', do_approve_by_superadmin_wr_doc_requests_path(wr_doc_request), data: {confirm: 'Are you sure to approve?'} %></td>
+                      <td><%= link_to 'Reject', edit_reject_wr_doc_requests_path(wr_doc_request), remote: true %></td>
+                    <% else %>
+                      <td><%= link_to 'Approve2', edit_approve_wr_doc_requests_path(wr_doc_request), remote: true %></td>
+                      <td></td>
+                    <% end %>
+                    <!--                    <td><%#= link_to 'Reject', wr_reject_request_path(wr_doc_request), data: {confirm: 'Are you sure to reject?'} %></td>-->
+                  <% end %>
+                <% end %>
+              </tr>
+
+            <% end %>
+            </tbody>
+
+          </table>
+          <%= render 'layouts/modal' %>
+        </div>
+      </div>
+      <!-- end widget content -->
+
+    </div>
+    <!-- end widget div -->
+
+  </div>
+  <% content_for :scripts do %>
+
+    <script type="text/javascript">
+
+        // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+        $(document).ready(function () {
+
+            pageSetUp();
+
+            /* // DOM Position key index //
+
+             l - Length changing (dropdown)
+             f - Filtering input (search)
+             t - The Table! (datatable)
+             i - Information (records)
+             p - Pagination (paging)
+             r - pRocessing
+             < and > - div elements
+             <"#id" and > - div with an id
+             <"class" and > - div with a class
+             <"#id.class" and > - div with an id and class
+
+             Also see: http://legacy.datatables.net/usage/features
+             */
+
+            /* BASIC ;*/
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+            /* END BASIC */
+
+            /* COLUMN FILTER  */
+            var otable = $('#datatable_fixed_column').DataTable({
+                //"bFilter": false,
+                //"bInfo": false,
+                //"bLengthChange": false
+                //"bAutoWidth": false,
+                //"bPaginate": false,
+                //"bStateSave": true // saves sort state using localStorage
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'f><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_fixed_column) {
+                        responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_datatable_fixed_column.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_datatable_fixed_column.respond();
+                }
+
+            });
+
+            // Apply the filter
+            $("#datatable_fixed_column thead th input[type=text]").on('keyup change', function () {
+
+                otable
+                    .column($(this).parent().index() + ':visible')
+                    .search(this.value)
+                    .draw();
+
+            });
+            /* END COLUMN FILTER */
+
+            /* COLUMN SHOW - HIDE */
+            $('#datatable_col_reorder').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                "autoWidth": true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_col_reorder) {
+                        responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_datatable_col_reorder.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_datatable_col_reorder.respond();
+                }
+            });
+
+            /* END COLUMN SHOW - HIDE */
+
+            /* TABLETOOLS */
+            $('#datatable_tabletools').dataTable({
+
+                // Tabletools options:
+                //   https://datatables.net/extensions/tabletools/button_options
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "oTableTools": {
+                    "aButtons": [
+                        "copy",
+                        "csv",
+                        "xls",
+                        {
+                            "sExtends": "pdf",
+                            "sTitle": "SmartAdmin_PDF",
+                            "sPdfMessage": "SmartAdmin PDF Export",
+                            "sPdfSize": "letter"
+                        },
+                        {
+                            "sExtends": "print",
+                            "sMessage": "Generated by SmartAdmin <i>(press Esc to close)</i>"
+                        }
+                    ],
+                    "sSwfPath": "js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+                },
+                "autoWidth": true,
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_tabletools) {
+                        responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_datatable_tabletools.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_datatable_tabletools.respond();
+                }
+            });
+
+            /* END TABLETOOLS */
+
+        })
+
+    </script>
+    </div>
+  <% end %>

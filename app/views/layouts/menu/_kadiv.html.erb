@@ -1,0 +1,39 @@
+<% if is_active_controller('documents') %>
+  <li class="dropdown">
+    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Quality Management">
+      <i class='fa fa-lg fa-fw fa-home'></i>
+      <span class="nav-label"> QMS <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+    <ul
+      <% if current_page?(new_document_path) or current_page?(internal_audits_url) or current_page?(new_internal_audit_path) or current_page?(sub_fields_path)
+           concat "style='display:block;'".html_safe
+         end
+      %>>
+      <li
+        <% if current_page?(view_all_index_documents_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+        <a href="<%= view_all_index_documents_path %>" title="Document Viewer"><span class='menu-item-parent'>Document Viewer</span></a>
+      </li>
+    </ul>
+  </li>
+<% end %>
+
+<% if is_active_controller('wr_docs') %>
+  <li class="dropdown">
+    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Work Reference">
+      <i class='fa fa-lg fa-fw fa-home'></i>
+      <span class="nav-label"> Work Reference <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+    <ul
+      <% if current_page?(new_wr_doc_path) or current_page?(internal_wr_audits_url) or current_page?(new_internal_wr_audit_path)
+           concat "style='display:block;'".html_safe
+         end
+      %>>
+      <li
+        <% if current_page?(view_all_index_wr_docs_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+        <a href="<%= view_all_index_wr_docs_path %>" title="Document Viewer"><span class='menu-item-parent'>Document Viewer</span></a>
+      </li>
+<% end %>

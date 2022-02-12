@@ -1,0 +1,2 @@
+module WrDocRevisionsHelper
+end

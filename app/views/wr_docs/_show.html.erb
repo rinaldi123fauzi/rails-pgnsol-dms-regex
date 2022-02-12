@@ -1,0 +1,74 @@
+<!-- MAIN CONTENT -->
+<div id="error_explanation" class="bg-danger text-danger"></div>
+<div class="modal-body">
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+    <div class="widget-body">
+      <dl class="dl-horizontal">
+        <div id="myTabContent" class="tab-content">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <div class="ibox-content" style="display: block;">
+                <table class="table table-bordered">
+                  <tr>
+                    <td colspan="2" align="center"><strong>DETAIL</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nomor Dokumen:</strong></td>
+                    <!--                      <td class="gen_number"><-->
+                    <!--                        <b><%#=@number%></b> <span class="label label-warning" title="Silahkan ganti status terlebih dahulu menjadi Request Procurement"><i class="fa fa-info"></i></span>-->
+                    <!--                      </td>-->
+                    <td><b><%= @wr_docs_code %></b></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Judul Dokumen:</strong></td>
+                    <td><%= @wr_docs_title %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Field:</strong></td>
+                    <td><%= @wr_docs_field %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sub Field:</strong></td>
+                    <td><%= @wr_docs_sub_field %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tipe Dokumen:</strong></td>
+                    <td><%= @wr_docs_doc_type%></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sifat Dokumen:</strong></td>
+                    <td><%= @sifat %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Issued By:</strong></td>
+                    <td><%= @wr_docs_issued_by %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tanggal Berlaku:</strong></td>
+                    <td><%= @wr_docs_date.present? ? @wr_docs_date : "" %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Revisi:</strong></td>
+                    <td><%= @wr_docs_revision %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Penanggung Jawab:</strong></td>
+                    <td><%= @penanggung_jawab %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lokasi Simpan:</strong></td>
+                    <td><%= @save_location %></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lama Simpan:</strong></td>
+                    <td><%= @save_date.present? ? distance_of_time_in_words(Time.now, @save_date, true, :only => [:years, :months, :weeks, :days]) : ""%></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <% @sub2field = Sub2Field.left_outer_joins(:sub_field).where(sub2_field_id: params[:sub2_field_id]).select('*') %>
+        <% @subfield = SubField.left_outer_joins(:field).where(sub_field_id: @sub2field.first.sub_field_id.to_s).select('*') %>
+        <% @field = Field.where(field_id: @subfield.first.field_id.to_s).select('*') %>
+        <span class="project-selector dropdown-toggle" data-toggle="dropdown" style="color: #bababa;"><%= _('...') %>
+          <i class="fa fa-angle-down"></i></span>
+        <ul class="dropdown-menu">
+          <li><a href="<%= root_path %>">HOME</a></li>
+          <li><a href="<%= home_document_wr_docs_path %>">Reference Documents</a></li>
+          <li>
+            <a href="<%= sub_wr_doc_path(@subfield.first.field_id.to_s) %>" title="<%= "#{@subfield.first.description_field.to_s}" %>"><%= @field.first.description_field.to_s.slice(0, 30) + "..." %></a>
+          </li>
+          <li>
+            <a href="<%= sub2_home_document_wr_docs_path(@sub2field.first.sub_field_id.to_s) %>" title="<%= "#{@sub2field.first.description_sub_field.to_s}" %>"><%= @sub2field.first.description_sub_field.to_s.slice(0, 30) + "..." %></a>
+          </li>
+        </ul>
+        <li><%= "#{@sub2field.first.sub2_name.truncate(35, sparator: "...").to_s}" %></li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <h1><a href="#" style="text-decoration: none; color: black;" title="<%= @sub2field.first.sub2_name.to_s %>">References
+      Documents - <%= @sub2field.first.sub2_name.truncate(23, sparator: '..').to_s %></a></h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+  <%= render 'layouts/css_cards' %>
+  <dl class="dl-horizontal">
+    <div class="row animated fadeInDown">
+      <%
+        if @sub3_field.empty?
+          concat "<h3>Data is not exists</h3>".html_safe
+        end
+        @sub3_field.each do |f|
+      %>
+        <div class="col-lg-2 col-md-2 col-xs-6 col-sm-3" id="card">
+          <% @sub4field = Sub4Field.find_by_sub3_field_id(f.sub3_field_id) %>
+          <!--<span class="label label-success pull-right">Monthly</span>-->
+          <% if @sub4field.present? %>
+            <a href="<%= sub4_home_document_wr_docs_path(f.sub3_field_id) %>" style="text-decoration:none; color:black;" title="<%= f.sub3_name_field %>">
+              <div class="card">
+                <h3 class="title"><%= f.sub3_name_field %></h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                  <% @WrDoc = WrDoc.where('sub3_field_id = ?', f.sub3_field_id).select('*') %>
+                  <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+                </div>
+              </div>
+            </a>
+            <br>
+          <% else %>
+            <a href="<%= view3_index_wr_docs_path(f.sub3_field_id) %>" style="text-decoration:none; color:black;" title="<%= f.sub3_name_field %>">
+              <div class="card">
+                <h3 class="title"><%= f.sub3_name_field %></h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                  <% @WrDoc = WrDoc.where('sub3_field_id = ?', f.sub3_field_id).select('*') %>
+                  <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+                </div>
+              </div>
+            </a>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </dl>
+  <%#= render 'layouts/pagination_cards' %>
+  <%#= will_paginate @sub3_field, renderer: @custom_paginate_renderer %>
+</div>

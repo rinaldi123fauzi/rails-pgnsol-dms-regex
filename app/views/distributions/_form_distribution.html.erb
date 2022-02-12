@@ -1,0 +1,99 @@
+<%= form_for(@distribution) do |f| %>
+  <div class="modal-body">
+    <div class="smart-form">
+      <div class="row">
+        <% if @distribution.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4><%= pluralize(@distribution.errors.count, "error") %> prohibited this member from being saved:</h4>
+
+            <ul>
+              <% @distribution.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <header>
+          Document Distribution
+        </header>
+
+        <fieldset>
+          <% if @document_request.document_id.present? %>
+            <input type="hidden" value="<%= @document_request.document_id %>" name="distribution[document_id]">
+          <% end %>
+          <input type="hidden" value="<%= @document_request.attachment_file %>" name="distribution[attachment_file]">
+          <input type="hidden" value="<%= current_user.username %>" name="distribution[sender]">
+          <input type="hidden" value="<%= @document_request.id %>" name="document_request">
+          <section>
+            <label class="control-label">Tujuan Distribusi</label>
+            <select multiple style="max-width:100%;" class="form-control select2" name="distribution[receiver][]">
+              <option value="">Pilih</option>
+              <% @member = Member.where(status: "Active").select('*').order("nama ASC") %>
+              <% @member.each do |f| %>
+                <option value="<%= f.username %>"><%= f.nama %></option>
+              <% end %>
+            </select>
+          </section>
+        </fieldset>
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% content_for :scripts do %>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+          pageSetUp();
+          var errorClass = 'invalid';
+          var errorElement = 'em';
+          var $reviewForm = $("#review-form").validate({
+              errorClass: errorClass,
+              errorElement: errorElement,
+              highlight: function (element) {
+                  $(element).parent().removeClass('state-success').addClass("state-error");
+                  $(element).removeClass('valid');
+              },
+              unhighlight: function (element) {
+                  $(element).parent().removeClass("state-error").addClass('state-success');
+                  $(element).addClass('valid');
+              },
+              // Rules for form validation
+              rules: {
+                  //         'member[password]' : {
+                  //   required : true
+                  // },
+                  'distribution[receiver]': {
+                      required: true
+                  },
+                  //         'member[last_login]' : {
+                  //   required : true
+                  // },
+              },
+
+              // Messages for form validation
+              messages: {
+                  'distribution[receiver]': {
+                      required: 'Please enter your textbox receiver '
+                  },
+                  //         'member[password]' : {
+                  //   required : 'Please enter your textbox password '
+                  // },
+                  //         'member[last_login]' : {
+                  //   required : 'Please enter your textbox last_login '
+                  // },
+              },
+
+              // Do not change code below
+              errorPlacement: function (error, element) {
+                  error.insertAfter(element.parent());
+              }
+          });
+      });
+  </script>
+<% end %>

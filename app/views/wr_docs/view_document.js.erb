@@ -1,0 +1,10 @@
+<% @document = WrDoc.find_by_wr_doc_id(params[:wr_doc_id]) %>
+$('#dialog h3').html("<%= @document.document_code + " - " + @document.document_title %>");
+
+$('#body').html('<%= j render ("view_doc") %>');
+
+$('#dialog').modal("show");
+
+$('#dialog').on('shown.bs.modal', function(){
+    $('.first_input').focus()
+})

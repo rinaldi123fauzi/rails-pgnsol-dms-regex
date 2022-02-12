@@ -1,0 +1,333 @@
+<header id="header">
+  <div id="logo-group">
+
+    <!-- PLACE YOUR LOGO HERE -->
+    <% if session[:id].present? %>
+      <span id="logo" class="hidden-lg hidden-md hidden-sm"> <a href="/"> <%= image_tag 'main-dms-logo.png', alt: 'SmartAdmin', style: "width: 80px; margin-top: -10px;" %> </a> </span>
+      <span id="logo" class="hidden-xs"> <a href="/"> <%= image_tag 'logo-home.png', alt: 'SmartAdmin', style: "width: 150px;" %> </a> </span>
+    <% else %>
+      <span id="logo" class="hidden-sm hidden-xs"> <a href="/"> <%= image_tag 'logo-home.png', alt: 'SmartAdmin', style: "width: 150px;" %> </a> </span>
+      <span id="logo" class="hidden-lg hidden-md"> <a href="/"> <%= image_tag 'main-dms-logo.png', alt: 'SmartAdmin', style: "width: 110px; margin-top: -25px;" %> </a> </span>
+    <% end %>
+    <!-- END LOGO PLACEHOLDER -->
+
+    <% if session[:id].present? %>
+      <!-- Note: The activity badge color changes when clicked and resets the number to 0
+      Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+
+      <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+      <div class="ajax-dropdown">
+
+        <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+        <div class="btn-group btn-group-justified" data-toggle="buttons">
+          <label class="btn btn-default">
+            <input type="radio" name="activity" id="<%= ajax_notify_mail_path %>">
+            <%= _('Msgs') %> (14) </label>
+          <label class="btn btn-default">
+            <input type="radio" name="activity" id="<%= ajax_notify_notifications_path %>">
+            <%= _('notify') %> (3) </label>
+          <label class="btn btn-default">
+            <input type="radio" name="activity" id="<%= ajax_notify_tasks_path %>">
+            <%= _('Tasks') %> (4) </label>
+        </div>
+
+        <!-- notification content -->
+        <div class="ajax-notifications custom-scroll">
+
+          <div class="alert alert-transparent">
+            <h4>Click a button to show messages here</h4>
+            This blank page message helps protect your privacy, or you can show the first message here automatically.
+          </div>
+
+          <i class="fa fa-lock fa-4x fa-border"></i>
+
+        </div>
+        <!-- end notification content -->
+
+        <!-- footer: refresh area -->
+        <span> Last updated on: 12/12/2013 9:43AM
+              <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+                <i class="fa fa-refresh"></i>
+              </button>
+            </span>
+        <!-- end footer -->
+
+      </div>
+      <!-- END AJAX-DROPDOWN -->
+    <% end %>
+  </div>
+  <%= yield :top_right %>
+
+  <% if session[:id].present? %>
+    <!-- projects dropdown -->
+    <div class="row">
+      <div class="col-md-6">
+        <% if current_user.is? 19 %>
+          <div class="row hidden-xs hidden-sm" style="padding-top: 6%;">
+            <div class="col-md-4">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tambah Folder
+                  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Reference Modules</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a tabindex="-1" href="<%= fields_path %>" title="Fields Document"><span class='menu-item-parent' style="color: black;">Folder Utama</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub_fields_path %>" title="Sub Fields Document"><span class='menu-item-parent' style="color: black;">Layer 1</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub2_fields_path %>" title="Sub2 Fields Document"><span class='menu-item-parent' style="color: black;">Layer 2</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub3_fields_path %>" title="Sub3 Fields Document"><span class='menu-item-parent' style="color: black;">Layer 3</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub4_fields_path %>" title="Sub4 Fields Document"><span class='menu-item-parent' style="color: black;">Layer 4</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% elsif current_user.is? 2 %>
+          <div class="row hidden-xs hidden-sm" style="padding-top: 6%;">
+            <div class="col-md-4">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Master Data
+                  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Quality Modules</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a tabindex="-1" href="<%= document_references_url %>" title="Reference Document"><span class='menu-item-parent' style="color: black;">Reference Document</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= document_types_url %>" title="Document Type"><span class='menu-item-parent' style="color: black;">Document Type</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub_document_types_url %>" title="Sub Document Type"><span class='menu-item-parent' style="color: black;">Sub Document Types</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub2_document_types_url %>" title="Sub2 Document Type"><span class='menu-item-parent' style="color: black;">Sub2 Document Types</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= document_classifications_url %>" title="Document Classification"><span class='menu-item-parent' style="color: black;">Document Classification</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Reference Modules</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a tabindex="-1" href="<%= fields_path %>" title="Fields Document"><span class='menu-item-parent' style="color: black;">Fields Document</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub_fields_path %>" title="Sub Fields Document"><span class='menu-item-parent' style="color: black;">Sub Fields Document</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub2_fields_path %>" title="Sub2 Fields Document"><span class='menu-item-parent' style="color: black;">Sub2 Fields Document</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub3_fields_path %>" title="Sub3 Fields Document"><span class='menu-item-parent' style="color: black;">Sub3 Fields Document</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= sub4_fields_path %>" title="Sub4 Fields Document"><span class='menu-item-parent' style="color: black;">Sub4 Fields Document</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= wr_doc_types_path %>" title="Reference Type Document"><span class='menu-item-parent' style="color: black;">Reference Types Document</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Account Settings</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a tabindex="-1" href="<%= members_url %>" title="Members" style="color: black;"><span class='menu-item-parent'>Members</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= permissions_path %>" title="Permissions" style="color: black;"><span class='menu-item-parent'>Permissions</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">List Activity</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a tabindex="-1" href="<%= list_login_log_activities_path %>" title="Log" style="color: black;"><span class='menu-item-parent'>Activities Login</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= list_request_log_activities_path %>" title="Log Request" style="color: black;"><span class='menu-item-parent'>Request Activities</span></a>
+                      </li>
+                      <li>
+                        <a tabindex="-1" href="<%= log_activities_url %>" title="Log" style="color: black;"><span class='menu-item-parent'>Log Activities</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="project-context">
+
+          <span class="label">Role Akses:</span>
+          <% role = Permission.joins(:role, :member).where('permissions.permission_id = ?', session[:id]).select('*')
+             role.each do |f|
+               @description = f.nama_role
+             end
+          %>
+
+            <span class="project-selector dropdown-toggle" data-toggle="dropdown"><%= _(@description) %>
+              <i class="fa fa-angle-down"></i></span>
+
+          <!-- Suggestion: populate this list with fetch and push technique -->
+          <ul class="dropdown-menu">
+            <%
+              user = Permission.joins(:role).where('member_id = ' + "#{current_user.member_id}" + ' and permission_id != ' + "#{session[:id]}" + ' and permissions.role_id != 1').select('*')
+              user.each do |f|
+                @description = f.nama_role
+                @permission_id = f.permission_id
+            %>
+              <li>
+                <a href="#" onclick="pilih_role('<%= @permission_id %>')"><%= @description %></a>
+              </li>
+            <% end %>
+            <script type="text/javascript">
+                function pilih_role(id) {
+                    console.log(id);
+                    $.ajax({
+                        type: "GET",
+                        url: "../switch_role",
+                        dataType: "json",
+                        data: {
+                            some_parameter: id
+                        },
+                        success: function (result) {
+                            if (result) {
+                                location.href = "<%= root_path%>";
+                            } else {
+                                console.log('gagal');
+                            }
+                        }
+                    });
+                }
+            </script>
+          </ul>
+          <!-- end dropdown-menu-->
+
+        </div>
+
+      </div>
+      <!-- <div class="col-md-6 col-sm-6 hidden-xs">
+        <div class="project-context">
+          <span class="label">Akun:</span>
+          <p><%= current_user.nama %></p>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- end projects dropdown -->
+
+    <!-- pulled right: nav area -->
+    <div class="pull-right">
+
+      <!-- collapse menu button -->
+      <!-- <div id="hide-menu" class="btn-header pull-right">
+        <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+      </div> -->
+      <!-- end collapse menu -->
+
+      <!-- #MOBILE -->
+      <!-- Top menu profile link : this shows only when top menu is active -->
+      <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+        <li class="">
+          <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+            <%= image_tag 'avatars/sunny.png', alt: 'John Doe', class: 'online' %>
+          </a>
+          <ul class="dropdown-menu pull-right">
+            <li>
+              <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i>
+                Setting</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i>
+                <u>P</u>rofile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i>
+                <u>S</u>hortcut</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i>
+                Full <u>S</u>creen</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i>
+                <strong><u>L</u>ogout</strong></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- logout button -->
+      <div id="logout" class="btn-header transparent pull-right">
+        <span>
+          <%= link_to(destroy_user_session_path, title: 'Sign Out', data: {action: 'userLogout', 'logout-msg' => 'You can improve your security further after logging out by closing this opened browser'}) do %>
+            <i class="fa fa-sign-out"></i>
+          <% end %>
+        </span>
+      </div>
+      <!-- end logout button -->
+
+      <!-- search mobile button (this is hidden till mobile view port) -->
+
+      <!-- end search mobile button -->
+
+      <!-- input: search field -->
+
+      <!-- end input: search field -->
+
+      <!-- fullscreen button -->
+      <div id="fullscreen" class="btn-header transparent pull-right">
+        <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+      </div>
+      <!-- end fullscreen button -->
+
+      <div id="fullscreen" class="btn-header transparent pull-right hidden-xs">
+        <span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
+					<a href="">
+            <%#= image_tag 'avatars/small.svg', alt: 'me', class: 'online' %>
+            <span style="color: black; font-style: bold;">
+							<%= current_user.nama %>
+						</span>
+            <!--            <i class="fa fa-angle-down"></i>-->
+          </a>
+
+				</span>
+      </div>
+
+      <!-- #Voice Command: Start Speech -->
+
+      <!-- end voice command -->
+
+      <!-- multiple lang dropdown : find all flags in the flags page -->
+
+      <!-- end multiple lang -->
+
+    </div>
+    <!-- end pulled right: nav area -->
+  <% end %>
+
+</header>

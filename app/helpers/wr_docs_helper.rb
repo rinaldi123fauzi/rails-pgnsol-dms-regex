@@ -1,0 +1,2 @@
+module WrDocsHelper
+end

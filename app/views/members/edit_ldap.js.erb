@@ -1,0 +1,101 @@
+$('#dialog h3').html("Editing Member");
+
+$('#body').html('<%= j render ("form_edit_ldap1") %>');
+
+$('#dialog').modal("show");
+
+$('#dialog').on('shown.bs.modal', function(){
+    $('.first_input').focus()
+})
+
+var email, nama;
+
+email = $('#email').html();
+
+nama = $('#nama').html();
+
+console.log(email);
+
+$('#username').change(function() {
+    var option, userSelectBox, username;
+    username = $('#username').val();
+    console.log(username);
+    username = $('#username :selected').text();
+    userSelectBox = $('#email');
+    userSelectBox = $('#nama');
+    userSelectBox.html('');
+    if (username.length === 0) {
+        return userSelectBox.append($('<input>').type('text').attr('value'));
+    } else {
+        option = $('#email').attr('value', username + '@pgn-solution.co.id');
+        option = $('#nama').attr('value', username.replace(".", " ").toUpperCase());
+        return userSelectBox.append(option);
+    }
+});
+
+    $(document).ready(function () {
+
+        pageSetUp();
+        var errorClass = 'invalid';
+        var errorElement = 'em';
+        var $reviewForm = $("#review-form").validate({
+            errorClass: errorClass,
+            errorElement: errorElement,
+            highlight: function (element) {
+                $(element).parent().removeClass('state-success').addClass("state-error");
+                $(element).removeClass('valid');
+            },
+            unhighlight: function (element) {
+                $(element).parent().removeClass("state-error").addClass('state-success');
+                $(element).addClass('valid');
+            },
+            // Rules for form validation
+            rules: {
+                'member[username]': {
+                    required: true
+                },
+                //         'member[password]' : {
+                //   required : true
+                // },
+                'member[nama]': {
+                    required: true
+                },
+                'member[email]': {
+                    required: true
+                },
+                'member[status]': {
+                    required: true
+                },
+                //         'member[last_login]' : {
+                //   required : true
+                // },
+            },
+
+            // Messages for form validation
+            messages: {
+                'member[username]': {
+                    required: 'Please enter your textbox username '
+                },
+                //         'member[password]' : {
+                //   required : 'Please enter your textbox password '
+                // },
+                'member[nama]': {
+                    required: 'Please enter your textbox nama '
+                },
+                'member[email]': {
+                    required: 'Please enter your textbox email '
+                },
+                'member[status]': {
+                    required: 'Please enter your selectbox status '
+                },
+                //         'member[last_login]' : {
+                //   required : 'Please enter your textbox last_login '
+                // },
+            },
+
+            // Do not change code below
+            errorPlacement: function (error, element) {
+                error.insertAfter(element.parent());
+            }
+        });
+    });

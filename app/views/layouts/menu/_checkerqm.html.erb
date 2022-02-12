@@ -1,0 +1,166 @@
+<li <% if current_page?(root_path)
+      concat "class='active'".html_safe
+    end
+ %>>
+    <a href="<%= root_path%>" title="Home"><i class='fa fa-lg fa-fw fa-home'></i><span class='menu-item-parent'>Home</span></a>
+</li>
+
+<%# Logical notification %>
+
+<%
+@document = Document.where("checker = ? and status = ? or status = ? or status = ?", current_user.nama, "Open", "Revision Done", "Request").select('*')
+if @document.present?
+  # @sign = "<span class='badge bg-color-greenLight pull-left inbox-badge'>!</span>"
+  @sign = "<i class='text-warning fa fa-warning flash animated'></i>"
+else
+  @sign = ""
+end
+%>
+
+<!-- QR Systems Module -->
+
+<li
+<% @sub_type = SubDocumentType.all
+  @sub_type.each do |f|
+    @sub_type_id = f.sub_document_type_id
+%>
+<% if current_page?(new_document_path) or current_page?(new_internal_audit_path) or current_page?(internal_audits_url) or current_page?(home_qms_documents_path) or current_page?(sub_type_document_path(@sub_type_id)) or current_page?(view_base_type_path(@sub_type_id))
+      concat "class='dropdown active'".html_safe
+    end end %>
+>
+ <!-- data-toggle="dropdown" -->
+  <a aria-expanded="false" role="button" href="<%= home_qms_documents_path %>" class="dropdown-toggle" title="Quality Management System"> <i class='fa fa-lg fa-fw fa-home'></i> <span class="nav-label"> QM Systems <% concat @sign.html_safe %> <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+  <% @sub_type = SubDocumentType.all
+    @sub_type.each do |f|
+      @sub_type_id = f.sub_document_type_id
+  %>
+  <ul <% if current_page?(new_document_path) or current_page?(new_internal_audit_path) or current_page?(internal_audits_url) or current_page?(home_qms_documents_path) or current_page?(sub_type_document_path(@sub_type_id)) or current_page?(view_base_type_path(@sub_type_id))
+        concat "style='display:block;'".html_safe
+      end end
+   %>>
+   <li class="dropdown">
+   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Document Control"> <span class="nav-label"> Document Control <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+     <ul <% if current_page?(new_document_path) or current_page?(new_internal_audit_path) or current_page?(internal_audits_url)
+           concat "style='display:block;'".html_safe
+         end
+      %>>
+       <li <% if current_page?(new_document_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= new_document_path%>" title="New Document"><span class='menu-item-parent'>New Document</span></a>
+       </li>
+       <li <% if current_page?(new_internal_audit_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= new_internal_audit_path%>" title="Internal Audit"><span class='menu-item-parent'>Internal Audit</span></a>
+       </li>
+       <li <% if current_page?(internal_audits_url)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= internal_audits_url%>" title="Log Internal Audit"><span class='menu-item-parent'>Log Internal Audit</span></a>
+       </li>
+     </ul>
+   </li>
+
+   <li class="dropdown">
+   <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Control Management"> <span class="nav-label"> Control Management <% concat @sign.html_safe %> <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+     <ul <% if current_page?(document_revisions_path) or current_page?(documents_path)
+           concat "style='display:block;'".html_safe
+         end
+      %>>
+       <li <% if current_page?(document_revisions_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= document_revisions_path%>" title="List Document Revision"><span class='menu-item-parent'>List Document Revision</span></a>
+       </li>
+       <li <% if current_page?(document_check_documents_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= document_check_documents_path%>" title="Document Check"><span class='menu-item-parent'><span class='badge bg-color-yellow pull-right inbox-badge flash animated'><b style='color:black;font-size:12px;'><%= "#{@document.count}" %></b></span>Document Check</span></a>
+       </li>
+       <li <% if current_page?(documents_path)
+             concat "class='active'".html_safe
+           end
+        %>>
+           <a href="<%= documents_path%>" title="Manage Document"><span class='menu-item-parent'>Manage Document</span></a>
+       </li>
+     </ul>
+   </li>
+   <li <% if current_page?(document_tracking_documents_path)
+         concat "class='active'".html_safe
+       end
+    %>>
+       <a href="<%= document_tracking_documents_path%>" title="Document Tracking"><span class='menu-item-parent'>Document Tracking</span></a>
+   </li>
+   <li <% if current_page?(document_request_documents_path)
+         concat "class='active'".html_safe
+       end
+    %>>
+       <a href="<%= document_request_documents_path%>" title="Request Document"><span class='menu-item-parent'>Request Document</span></a>
+   </li>
+   <li <% if current_page?(view_all_index_documents_path)
+         concat "class='active'".html_safe
+       end
+    %>>
+       <a href="<%= view_all_index_documents_path%>" title="Document Viewer"><span class='menu-item-parent'>Document Viewer</span></a>
+   </li>
+  </ul>
+</li>
+
+<!-- Work Reference Module -->
+
+<li
+<% @sub_type = Field.all
+  @sub_type.each do |f|
+    @sub_type_id = f.field_id
+%>
+<% if current_page?(home_document_wr_docs_path) or current_page?(all_index_wr_docs_path(@sub_type_id))
+      concat "class='dropdown active'".html_safe
+    end end
+ %>
+>
+<!-- data-toggle="dropdown" -->
+  <a aria-expanded="false" role="button" href="<%= home_document_wr_docs_path %>" class="dropdown-toggle" title="Work Reference Document"> <i class='fa fa-lg fa-fw fa-home'></i> <span class="nav-label"> WR Document <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+  <ul
+  <% @sub_type = Field.all
+    @sub_type.each do |f|
+      @sub_type_id = f.field_id
+  %>
+  <% if current_page?(home_document_wr_docs_path) or current_page?(all_index_wr_docs_path(@sub_type_id))
+        concat "style='display:block;'".html_safe
+      end end
+   %>
+  >
+    <% @field = Field.all.order('description_field ASC')
+      @field.each do |f|
+    %>
+    <li class="dropdown">
+    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="nav-label"> <%= f.description_field %> <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+      <ul>
+        <%
+        @subfield = SubField.joins(:field).where('sub_fields.field_id = ?', "#{f.field_id}").select('*').order('description_sub_field ASC')
+          @subfield.each do |ff|
+        %>
+        <li <% if current_page?(reference_document_path(ff.sub_field_id))
+              concat "class='active'".html_safe
+            end
+         %>>
+            <a href="<%= reference_document_path(ff.sub_field_id)%>"><span class='menu-item-parent'><%= ff.description_sub_field %></span></a>
+        </li>
+        <% end %>
+      </ul>
+    </li>
+    <% end %>
+  </ul>
+</li>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+    });
+  </script>

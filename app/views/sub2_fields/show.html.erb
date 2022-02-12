@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to sub2_fields_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_sub2_field_path(@sub2_field), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show sub2_field</h1>
+</div>
+
+<dl class="dl-horizontal">
+
+  <dt>Sub field:</dt>
+  <dd><%= @sub2_field.sub_field_id %></dd>
+
+
+  <dt>Sub2 name:</dt>
+  <dd><%= @sub2_field.sub2_name %></dd>
+
+
+</dl>

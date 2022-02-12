@@ -1,0 +1,9 @@
+$('#dialog h3').html("<%= @wr_docs_code.present? ? @wr_docs_code : "" + " - " + @wr_docs_title.present? ? @wr_docs_title : "" %>");
+
+$('#body').html('<%= j render ("show") %>');
+
+$('#dialog').modal("show");
+
+$('#dialog').on('shown.bs.modal', function(){
+    $('.first_input').focus()
+})

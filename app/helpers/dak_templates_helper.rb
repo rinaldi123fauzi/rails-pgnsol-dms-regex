@@ -1,0 +1,2 @@
+module DakTemplatesHelper
+end

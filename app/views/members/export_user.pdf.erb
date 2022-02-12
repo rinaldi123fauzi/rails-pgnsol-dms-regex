@@ -1,0 +1,113 @@
+<style type="text/css">
+  body {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 11px;
+    color: black;
+  }
+
+  .ibox-title {
+    font-size: 10px;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .in-table tr td,
+  .in-table tr th {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 3px;
+  }
+
+  .in-table tr th {
+    background-color: #c6d9f0;
+  }
+
+  .in-table table {
+    border: 0px;
+    margin-top: 5px;
+  }
+
+  .bottom-table tr td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding-left: 3px;
+  }
+
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+</style>
+
+<div class="ibox">
+
+  <div class="ibox-content" style="display: block;">
+    <div class="print-area" style="padding: 15px 30px;">
+
+      <table class="bottom-table">
+        <tr>
+          <td width="365" height="60">
+            <div style="margin: 20px"><%= wicked_pdf_image_tag 'pgn.png', :height => 50 %></div>
+          </td>
+          <td colspan="3">
+            <h3 style="text-align: center; margin-top: 15px;font-style: italic;font-size: 16px;">
+              <b>DAFTAR USER</b></h3>
+            <!--            <p style="text-align: center; margin-bottom: 15px">Quality Management - DAK</p>-->
+          </td>
+        </tr>
+      </table>
+
+
+      <table style="border-collapse: collapse;" class="in-table">
+        <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @log_request.each_with_index do |log_activity, index| %>
+          <tr>
+            <% ldap = Net::LDAP.new :host => '192.168.60.159',
+                                    :port => 389,
+                                    :auth => {
+                                        :method => :simple,
+                                        :username => "cn=manager, dc=pgn-solution, dc=co, dc=id",
+                                        :password => "4lh4mdul1ll4h"
+                                    }
+              filter = Net::LDAP::Filter.eq("cn", "#{log_activity.username}")
+              treebase = "dc=pgn-solution, dc=co, dc=id"
+              ldap.search(:base => treebase, :filter => filter) do |entry|
+                @data = entry["sn"].map(&:inspect).join(', ').gsub('"', '')
+              end
+            %>
+            <% if log_activity.username == @data and (@data != "maulita" and @data != "azhar" and @data != "rinaldi.fauzi")%>
+              <td><%= index + 1 %></td>
+              <td><%= log_activity.namamembers %></td>
+              <td><%= log_activity.username %></td>
+              <td><%= log_activity.email %></td>
+              <td><%= log_activity.nama_role %></td>
+              <td><%= log_activity.status %></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<br>

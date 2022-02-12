@@ -1,0 +1,24 @@
+<div class="page-header">
+  <%= link_to sub2_document_types_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_sub2_document_type_path(@sub2_document_type), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show sub2_document_type</h1>
+  <%= render "layouts/logo_header" %>
+</div>
+
+<dl class="dl-horizontal">
+
+  <dt>Sub document type:</dt>
+  <dd><%= @sub2_document_type.sub_document_type_id %></dd>
+
+
+  <dt>Sub2 type name:</dt>
+  <dd><%= @sub2_document_type.sub2_type_name %></dd>
+
+
+</dl>

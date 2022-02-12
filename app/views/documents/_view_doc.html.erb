@@ -1,0 +1,57 @@
+<!-- MAIN CONTENT -->
+<div id="error_explanation" class="bg-danger text-danger"></div>
+<div class="modal-body">
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+    <div class="widget-body">
+      <dl class="dl-horizontal">
+        <div id="myTabContent" class="tab-content">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <% if current_user.is? 10
+                   @file_document = Document.find_by(document_id: params[:document_id])
+              %>
+                <!--                <div  style="width: 100% !important; height: 480px; position: relative;">-->
+                <!--                  <iframe src="https://docs.google.com/viewer?url=https://dms.pgn-solution.co.id/file/DMS/Quality_Management/<%#= "#{@file_document.file_upload}" %>&embedded=true"   style="width: 100% !important; height: 480px; position: relative;" frameborder="0" scrolling="no" seamless=""></iframe>-->
+                <!--                  <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;"> </div>-->
+                <!--                </div>-->
+                <% if File.extname(@file_document.file_upload).strip.downcase[1..-1] == "mp4" %>
+                  <video style="width: 100%;" controls controlsList="nodownload">
+                    <source src="/file/DMS/Quality_Management/<%= @file_document.file_upload %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <script type="text/javascript">
+                      function myFunction() {
+                          location.reload();
+                      }
+                  </script>
+                <% else %>
+                  <iframe src="<%= pdfjs.minimal_path(file: "/file/DMS/Quality_Management/#{@file_document.file_upload}") %>" style="width: 100%; height: 600px; position: relative;"></iframe>
+                <% end %>
+              <% else
+                   @file_document = Document.find_by(document_id: params[:document_id])
+              %>
+                <!--                <object data="<%#= pdfjs.full_path(file: "/file/DMS/Quality_Management/#{@file_document.file_upload}") %>" type="application/pdf"  style="width: 100% !important; height: 600px; position: relative;">-->
+                <!--                  <embed src="<%#= pdfjs.full_path(file: "/file/DMS/Quality_Management/#{@file_document.file_upload}") %>" type="application/pdf" />-->
+                <!--                </object>-->
+                <% if File.extname(@file_document.file_upload).strip.downcase[1..-1] != "pdf" %>
+                  <video style="width: 100%;" controls controlsList="nodownload">
+                    <source src="/file/DMS/Quality_Management/<%= @file_document.file_upload %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <script type="text/javascript">
+                      function myFunction() {
+                          location.reload();
+                      }
+                  </script>
+                <% else %>
+                  <iframe src="<%= pdfjs.full_path(file: "/file/DMS/Quality_Management/#{@file_document.file_upload}") %>" style="width: 100%; height: 600px; position: relative;"></iframe>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+

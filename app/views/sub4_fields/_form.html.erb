@@ -1,0 +1,177 @@
+<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-custombutton="false">
+  <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+  -->
+  <header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>sub4_field </h2>
+
+  </header>
+
+  <!-- widget div-->
+  <div>
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+      <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <%= form_for(@sub4_field, html: { id: "review-form", class: "smart-form", role: "form" }) do |f| %>
+        <header>
+          sub4_field
+        </header>
+
+        <fieldset>
+          <style media="screen">
+            select.select2 {
+              display: block;
+              visibility: visible;
+              position: absolute;
+              margin-top: 4px;
+              margin-left: 4px;
+              width: 190px;
+              height: 20px;
+            }
+          </style>
+          <script type="text/javascript">
+              $(".select2").select2();
+          </script>
+          <section>
+              <label class="input">Sub3 Name</label>
+                <%#= f.number_field :sub3_field_id, class: "form-control", id: "sub3_field_id", placeholder: "sub3_field_id" %>
+                <% if current_user.is? 19 %>
+                  <% @getId = Member.find_by_username(current_user.username) %>
+                  <%= f.collection_select :sub3_field_id, Sub3Field.where('akses LIKE ?', "%#{current_user.username}%"), :sub3_field_id, :sub3_name_field, {prompt: "Select a field"}, {:class => 'select2'} %>
+                <% else %>
+                  <%= f.collection_select :sub3_field_id, Sub3Field.all, :sub3_field_id, :sub3_name_field, {prompt: "Select a field"}, {:class => 'select2'} %>
+                <% end %>
+            </label>
+          </section>
+          
+          <section>
+              <label class="input">Field Name</label>
+                <%= f.text_field :sub4_name_field, class: "form-control", id: "sub4_name_field", placeholder: "sub4_name_field" %>
+            </label>
+          </section>
+
+          <section>
+            <% if current_user.is? 19 %>
+              <label class="input">Control Access</label>
+              <%= f.text_field :akses, value: current_user.username, class: "form-control", readonly: true %>
+            <% else %>
+              <label class="input"> <i class="icon-append fa fa-settings"></i>
+                <select class="form-control select2" data-min-options="2" name="sub4_field[akses][]" multiple data-live-search="true">
+                  <% unless @sub4_field.new_record? %>
+                    <% @user = Sub4Field.find(params[:id]) %>
+                    <% if @user.akses.present? %>
+                      <%
+                        @user = Sub4Field.find(params[:id])
+                        @user = @user.akses.gsub("'\'", "")
+                        @user = @user.gsub('"',"")
+                        @user = @user.gsub("[","")
+                        @user = @user.gsub("]","")
+                        @user = @user.split(",")
+                        @user.map do |user|
+                        @getUser = Member.find(user)
+                        @selected = "selected=selected"
+                      %>
+                          <option value="<%= @getUser.id %>" <%= @selected %>><%= @getUser.username %></option>
+                      <% end %>
+                    <% end %>
+
+                    <% @getVendor = Member.where.not('member_id IN (?)', @user).select('DISTINCT ON (nama)*') %>
+                    <% @getVendor.each do |f| %>
+                      <option value="<%= f.id %>"><%= f.nama %></option>
+                    <% end %>
+
+                  <% else %>
+                    <% @user = Member.order(:username) %>
+                    <% @user.each do |user| %>
+                      <option value="<%= user.member_id %>" <%= @selected %>><%= user.username %></option>
+                    <% end %>
+                  <% end %>
+                </select>
+              </label>
+            <% end %>
+          </section>
+          
+        </fieldset>
+        <footer>
+          <%= f.submit class: "btn btn-primary" %>
+        </footer>
+        <% end %>
+
+    </div>
+    <!-- end widget content -->
+
+  </div>
+  <!-- end widget div -->
+
+</div>
+<% content_for :scripts do %>
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    pageSetUp();
+    var errorClass = 'invalid';
+    var errorElement = 'em';
+    var $reviewForm = $("#review-form").validate({
+      errorClass		: errorClass,
+      errorElement	: errorElement,
+      highlight: function(element) {
+        $(element).parent().removeClass('state-success').addClass("state-error");
+        $(element).removeClass('valid');
+      },
+      unhighlight: function(element) {
+        $(element).parent().removeClass("state-error").addClass('state-success');
+        $(element).addClass('valid');
+      },
+      // Rules for form validation
+      rules : {
+        
+        'sub4_field[sub3_field_id]' : {
+          required : true
+        },
+        
+        'sub4_field[sub4_name_field]' : {
+          required : true
+        },
+        
+      },
+
+      // Messages for form validation
+      messages : {
+        
+        'sub4_field[sub3_field_id]' : {
+          required : 'Please enter your textbox sub3_field_id '
+        },
+        
+        'sub4_field[sub4_name_field]' : {
+          required : 'Please enter your textbox sub4_name_field '
+        },
+        
+      },
+
+      // Do not change code below
+      errorPlacement : function(error, element) {
+        error.insertAfter(element.parent());
+      }
+    });
+  });
+</script>
+<% end %>

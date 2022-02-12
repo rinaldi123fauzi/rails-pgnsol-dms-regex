@@ -1,0 +1,52 @@
+<aside id="left-panel" class="hidden-lg hidden-md hidden-sm">
+
+  <!-- User info -->
+  <div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
+					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+            <%= image_tag 'avatars/small.svg', alt: 'me', class: 'online' %>
+            <span>
+							<%= current_user.nama %>
+						</span>
+<!--            <i class="fa fa-angle-down"></i>-->
+          </a>
+
+				</span>
+  </div>
+  <!-- end user info -->
+
+  <!-- NAVIGATION : This navigation is also responsive-->
+  <nav>
+    <!--
+    NOTE: Notice the gaps after each icon usage <i></i>..
+    Please note that these links work a bit different than
+    traditional href="" links. See documentation for details.
+    -->
+
+    <ul>
+      <%# <%= left_menu %>
+      <% if current_user.is? 2 %>
+      <%= render 'layouts/menu/superadmin'%>
+      <% elsif current_user.is? 6 %>
+      <%= render 'layouts/menu/inputerqm'%>
+      <% elsif current_user.is? 7 %>
+      <%= render 'layouts/menu/inputerwr'%>
+      <% elsif current_user.is? 8 %>
+      <%= render 'layouts/menu/checkerqm' %>
+      <% elsif current_user.is? 9 %>
+      <%= render 'layouts/menu/checkerwr' %>
+      <% elsif current_user.is? 10 %>
+      <%= render 'layouts/menu/staff'%>
+      <% elsif current_user.is? 12 %>
+      <%= render 'layouts/menu/kadiv' %>
+      <% end %>
+    </ul>
+  </nav>
+
+
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
+			</span>
+
+</aside>

@@ -1,0 +1,109 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <% content_for :ribbon do %>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+    <span class="ribbon-button-alignment">
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </span>
+
+      <!-- breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="<%= home_documents_path %>" style="text-decoration: none;">HOME</a></li>
+        <li><a href="<%= dashboard_internal_audits_path %>" style="text-decoration: none;">Audit Dashboard</a></li>
+        <li>Audit Data</li>
+      </ol>
+      <!-- end breadcrumb -->
+
+      <!-- You can also add more buttons to the
+      ribbon for further usability
+
+      Example below:
+
+      <span class="ribbon-button-alignment pull-right">
+      <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+      <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+      <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+      </span> -->
+
+    </div>
+    <!-- END RIBBON -->
+  <% end %>
+  <div class="page-header">
+    <h1>Listing internal_audits</h1>
+    <%= render "layouts/logo_header" %>
+
+    <%= link_to new_internal_audit_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    <% end %>
+  </div>
+
+  <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+    <!-- widget options:
+    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+    data-widget-colorbutton="false"
+    data-widget-editbutton="false"
+    data-widget-togglebutton="false"
+    data-widget-deletebutton="false"
+    data-widget-fullscreenbutton="false"
+    data-widget-custombutton="false"
+    data-widget-collapsed="true"
+    data-widget-sortable="false"
+
+    -->
+    <header>
+      <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+      <h2>internal_audits </h2>
+
+    </header>
+
+    <!-- widget div-->
+    <div>
+
+      <!-- widget edit box -->
+      <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+      </div>
+      <!-- end widget edit box -->
+
+      <!-- widget content -->
+      <div class="widget-body">
+        <div class="table-responsive">
+
+          <table id="IndexInternalAudit" class="table table-striped table-bordered" width="100%" data-source="<%= internal_audits_url(format: "json") %>">
+            <thead>
+            <tr>
+              <th>No</th>
+              <th>Report no</th>
+              <th>Audit date</th>
+              <th>Division</th>
+              <th>Audit Functional</th>
+              <th>Status</th>
+              <th>Tindak Lanjut</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+
+          </table>
+
+        </div>
+      </div>
+      <!-- end widget content -->
+
+    </div>
+    <!-- end widget div -->
+
+  </div>
+</div>

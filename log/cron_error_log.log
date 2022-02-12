@@ -1,0 +1,1462 @@
+rake aborted!
+NoMethodError: undefined method `each' for nil:NilClass
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:5:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Errno::ECONNRESET: Connection reset by peer
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+PG::ConnectionBad: connection to server at "localhost" (127.0.0.1), port 1234 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)
+rake aborted!
+Net::OpenTimeout: execution expired
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:23:in `migrateDivisi'
+/home/pgnsol/project/pgnsol/dms/app/models/division.rb:3:in `set_divisi'
+/home/pgnsol/project/pgnsol/dms/lib/tasks/migrasi_data.rake:4:in `block (2 levels) in <top (required)>'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `load'
+/home/pgnsol/.rbenv/versions/2.6.6/bin/bundle:23:in `<main>'
+Tasks: TOP => migrasi_data:set_divisi
+(See full trace by running task with --trace)

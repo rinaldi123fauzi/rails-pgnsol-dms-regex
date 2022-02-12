@@ -1,0 +1,415 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <div class="page-header">
+    <h1>Home</h1>
+    <%= render "layouts/logo_header" %>
+  </div>
+  <% if current_user.is? 2 %>
+    <div class="row hidden-md hidden-lg">
+      <div class="col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Master Data
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-submenu">
+              <a class="test" tabindex="-1" href="#">Quality Modules</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a tabindex="-1" href="<%= document_references_url %>" title="Reference Document"><span class='menu-item-parent' style="color: black;">Reference Document</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= document_types_url %>" title="Document Type"><span class='menu-item-parent' style="color: black;">Document Type</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= sub_document_types_url %>" title="Sub Document Type"><span class='menu-item-parent' style="color: black;">Sub Document Types</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= sub2_document_types_url %>" title="Sub2 Document Type"><span class='menu-item-parent' style="color: black;">Sub2 Document Types</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= document_classifications_url %>" title="Document Classification"><span class='menu-item-parent' style="color: black;">Document Classification</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="test" tabindex="-1" href="#">Reference Modules</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a tabindex="-1" href="<%= fields_path %>" title="Fields Document"><span class='menu-item-parent' style="color: black;">Fields Document</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= sub_fields_path %>" title="Sub Fields Document"><span class='menu-item-parent' style="color: black;">Sub Fields Document</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= sub2_fields_path %>" title="Sub2 Fields Document"><span class='menu-item-parent' style="color: black;">Sub2 Fields Document</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= sub3_fields_path %>" title="Sub3 Fields Document"><span class='menu-item-parent' style="color: black;">Sub3 Fields Document</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= sub4_fields_path %>" title="Sub4 Fields Document"><span class='menu-item-parent' style="color: black;">Sub4 Fields Document</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= wr_doc_types_path %>" title="Reference Type Document"><span class='menu-item-parent' style="color: black;">Reference Types Document</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="test" tabindex="-1" href="#">Account Settings</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a tabindex="-1" href="<%= members_url %>" title="Members" style="color: black;"><span class='menu-item-parent'>Members</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= permissions_path %>" title="Permissions" style="color: black;"><span class='menu-item-parent'>Permissions</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="test" tabindex="-1" href="#">List Activity</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a tabindex="-1" href="<%= list_login_log_activities_path %>" title="Log" style="color: black;"><span class='menu-item-parent'>Activities Login</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= list_request_log_activities_path %>" title="Log Request" style="color: black;"><span class='menu-item-parent'>Request Activities</span></a>
+                </li>
+                <li>
+                  <a tabindex="-1" href="<%= log_activities_url %>" title="Log" style="color: black;"><span class='menu-item-parent'>Log Activities</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <div class="row">
+    <nav>
+      <% if current_user.is? 6 %>
+        <ul class="col-md-4">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Control Systems">
+              <span class="nav-label"> Control Systems <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li class="dropdown">
+                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Quality Management Modules">
+                  <span class="nav-label" style="color: black;"> QMS Modules <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+                <ul>
+                  <li>
+                    <a href="<%= document_references_url %>" title="Reference Document"><span class='menu-item-parent' style="color: black;">Reference Document</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= document_types_url %>" title="Document Types"><span class='menu-item-parent' style="color: black;">Document Types</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= sub_document_types_url %>" title="Sub Document Type"><span class='menu-item-parent' style="color: black;">Sub Document Types</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= sub2_document_types_url %>" title="Sub2 Document Type"><span class='menu-item-parent' style="color: black;">Sub2 Document Types</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= document_classifications_url %>" title="Document Classification"><span class='menu-item-parent' style="color: black;">Document Classification</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+      <% if current_user.is? 7 %>
+        <ul class="col-md-4">
+          <li class="dropdown">
+            <a aria-expanded="false" role="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Control Systems">
+              <span class="nav-label"> Control Systems <span class="caret"></span> </span></a>
+            <ul style="background-color: transparent;">
+              <li class="dropdown">
+                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown" title="Work Reference Modules">
+                  <span class="nav-label" style="color: black;"> WR Modules <b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></span></a>
+                <ul>
+                  <li>
+                    <a href="<%= fields_path %>" title="Fields Document"><span class='menu-item-parent' style="color: black;">Fields Document</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= sub_fields_path %>" title="Sub Fields Document"><span class='menu-item-parent' style="color: black;">Sub Fields Document</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= sub2_fields_path %>" title="Sub2 Fields Document"><span class='menu-item-parent' style="color: black;">Sub2 Fields Document</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= sub3_fields_path %>" title="Sub3 Fields Document"><span class='menu-item-parent' style="color: black;">Sub3 Fields Document</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= sub4_fields_path %>" title="Sub4 Fields Document"><span class='menu-item-parent' style="color: black;">Sub4 Fields Document</span></a>
+                  </li>
+                  <li>
+                    <a href="<%= wr_doc_types_path %>" title="Reference Document Type"><span class='menu-item-parent' style="color: black;">Reference Document Type</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+    </nav>
+  </div>
+  <hr style="border-color: black;">
+  <style>
+    @media screen and (max-width: 480px){
+      #graph-dak{
+        width: 100%;
+      }
+    }
+
+    @media screen and (min-width: 1200px){
+      #graph-dak{
+        width: 73%;
+      }
+    }
+  </style>
+
+  <div class="row">
+    <div id="graph-dak" class="col-md-9">
+      <section id="widget-grid" class="animated fadeInDown">
+        <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="false" style="box-shadow: -1rem 0 3rem #000;">
+          <!-- widget options:
+          usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+          data-widget-colorbutton="false"
+          data-widget-editbutton="false"
+          data-widget-togglebutton="false"
+          data-widget-deletebutton="false"
+          data-widget-fullscreenbutton="false"
+          data-widget-custombutton="false"
+          data-widget-collapsed="true"
+          data-widget-sortable="false"
+
+          -->
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>Graphic of DAK Documents</h2>
+
+          </header>
+
+          <!-- widget div-->
+          <div>
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+              <!-- This area used as dropdown edit box -->
+
+            </div>
+            <!-- end widget edit box -->
+
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+
+              <div id="dak-graph" class="chart no-padding"></div>
+
+            </div>
+            <!-- end widget content -->
+
+          </div>
+          <!-- end widget div -->
+
+        </div>
+        <!-- end widget -->
+      </section>
+    </div>
+
+    <style>
+      .card2 {
+        /* Add shadows to create the "card" effect */
+        display: flex;
+        height: 140px;
+        width: 200px;
+        background-color: #09b37d;
+        border-radius: 10px;
+        box-shadow: -1rem 0 2rem #000;
+        /*   margin-left: -50px; */
+        transition: 0.4s ease-out;
+        position: relative;
+        left: 0px;
+      }
+
+      /* On mouse-over, add a deeper shadow */
+      .card2:hover {
+        transform: translateY(-20px);
+        transition: 0.4s ease-out;
+      }
+
+      /* Add some padding inside the card container */
+      .bar2 {
+        padding: 70px 16px;
+      }
+    </style>
+    <div class="col-md-3">
+      <dl class="dl-horizontal hidden-xs hidden-sm">
+        <div class="row animated fadeInDown">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="card2">
+
+                <a href="<%= home_qms_documents_path %>" style="text-decoration:none; color:black;" title="Qualities Documents">
+                  <div class="card2">
+                    <h3 class="title" style="font-size: 16px;">Quality Documents</h3>
+                    <div class="bar2">
+                      <% @document = Document.all %>
+                      <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @document.count %></h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div style="margin-top: 5px;">
+                <a href="<%= home_document_wr_docs_path %>" style="text-decoration:none; color:black;" title="References Documents">
+                  <div class="card2">
+                    <h3 class="title" style="font-size: 16px;">Reference Documents</h3>
+                    <div class="bar2">
+                      <% @WrDoc = WrDoc.all %>
+                      <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <a href="<%= dak_templates_url %>" style="text-decoration:none; color:black;" title="Template DAK">
+                  <div class="card2">
+                    <h3 class="title" style="font-size: 16px;">Template DAK</h3>
+                  </div>
+                </a>
+              </div>
+              <% if current_user.is? 2 or current_user.is? 6 or current_user.is? 7 %>
+                <div>
+                  <a href="<%= dashboard_internal_audits_path %>" style="text-decoration:none; color:black;" title="Audit Documents">
+                    <div class="card2">
+                      <h3 class="title" style="font-size: 16px;">Audit Documents</h3>
+                      <div class="bar2">
+                        <% @internalAudit = InternalAudit.all %>
+                        <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @internalAudit.count %></h2>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+  <%= render 'layouts/css_cards' %>
+
+  <dl class="dl-horizontal hidden-md hidden-lg">
+    <div class="row animated fadeInDown">
+      <div class="col-xs-6 col-sm-4" id="card">
+
+        <a href="<%= home_qms_documents_path %>" style="text-decoration:none; color:black;" title="Qualities Documents">
+          <div class="card">
+            <h3 class="title">Quality Documents</h3>
+            <div class="bar">
+              <div class="emptybar"></div>
+              <div class="filledbar"></div>
+              <% @document = Document.all %>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @document.count %></h2>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-sm-4">
+        <a href="<%= home_document_wr_docs_path %>" style="text-decoration:none; color:black;" title="References Documents">
+          <div class="card">
+            <h3 class="title">Reference Documents</h3>
+            <div class="bar">
+              <div class="emptybar"></div>
+              <div class="filledbar"></div>
+              <% @WrDoc = WrDoc.all %>
+              <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @WrDoc.count %></h2>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-xs-6 col-sm-4">
+        <a href="<%= dak_templates_url %>" style="text-decoration:none; color:black;" title="Template DAK">
+          <div class="card">
+            <h3 class="title">Template DAK</h3>
+            <div class="bar">
+              <div class="emptybar"></div>
+              <div class="filledbar"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <% if current_user.is? 2 or current_user.is? 6 or current_user.is? 7 %>
+        <div class="col-xs-6 col-sm-4" style="margin-top: 5px;">
+          <a href="<%= dashboard_internal_audits_path %>" style="text-decoration:none; color:black;" title="Audit Documents">
+            <div class="card">
+              <h3 class="title">Audit Documents</h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+                <% @internalAudit = InternalAudit.all %>
+                <h2 class="no-margins text-navy" style="color:#42f4a1;"><%= @internalAudit.count %></h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </dl>
+</div>
+<% content_for :scripts do %>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          pageSetUp();
+          if ($('#dak-graph').length) {
+
+              Morris.Bar({
+                  element: 'dak-graph',
+                  data: [
+                      <%  @field = SubDocumentType.where(document_type_id: 2).select('*').order('sub_document_type_id, sub_type_name ASC')
+                          @field.each do |f|
+                      %>
+                      <%  @dak_count = Document.where('sub_document_type_id = ?', f.sub_document_type_id).select('*') %>
+                      {
+                          <% if f.sub_type_name.size > 5 %>
+                          x: "<%= f.sub_type_name.gsub('&', 'dan').slice(0, 5) %>",
+                          <% else %>
+                          x: "<%= f.sub_type_name.gsub('&', 'dan') %>",
+                          <% end %>
+                          z: "<%= f.sub_type_name.gsub('&', 'dan') %>",
+                          y: <%= @dak_count.count %>
+                      },
+                      <% end %>
+                  ],
+                  xkey: 'x',
+                  ykeys: ['y'],
+                  labels: ['Jumlah Dokumen'],
+                  hoverCallback: function (index, options, content, row) {
+                      return row.z + '<br> Jumlah Dokumen ' + row.y;
+                  },
+                  barColors: function (row, series, type) {
+                      var letters = '0123456789ABCDEF'.split('');
+                      var color = '#';
+                      for (var i = 0; i < 6; i++) {
+                          color += letters[Math.floor(Math.random() * 16)];
+                      }
+                      if (type === 'bar') {
+                          return color;
+                      } else {
+                          return '#000';
+                      }
+                  }
+              });
+
+          }
+      })
+  </script>
+<% end %>
